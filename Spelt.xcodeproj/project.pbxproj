@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FDDD24E91D3FA87B00C00C39 /* SiteLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDD24E81D3FA87B00C00C39 /* SiteLoader.swift */; };
 		_LinkFileRef_Spelt_via_SpeltTestSuite /* Spelt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_Spelt" /* Spelt.framework */; };
 		__src_cc_ref_Sources/CLI/main.swift /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/CLI/main.swift /* main.swift */; };
 		__src_cc_ref_Sources/Spelt/Document.swift /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/Spelt/Document.swift /* Document.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FDDD24E81D3FA87B00C00C39 /* SiteLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteLoader.swift; sourceTree = "<group>"; };
 		__PBXFileRef_Package.swift /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		__PBXFileRef_Sources/CLI/main.swift /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		__PBXFileRef_Sources/Spelt/Document.swift /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 			children = (
 				__PBXFileRef_Sources/Spelt/Document.swift /* Document.swift */,
 				__PBXFileRef_Sources/Spelt/Site.swift /* Site.swift */,
+				FDDD24E81D3FA87B00C00C39 /* SiteLoader.swift */,
 				__PBXFileRef_Spelt_Info.plist /* Spelt_Info.plist */,
 			);
 			name = Spelt;
@@ -240,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				FDDD24E91D3FA87B00C00C39 /* SiteLoader.swift in Sources */,
 				__src_cc_ref_Sources/Spelt/Document.swift /* Document.swift in Sources */,
 				__src_cc_ref_Sources/Spelt/Site.swift /* Site.swift in Sources */,
 			);
