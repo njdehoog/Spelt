@@ -1,0 +1,396 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		_LinkFileRef_Spelt_via_SpeltTestSuite /* Spelt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "_____Product_Spelt" /* Spelt.framework */; };
+		__src_cc_ref_Sources/CLI/main.swift /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/CLI/main.swift /* main.swift */; };
+		__src_cc_ref_Sources/Spelt/Document.swift /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/Spelt/Document.swift /* Document.swift */; };
+		__src_cc_ref_Sources/Spelt/Site.swift /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Sources/Spelt/Site.swift /* Site.swift */; };
+		__src_cc_ref_Tests/Spelt/SiteTests.swift /* SiteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = __PBXFileRef_Tests/Spelt/SiteTests.swift /* SiteTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FDDD24E71D3F8F2900C00C39 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = __RootObject_ /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = "______Target_Spelt";
+			remoteInfo = Spelt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		__PBXFileRef_Package.swift /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Sources/CLI/main.swift /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Sources/Spelt/Document.swift /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Sources/Spelt/Site.swift /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
+		__PBXFileRef_Spelt.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Project.xcconfig; path = Spelt.xcodeproj/Configs/Project.xcconfig; sourceTree = "<group>"; };
+		__PBXFileRef_SpeltTestSuite_Info.plist /* SpeltTestSuite_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = SpeltTestSuite_Info.plist; path = Spelt.xcodeproj/SpeltTestSuite_Info.plist; sourceTree = SOURCE_ROOT; };
+		__PBXFileRef_Spelt_Info.plist /* Spelt_Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Spelt_Info.plist; path = Spelt.xcodeproj/Spelt_Info.plist; sourceTree = SOURCE_ROOT; };
+		__PBXFileRef_Tests/Spelt/SiteTests.swift /* SiteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteTests.swift; sourceTree = "<group>"; };
+		"_____Product_CLI" /* CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = CLI; sourceTree = BUILT_PRODUCTS_DIR; };
+		"_____Product_Spelt" /* Spelt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Spelt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		"_____Product_SpeltTestSuite" /* SpeltTestSuite.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = SpeltTestSuite.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		"___LinkPhase_CLI" /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		"___LinkPhase_Spelt" /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		"___LinkPhase_SpeltTestSuite" /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				_LinkFileRef_Spelt_via_SpeltTestSuite /* Spelt.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		TestProducts_ /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				"_____Product_SpeltTestSuite" /* SpeltTestSuite.xctest */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+		"___RootGroup_" = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Package.swift /* Package.swift */,
+				"_____Configs_" /* Configs */,
+				"_____Sources_" /* Sources */,
+				"_______Tests_" /* Tests */,
+				"____Products_" /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		"____Products_" /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				TestProducts_ /* Tests */,
+				"_____Product_CLI" /* CLI */,
+				"_____Product_Spelt" /* Spelt.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		"_____Configs_" /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Spelt.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */,
+			);
+			name = Configs;
+			sourceTree = "<group>";
+		};
+		"_____Sources_" /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				"_______Group_CLI" /* CLI */,
+				"_______Group_Spelt" /* Spelt */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		"_______Group_CLI" /* CLI */ = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Sources/CLI/main.swift /* main.swift */,
+			);
+			name = CLI;
+			path = Sources/CLI;
+			sourceTree = "<group>";
+		};
+		"_______Group_Spelt" /* Spelt */ = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Sources/Spelt/Document.swift /* Document.swift */,
+				__PBXFileRef_Sources/Spelt/Site.swift /* Site.swift */,
+				__PBXFileRef_Spelt_Info.plist /* Spelt_Info.plist */,
+			);
+			name = Spelt;
+			path = Sources/Spelt;
+			sourceTree = "<group>";
+		};
+		"_______Group_SpeltTestSuite" /* SpeltTestSuite */ = {
+			isa = PBXGroup;
+			children = (
+				__PBXFileRef_Tests/Spelt/SiteTests.swift /* SiteTests.swift */,
+				__PBXFileRef_SpeltTestSuite_Info.plist /* SpeltTestSuite_Info.plist */,
+			);
+			name = SpeltTestSuite;
+			path = Tests/Spelt;
+			sourceTree = "<group>";
+		};
+		"_______Tests_" /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				"_______Group_SpeltTestSuite" /* SpeltTestSuite */,
+			);
+			name = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		"______Target_CLI" /* CLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = "_______Confs_CLI" /* Build configuration list for PBXNativeTarget "CLI" */;
+			buildPhases = (
+				CompilePhase_CLI /* Sources */,
+				"___LinkPhase_CLI" /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CLI;
+			productName = CLI;
+			productReference = "_____Product_CLI" /* CLI */;
+			productType = "com.apple.product-type.tool";
+		};
+		"______Target_Spelt" /* Spelt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = "_______Confs_Spelt" /* Build configuration list for PBXNativeTarget "Spelt" */;
+			buildPhases = (
+				CompilePhase_Spelt /* Sources */,
+				"___LinkPhase_Spelt" /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Spelt;
+			productName = Spelt;
+			productReference = "_____Product_Spelt" /* Spelt.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		"______Target_SpeltTestSuite" /* SpeltTestSuite */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = "_______Confs_SpeltTestSuite" /* Build configuration list for PBXNativeTarget "SpeltTestSuite" */;
+			buildPhases = (
+				CompilePhase_SpeltTestSuite /* Sources */,
+				"___LinkPhase_SpeltTestSuite" /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				__Dependency_Spelt /* PBXTargetDependency */,
+			);
+			name = SpeltTestSuite;
+			productName = SpeltTestSuite;
+			productReference = "_____Product_SpeltTestSuite" /* SpeltTestSuite.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		__RootObject_ /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 9999;
+			};
+			buildConfigurationList = "___RootConfs_" /* Build configuration list for PBXProject "Spelt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = "___RootGroup_";
+			productRefGroup = "____Products_" /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				"______Target_CLI" /* CLI */,
+				"______Target_Spelt" /* Spelt */,
+				"______Target_SpeltTestSuite" /* SpeltTestSuite */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CompilePhase_CLI /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				__src_cc_ref_Sources/CLI/main.swift /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CompilePhase_Spelt /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				__src_cc_ref_Sources/Spelt/Document.swift /* Document.swift in Sources */,
+				__src_cc_ref_Sources/Spelt/Site.swift /* Site.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CompilePhase_SpeltTestSuite /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				__src_cc_ref_Tests/Spelt/SiteTests.swift /* SiteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		__Dependency_Spelt /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = "______Target_Spelt" /* Spelt */;
+			targetProxy = FDDD24E71D3F8F2900C00C39 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		_ReleaseConf_CLI /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
+			};
+			name = Release;
+		};
+		_ReleaseConf_Spelt /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = Spelt.xcodeproj/Spelt_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+			};
+			name = Release;
+		};
+		_ReleaseConf_SpeltTestSuite /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = Spelt.xcodeproj/SpeltTestSuite_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+			};
+			name = Release;
+		};
+		"___DebugConf_CLI" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx @executable_path";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_FORCE_DYNAMIC_LINK_STDLIB = YES;
+				SWIFT_FORCE_STATIC_LINK_STDLIB = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		"___DebugConf_Spelt" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_TESTABILITY = YES;
+				INFOPLIST_FILE = Spelt.xcodeproj/Spelt_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		"___DebugConf_SpeltTestSuite" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				INFOPLIST_FILE = Spelt.xcodeproj/SpeltTestSuite_Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		"_____Release_" /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = __PBXFileRef_Spelt.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		"_______Debug_" /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = __PBXFileRef_Spelt.xcodeproj/Configs/Project.xcconfig /* Project.xcconfig */;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		"___RootConfs_" /* Build configuration list for PBXProject "Spelt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"_______Debug_" /* Debug */,
+				"_____Release_" /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		"_______Confs_CLI" /* Build configuration list for PBXNativeTarget "CLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"___DebugConf_CLI" /* Debug */,
+				_ReleaseConf_CLI /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		"_______Confs_Spelt" /* Build configuration list for PBXNativeTarget "Spelt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"___DebugConf_Spelt" /* Debug */,
+				_ReleaseConf_Spelt /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		"_______Confs_SpeltTestSuite" /* Build configuration list for PBXNativeTarget "SpeltTestSuite" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				"___DebugConf_SpeltTestSuite" /* Debug */,
+				_ReleaseConf_SpeltTestSuite /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = __RootObject_ /* Project object */;
+}
