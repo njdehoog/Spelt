@@ -9,5 +9,8 @@ let package = Package(
         Target(
             name: "CLI",
             dependencies: ["Spelt"])
-        ]
+        ],
+    dependencies: [
+        .Package(url: "https://github.com/njdehoog/Witness.git", majorVersion: 0, minor: 1)
+    ]
 )

@@ -135,6 +135,10 @@ xcuserdata
 Pods/
 !Podfile.lock
 
+###
+# SPM - Swift Package Manager
+Packages/
+
 ####
 # Xcode 5 -  Source Control files
 #
