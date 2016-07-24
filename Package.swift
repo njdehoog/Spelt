@@ -12,6 +12,7 @@ let package = Package(
         ],
     dependencies: [
         .Package(url: "https://github.com/njdehoog/Witness.git", majorVersion: 0, minor: 1),
-        .Package(url: "https://github.com/njdehoog/swift-yaml.git", majorVersion: 0, minor: 1)
+        .Package(url: "https://github.com/njdehoog/swift-yaml.git", majorVersion: 0, minor: 1),
+        .Package(url: "https://github.com/njdehoog/swift-hoedown.git", majorVersion: 0, minor: 1)
     ]
 )

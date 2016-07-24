@@ -7,5 +7,8 @@ class SpeltTests: XCTestCase {
         XCTAssertNotNil(Site())
     }
     
+    func testMarkdown() {
+        XCTAssertEqual(Site().html!, "<h1>Header 1</h1>\n")
+    }
 }
 
