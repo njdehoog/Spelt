@@ -1,4 +1,4 @@
-import Hoedown
+import SwiftHoedown
 
 public final class Site {
     var documents: [Document]

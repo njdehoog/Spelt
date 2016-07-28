@@ -1,0 +1,6 @@
+github "njdehoog/swift-hoedown" == 0.1.1
+github "njdehoog/swift-yaml" == 0.1.2
+github "njdehoog/Witness" "master"
+github "sagmor/GCDWebServer" "frameworks"
+github "njdehoog/swift-sass" == 0.1.0
+github "kylef/PathKit"

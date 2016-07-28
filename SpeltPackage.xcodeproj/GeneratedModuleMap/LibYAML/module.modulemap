@@ -1,5 +1,0 @@
-framework module LibYAML {
-    umbrella "/Users/njdehoog/Projects/Spelt/framework/Packages/YAML-0.1.1/Sources/LibYAML/include"
-    link framework "LibYAML"
-    export *
-}

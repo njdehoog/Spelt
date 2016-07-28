@@ -1,0 +1,21 @@
+[submodule "Carthage/Checkouts/GCDWebServer"]
+	path = Carthage/Checkouts/GCDWebServer
+	url = https://github.com/sagmor/GCDWebServer.git
+[submodule "Carthage/Checkouts/hoedown"]
+	path = Carthage/Checkouts/hoedown
+	url = https://github.com/njdehoog/hoedown.git
+[submodule "Carthage/Checkouts/PathKit"]
+	path = Carthage/Checkouts/PathKit
+	url = https://github.com/kylef/PathKit.git
+[submodule "Carthage/Checkouts/swift-hoedown"]
+	path = Carthage/Checkouts/swift-hoedown
+	url = https://github.com/njdehoog/swift-hoedown.git
+[submodule "Carthage/Checkouts/swift-sass"]
+	path = Carthage/Checkouts/swift-sass
+	url = https://github.com/njdehoog/swift-sass.git
+[submodule "Carthage/Checkouts/swift-yaml"]
+	path = Carthage/Checkouts/swift-yaml
+	url = https://github.com/njdehoog/swift-yaml.git
+[submodule "Carthage/Checkouts/Witness"]
+	path = Carthage/Checkouts/Witness
+	url = https://github.com/njdehoog/Witness.git

@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD6D5FD81D4A3C1100A7C277 /* SiteReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */; };
 		FD8531B71D4A2A3A00658286 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B11D4A2A3500658286 /* main.swift */; };
 		FD8531C61D4A2A6200658286 /* Spelt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* Spelt.framework */; };
-		FD8531CB1D4A2A6200658286 /* SpeltTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531CA1D4A2A6200658286 /* SpeltTests.swift */; };
 		FD8531CD1D4A2A6200658286 /* Spelt.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8531BF1D4A2A6200658286 /* Spelt.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD8531D61D4A2A8900658286 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD8531D41D4A2A8900658286 /* Info.plist */; };
 		FD8531D71D4A2A8900658286 /* Spelt.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8531D51D4A2A8900658286 /* Spelt.h */; };
@@ -18,6 +18,8 @@
 		FD8531DA1D4A2A8D00658286 /* SiteReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B51D4A2A3500658286 /* SiteReader.swift */; };
 		FD8531DB1D4A2A8D00658286 /* StaticFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B61D4A2A3500658286 /* StaticFile.swift */; };
 		FD8531DC1D4A2B4800658286 /* Spelt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* Spelt.framework */; };
+		FD8531E21D4A3A7200658286 /* SwiftHoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */; };
+		FD8531E41D4A3A7400658286 /* Hoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E31D4A3A7400658286 /* Hoedown.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteReaderTests.swift; sourceTree = "<group>"; };
 		FD8531A71D4A2A1200658286 /* CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8531B11D4A2A3500658286 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FD8531B31D4A2A3500658286 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -53,10 +56,12 @@
 		FD8531BF1D4A2A6200658286 /* Spelt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spelt.h; sourceTree = "<group>"; };
 		FD8531C01D4A2A6200658286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD8531C51D4A2A6200658286 /* SpeltTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeltTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD8531CA1D4A2A6200658286 /* SpeltTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeltTests.swift; sourceTree = "<group>"; };
 		FD8531CC1D4A2A6200658286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD8531D41D4A2A8900658286 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD8531D51D4A2A8900658286 /* Spelt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spelt.h; sourceTree = "<group>"; };
+		FD8531DE1D4A3A4400658286 /* GCDWebServers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GCDWebServers.framework; path = Carthage/Build/Mac/GCDWebServers.framework; sourceTree = "<group>"; };
+		FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHoedown.framework; path = Carthage/Build/Mac/SwiftHoedown.framework; sourceTree = "<group>"; };
+		FD8531E31D4A3A7400658286 /* Hoedown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hoedown.framework; path = Carthage/Build/Mac/Hoedown.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD8531E21D4A3A7200658286 /* SwiftHoedown.framework in Frameworks */,
+				FD8531E41D4A3A7400658286 /* Hoedown.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +100,7 @@
 				FD8531BE1D4A2A6200658286 /* Spelt */,
 				FD8531C91D4A2A6200658286 /* SpeltTests */,
 				FD8531A81D4A2A1200658286 /* Products */,
+				FD8531DD1D4A3A4400658286 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,10 +156,20 @@
 		FD8531C91D4A2A6200658286 /* SpeltTests */ = {
 			isa = PBXGroup;
 			children = (
-				FD8531CA1D4A2A6200658286 /* SpeltTests.swift */,
+				FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */,
 				FD8531CC1D4A2A6200658286 /* Info.plist */,
 			);
 			path = SpeltTests;
+			sourceTree = "<group>";
+		};
+		FD8531DD1D4A3A4400658286 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD8531E31D4A3A7400658286 /* Hoedown.framework */,
+				FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */,
+				FD8531DE1D4A3A4400658286 /* GCDWebServers.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,7 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD8531CB1D4A2A6200658286 /* SpeltTests.swift in Sources */,
+				FD6D5FD81D4A3C1100A7C277 /* SiteReaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +381,10 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -411,6 +433,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -446,7 +472,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -457,6 +482,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -509,7 +538,6 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -520,6 +548,10 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -662,6 +694,7 @@
 				FD8531AD1D4A2A1200658286 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD8531CE1D4A2A6200658286 /* Build configuration list for PBXNativeTarget "Spelt" */ = {
 			isa = XCConfigurationList;
@@ -670,6 +703,7 @@
 				FD8531D01D4A2A6200658286 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FD8531D11D4A2A6200658286 /* Build configuration list for PBXNativeTarget "SpeltTests" */ = {
 			isa = XCConfigurationList;
@@ -678,6 +712,7 @@
 				FD8531D31D4A2A6200658286 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
