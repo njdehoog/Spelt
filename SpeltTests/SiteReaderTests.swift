@@ -3,17 +3,18 @@ import XCTest
 
 class SiteReaderTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        
-        let fixturesPath = NSString(string:"~/Projects/Spelt/framework/SpeltTests/Fixtures").stringByExpandingTildeInPath
-        let sampleProjectPath = (fixturesPath as NSString).stringByAppendingPathComponent("test-site")
-        
-        print(sampleProjectPath)
+    var sampleProjectPath: String {
+        let fixturesPath = "~/Projects/Spelt/framework/SpeltTests/Fixtures".stringByExpandingTildeInPath
+        return fixturesPath.stringByAppendingPathComponent("test-site")
     }
     
-    func testThatItReadsDocuments() {
-        let fixturesPath = NSString(string:"~/Projects/Spelt/framework/Tests/Spelt/Fixtures").stringByExpandingTildeInPath
-        XCTAssertEqual(fixturesPath, "nope")
+    override func setUp() {
+        super.setUp()
+    }
+    
+    func testThatItReadsStaticFile() {
+        let reader = SiteReader(siteURL: NSURL(fileURLWithPath: sampleProjectPath))
+        let site = try! reader.read()
+        XCTAssert(site.staticFiles.count == 1)
     }
 }

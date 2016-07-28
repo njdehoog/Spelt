@@ -1,10 +1,12 @@
 import SwiftHoedown
 
 public final class Site {
-    var documents: [Document]
+//    var documents: [Document]
+    public let staticFiles: [StaticFile]
     
-    public init() {
-        documents = []
+    public init(staticFiles: [StaticFile]) {
+//        documents = []
+        self.staticFiles = staticFiles
     }
     
     public var html: String? {

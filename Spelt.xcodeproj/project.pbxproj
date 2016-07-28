@@ -10,6 +10,7 @@
 		FD6D5FD81D4A3C1100A7C277 /* SiteReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */; };
 		FD6D5FDD1D4A3F9A00A7C277 /* Hoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E31D4A3A7400658286 /* Hoedown.framework */; };
 		FD6D5FDE1D4A3F9A00A7C277 /* SwiftHoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */; };
+		FD6D5FE11D4A4BE600A7C277 /* String+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */; };
 		FD8531B71D4A2A3A00658286 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B11D4A2A3500658286 /* main.swift */; };
 		FD8531C61D4A2A6200658286 /* Spelt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* Spelt.framework */; };
 		FD8531CD1D4A2A6200658286 /* Spelt.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8531BF1D4A2A6200658286 /* Spelt.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteReaderTests.swift; sourceTree = "<group>"; };
+		FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Paths.swift"; sourceTree = "<group>"; };
 		FD8531A71D4A2A1200658286 /* CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8531B11D4A2A3500658286 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FD8531B31D4A2A3500658286 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				FD8531B41D4A2A3500658286 /* Site.swift */,
 				FD8531B51D4A2A3500658286 /* SiteReader.swift */,
 				FD8531B61D4A2A3500658286 /* StaticFile.swift */,
+				FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */,
 			);
 			path = Spelt;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD8531DA1D4A2A8D00658286 /* SiteReader.swift in Sources */,
+				FD6D5FE11D4A4BE600A7C277 /* String+Paths.swift in Sources */,
 				FD8531D91D4A2A8D00658286 /* Site.swift in Sources */,
 				FD8531D81D4A2A8D00658286 /* Document.swift in Sources */,
 				FD8531DB1D4A2A8D00658286 /* StaticFile.swift in Sources */,
