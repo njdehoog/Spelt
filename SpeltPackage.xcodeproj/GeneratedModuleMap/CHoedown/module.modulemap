@@ -1,0 +1,5 @@
+framework module CHoedown {
+    umbrella "/Users/njdehoog/Projects/Spelt/framework/Packages/Hoedown-0.1.2/Sources/CHoedown/include"
+    link framework "CHoedown"
+    export *
+}

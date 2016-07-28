@@ -2,4 +2,4 @@ import Spelt
 
 print("Hello CLI")
 
-//print("building site: \(Site())")
+print("building site: \(Site())")
