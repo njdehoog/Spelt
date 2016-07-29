@@ -2,20 +2,8 @@ public struct SiteRenderer {
     public let site: Site
     
     public func render() throws {
-        renderDestinationPaths()
+        PermalinkRenderer(site: site).render()
         try renderContents()
-    }
-    
-    private func renderDestinationPaths() {
-        for file in site.files {
-            if let file = file as? FileWithMetadata, let generator = PermalinkGenerator(file: file) {
-                file.destinationPath = generator.permalink
-            }
-            else {
-                // by default, the destination path is equal to the file's path relative to the source directory
-                file.destinationPath = file.relativePath(to: site.path)
-            }
-        }
     }
     
     private func renderContents() throws {
@@ -35,7 +23,6 @@ public struct SiteRenderer {
     }
 }
 
-
 extension SiteRenderer {
     public struct Error: ErrorType {
         public let filePath: String
@@ -54,6 +41,6 @@ protocol Renderer {
     var site: Site { get }
     
     init(site: Site)
-    func render()
+    func render() throws
 }
 
