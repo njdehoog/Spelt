@@ -26,10 +26,6 @@ public struct SiteReader {
     
     let sitePath: String
     
-    init(path: String) {
-        self.sitePath = path
-    }
-    
     func read() throws -> Site {
         let fileManager = NSFileManager()
         guard let enumerator = fileManager.enumeratorAtURL(NSURL(fileURLWithPath: sitePath), includingPropertiesForKeys:nil, options: .SkipsHiddenFiles, errorHandler: nil) else {

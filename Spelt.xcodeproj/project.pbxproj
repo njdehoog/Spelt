@@ -17,6 +17,12 @@
 		FD6D5FEA1D4B7B2700A7C277 /* SwiftYAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6D5FE81D4B7B1A00A7C277 /* SwiftYAML.framework */; };
 		FD6D5FEC1D4B7B6B00A7C277 /* NSRegularExpression+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FEB1D4B7B6B00A7C277 /* NSRegularExpression+Utilities.swift */; };
 		FD6D5FEE1D4B7F8700A7C277 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FED1D4B7F8700A7C277 /* Utilities.swift */; };
+		FD6D5FF01D4B8FD400A7C277 /* SiteBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FEF1D4B8FD400A7C277 /* SiteBuilder.swift */; };
+		FD6D5FF41D4B90BC00A7C277 /* SiteRendererTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FF31D4B90BC00A7C277 /* SiteRendererTests.swift */; };
+		FD6D5FF61D4B90F000A7C277 /* SiteRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FF51D4B90F000A7C277 /* SiteRenderer.swift */; };
+		FD6D5FF81D4B91F800A7C277 /* YAMLDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FF71D4B91F800A7C277 /* YAMLDateFormatter.swift */; };
+		FD6D5FFB1D4B969B00A7C277 /* Permalinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FFA1D4B969B00A7C277 /* Permalinks.swift */; };
+		FD6D5FFD1D4B975400A7C277 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FFC1D4B975400A7C277 /* File.swift */; };
 		FD8531B71D4A2A3A00658286 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B11D4A2A3500658286 /* main.swift */; };
 		FD8531C61D4A2A6200658286 /* Spelt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* Spelt.framework */; };
 		FD8531CD1D4A2A6200658286 /* Spelt.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8531BF1D4A2A6200658286 /* Spelt.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -61,6 +67,12 @@
 		FD6D5FE81D4B7B1A00A7C277 /* SwiftYAML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftYAML.framework; path = Carthage/Build/Mac/SwiftYAML.framework; sourceTree = "<group>"; };
 		FD6D5FEB1D4B7B6B00A7C277 /* NSRegularExpression+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+Utilities.swift"; sourceTree = "<group>"; };
 		FD6D5FED1D4B7F8700A7C277 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		FD6D5FEF1D4B8FD400A7C277 /* SiteBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteBuilder.swift; sourceTree = "<group>"; };
+		FD6D5FF31D4B90BC00A7C277 /* SiteRendererTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteRendererTests.swift; sourceTree = "<group>"; };
+		FD6D5FF51D4B90F000A7C277 /* SiteRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteRenderer.swift; sourceTree = "<group>"; };
+		FD6D5FF71D4B91F800A7C277 /* YAMLDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YAMLDateFormatter.swift; sourceTree = "<group>"; };
+		FD6D5FFA1D4B969B00A7C277 /* Permalinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permalinks.swift; sourceTree = "<group>"; };
+		FD6D5FFC1D4B975400A7C277 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		FD8531A71D4A2A1200658286 /* CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8531B11D4A2A3500658286 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FD8531B31D4A2A3500658286 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -114,6 +126,7 @@
 		FD6D5FE21D4A4FBC00A7C277 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FD6D5FF71D4B91F800A7C277 /* YAMLDateFormatter.swift */,
 				FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */,
 				FD6D5FEB1D4B7B6B00A7C277 /* NSRegularExpression+Utilities.swift */,
 			);
@@ -126,11 +139,20 @@
 				FD6D5FED1D4B7F8700A7C277 /* Utilities.swift */,
 				FD6D5FE61D4B778E00A7C277 /* Metadata.swift */,
 				FD8531B31D4A2A3500658286 /* Post.swift */,
+				FD6D5FFC1D4B975400A7C277 /* File.swift */,
 				FD8531B41D4A2A3500658286 /* Site.swift */,
 				FD8531B61D4A2A3500658286 /* StaticFile.swift */,
 				FD6D5FE41D4B4E7100A7C277 /* Document.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		FD6D5FF91D4B968C00A7C277 /* Renderers */ = {
+			isa = PBXGroup;
+			children = (
+				FD6D5FFA1D4B969B00A7C277 /* Permalinks.swift */,
+			);
+			name = Renderers;
 			sourceTree = "<group>";
 		};
 		FD85319C1D4A29B700658286 = {
@@ -177,6 +199,9 @@
 				FD8531D41D4A2A8900658286 /* Info.plist */,
 				FD8531D51D4A2A8900658286 /* Spelt.h */,
 				FD8531B51D4A2A3500658286 /* SiteReader.swift */,
+				FD6D5FEF1D4B8FD400A7C277 /* SiteBuilder.swift */,
+				FD6D5FF51D4B90F000A7C277 /* SiteRenderer.swift */,
+				FD6D5FF91D4B968C00A7C277 /* Renderers */,
 				FD6D5FE31D4A4FC700A7C277 /* Model */,
 				FD6D5FE21D4A4FBC00A7C277 /* Helpers */,
 			);
@@ -196,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */,
+				FD6D5FF31D4B90BC00A7C277 /* SiteRendererTests.swift */,
 				FD8531CC1D4A2A6200658286 /* Info.plist */,
 			);
 			path = SpeltTests;
@@ -379,15 +405,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6D5FF01D4B8FD400A7C277 /* SiteBuilder.swift in Sources */,
 				FD6D5FEC1D4B7B6B00A7C277 /* NSRegularExpression+Utilities.swift in Sources */,
 				FD6D5FE71D4B778E00A7C277 /* Metadata.swift in Sources */,
+				FD6D5FF81D4B91F800A7C277 /* YAMLDateFormatter.swift in Sources */,
 				FD8531DA1D4A2A8D00658286 /* SiteReader.swift in Sources */,
+				FD6D5FF61D4B90F000A7C277 /* SiteRenderer.swift in Sources */,
 				FD6D5FE11D4A4BE600A7C277 /* String+Paths.swift in Sources */,
 				FD6D5FE51D4B4E7100A7C277 /* Document.swift in Sources */,
 				FD8531D91D4A2A8D00658286 /* Site.swift in Sources */,
+				FD6D5FFD1D4B975400A7C277 /* File.swift in Sources */,
 				FD6D5FEE1D4B7F8700A7C277 /* Utilities.swift in Sources */,
 				FD8531D81D4A2A8D00658286 /* Post.swift in Sources */,
 				FD8531DB1D4A2A8D00658286 /* StaticFile.swift in Sources */,
+				FD6D5FFB1D4B969B00A7C277 /* Permalinks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +427,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD6D5FD81D4A3C1100A7C277 /* SiteReaderTests.swift in Sources */,
+				FD6D5FF41D4B90BC00A7C277 /* SiteRendererTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

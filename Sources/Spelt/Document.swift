@@ -1,6 +1,7 @@
 // Any file which contains front matter and is not a blog post is considered front matter
 public final class Document: FileWithMetadata {
     public let path: String
+    public var destinationPath: String?
     public var contents: String
     public var metadata: Metadata
     
