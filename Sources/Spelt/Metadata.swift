@@ -7,7 +7,7 @@ public enum Metadata {
     case Int(Swift.Int)
     case Double(Swift.Double)
     case Date(NSDate)
-    indirect case File(Spelt.File)
+    indirect case File(Spelt.FileWithMetadata)
     case Array([Spelt.Metadata])
     case Dictionary([Swift.String: Spelt.Metadata])
 }
@@ -115,7 +115,7 @@ public func == (lhs: Metadata, rhs: Metadata) -> Bool {
         if case .Date(let rv) = rhs { equal = lv.isEqualToDate(rv) }
     case .File(_):
         break
-        // FIXME: equality comparison does not work for files
+//         FIXME: equality comparison does not work for files
 //        if case .File(let rv) = rhs { equal = (lv == rv) }
     case .Array(let lv):
         if case .Array(let rv) = rhs { equal = (lv == rv) }
@@ -141,10 +141,8 @@ public func < (lhs: Metadata, rhs: Metadata) -> Bool {
         if case .Double(let rv) = rhs { smallerThan = (lv < rv) }
     case .Date(let lv):
         if case .Date(let rv) = rhs { smallerThan = (lv.compare(rv) == .OrderedAscending) }
-    case .File(_):
-        break
-        // FIXME: file has not metadata
-//        if case .File(let rv) = rhs { smallerThan = (lv.metadata < rv.metadata) }
+    case .File(let lv):
+        if case .File(let rv) = rhs { smallerThan = (lv.metadata < rv.metadata) }
     case .Array(_):
         break
     case .Dictionary(_):

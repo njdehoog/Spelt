@@ -1,4 +1,4 @@
-public protocol File {
+public protocol File: class {
     var path: String { get }
     
     // destinationPath is relative to build directory
@@ -16,6 +16,7 @@ extension File {
 }
 
 public protocol FileWithMetadata: File {
+    var contents: String { get set }
     var metadata: Metadata { get set }
     
     init(path: String, contents: String, metadata: Metadata)

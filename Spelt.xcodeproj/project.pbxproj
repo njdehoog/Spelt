@@ -23,6 +23,27 @@
 		FD6D5FF81D4B91F800A7C277 /* YAMLDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FF71D4B91F800A7C277 /* YAMLDateFormatter.swift */; };
 		FD6D5FFB1D4B969B00A7C277 /* Permalinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FFA1D4B969B00A7C277 /* Permalinks.swift */; };
 		FD6D5FFD1D4B975400A7C277 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FFC1D4B975400A7C277 /* File.swift */; };
+		FD6D60611D4BA19D00A7C277 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60521D4BA19D00A7C277 /* Context.swift */; };
+		FD6D60621D4BA19D00A7C277 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60531D4BA19D00A7C277 /* Filters.swift */; };
+		FD6D60641D4BA19D00A7C277 /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60551D4BA19D00A7C277 /* Lexer.swift */; };
+		FD6D60651D4BA19D00A7C277 /* Namespace.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60561D4BA19D00A7C277 /* Namespace.swift */; };
+		FD6D60661D4BA19D00A7C277 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60571D4BA19D00A7C277 /* Node.swift */; };
+		FD6D60671D4BA19D00A7C277 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60581D4BA19D00A7C277 /* Parser.swift */; };
+		FD6D60681D4BA19D00A7C277 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60591D4BA19D00A7C277 /* String+Extensions.swift */; };
+		FD6D60691D4BA19D00A7C277 /* Template.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D605A1D4BA19D00A7C277 /* Template.swift */; };
+		FD6D606A1D4BA19D00A7C277 /* Include.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D605C1D4BA19D00A7C277 /* Include.swift */; };
+		FD6D606B1D4BA19D00A7C277 /* Inheritence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D605D1D4BA19D00A7C277 /* Inheritence.swift */; };
+		FD6D606C1D4BA19D00A7C277 /* TemplateLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D605E1D4BA19D00A7C277 /* TemplateLoader.swift */; };
+		FD6D606D1D4BA19D00A7C277 /* Tokenizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D605F1D4BA19D00A7C277 /* Tokenizer.swift */; };
+		FD6D606E1D4BA19D00A7C277 /* Variable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60601D4BA19D00A7C277 /* Variable.swift */; };
+		FD6D60701D4BA21B00A7C277 /* TemplateRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D606F1D4BA21B00A7C277 /* TemplateRenderer.swift */; };
+		FD6D60721D4BA27900A7C277 /* Stencil+Spelt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60711D4BA27900A7C277 /* Stencil+Spelt.swift */; };
+		FD6D60741D4BA2AE00A7C277 /* Stencil+MathFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60731D4BA2AE00A7C277 /* Stencil+MathFilters.swift */; };
+		FD6D60761D4BA2D500A7C277 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60751D4BA2D500A7C277 /* String+HTML.swift */; };
+		FD6D60781D4BA30700A7C277 /* String+XML.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60771D4BA30700A7C277 /* String+XML.swift */; };
+		FD6D607A1D4BA36A00A7C277 /* MarkdownRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60791D4BA36A00A7C277 /* MarkdownRenderer.swift */; };
+		FD6D607C1D4BA3B100A7C277 /* PathKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6D607B1D4BA3B100A7C277 /* PathKit.framework */; };
+		FD6D607E1D4BA51000A7C277 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D607D1D4BA51000A7C277 /* Error.swift */; };
 		FD8531B71D4A2A3A00658286 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B11D4A2A3500658286 /* main.swift */; };
 		FD8531C61D4A2A6200658286 /* Spelt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* Spelt.framework */; };
 		FD8531CD1D4A2A6200658286 /* Spelt.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8531BF1D4A2A6200658286 /* Spelt.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -73,6 +94,27 @@
 		FD6D5FF71D4B91F800A7C277 /* YAMLDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YAMLDateFormatter.swift; sourceTree = "<group>"; };
 		FD6D5FFA1D4B969B00A7C277 /* Permalinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Permalinks.swift; sourceTree = "<group>"; };
 		FD6D5FFC1D4B975400A7C277 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		FD6D60521D4BA19D00A7C277 /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		FD6D60531D4BA19D00A7C277 /* Filters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		FD6D60551D4BA19D00A7C277 /* Lexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
+		FD6D60561D4BA19D00A7C277 /* Namespace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Namespace.swift; sourceTree = "<group>"; };
+		FD6D60571D4BA19D00A7C277 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		FD6D60581D4BA19D00A7C277 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		FD6D60591D4BA19D00A7C277 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		FD6D605A1D4BA19D00A7C277 /* Template.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Template.swift; sourceTree = "<group>"; };
+		FD6D605C1D4BA19D00A7C277 /* Include.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Include.swift; sourceTree = "<group>"; };
+		FD6D605D1D4BA19D00A7C277 /* Inheritence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inheritence.swift; sourceTree = "<group>"; };
+		FD6D605E1D4BA19D00A7C277 /* TemplateLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateLoader.swift; sourceTree = "<group>"; };
+		FD6D605F1D4BA19D00A7C277 /* Tokenizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tokenizer.swift; sourceTree = "<group>"; };
+		FD6D60601D4BA19D00A7C277 /* Variable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Variable.swift; sourceTree = "<group>"; };
+		FD6D606F1D4BA21B00A7C277 /* TemplateRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateRenderer.swift; sourceTree = "<group>"; };
+		FD6D60711D4BA27900A7C277 /* Stencil+Spelt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stencil+Spelt.swift"; sourceTree = "<group>"; };
+		FD6D60731D4BA2AE00A7C277 /* Stencil+MathFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stencil+MathFilters.swift"; sourceTree = "<group>"; };
+		FD6D60751D4BA2D500A7C277 /* String+HTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
+		FD6D60771D4BA30700A7C277 /* String+XML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+XML.swift"; sourceTree = "<group>"; };
+		FD6D60791D4BA36A00A7C277 /* MarkdownRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownRenderer.swift; sourceTree = "<group>"; };
+		FD6D607B1D4BA3B100A7C277 /* PathKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PathKit.framework; path = Carthage/Build/Mac/PathKit.framework; sourceTree = "<group>"; };
+		FD6D607D1D4BA51000A7C277 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		FD8531A71D4A2A1200658286 /* CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8531B11D4A2A3500658286 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FD8531B31D4A2A3500658286 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -105,6 +147,7 @@
 			files = (
 				FD8531E21D4A3A7200658286 /* SwiftHoedown.framework in Frameworks */,
 				FD8531E41D4A3A7400658286 /* Hoedown.framework in Frameworks */,
+				FD6D607C1D4BA3B100A7C277 /* PathKit.framework in Frameworks */,
 				FD6D5FEA1D4B7B2700A7C277 /* SwiftYAML.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -126,9 +169,13 @@
 		FD6D5FE21D4A4FBC00A7C277 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				FD6D60771D4BA30700A7C277 /* String+XML.swift */,
+				FD6D60751D4BA2D500A7C277 /* String+HTML.swift */,
 				FD6D5FF71D4B91F800A7C277 /* YAMLDateFormatter.swift */,
 				FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */,
 				FD6D5FEB1D4B7B6B00A7C277 /* NSRegularExpression+Utilities.swift */,
+				FD6D60711D4BA27900A7C277 /* Stencil+Spelt.swift */,
+				FD6D60731D4BA2AE00A7C277 /* Stencil+MathFilters.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -151,8 +198,39 @@
 			isa = PBXGroup;
 			children = (
 				FD6D5FFA1D4B969B00A7C277 /* Permalinks.swift */,
+				FD6D606F1D4BA21B00A7C277 /* TemplateRenderer.swift */,
+				FD6D60791D4BA36A00A7C277 /* MarkdownRenderer.swift */,
 			);
 			name = Renderers;
+			sourceTree = "<group>";
+		};
+		FD6D60511D4BA19D00A7C277 /* Stencil */ = {
+			isa = PBXGroup;
+			children = (
+				FD6D605B1D4BA19D00A7C277 /* TemplateLoader */,
+				FD6D60521D4BA19D00A7C277 /* Context.swift */,
+				FD6D60531D4BA19D00A7C277 /* Filters.swift */,
+				FD6D60551D4BA19D00A7C277 /* Lexer.swift */,
+				FD6D60561D4BA19D00A7C277 /* Namespace.swift */,
+				FD6D60571D4BA19D00A7C277 /* Node.swift */,
+				FD6D60581D4BA19D00A7C277 /* Parser.swift */,
+				FD6D60591D4BA19D00A7C277 /* String+Extensions.swift */,
+				FD6D605A1D4BA19D00A7C277 /* Template.swift */,
+				FD6D605E1D4BA19D00A7C277 /* TemplateLoader.swift */,
+				FD6D605F1D4BA19D00A7C277 /* Tokenizer.swift */,
+				FD6D60601D4BA19D00A7C277 /* Variable.swift */,
+			);
+			name = Stencil;
+			path = Stencil/Stencil;
+			sourceTree = SOURCE_ROOT;
+		};
+		FD6D605B1D4BA19D00A7C277 /* TemplateLoader */ = {
+			isa = PBXGroup;
+			children = (
+				FD6D605C1D4BA19D00A7C277 /* Include.swift */,
+				FD6D605D1D4BA19D00A7C277 /* Inheritence.swift */,
+			);
+			path = TemplateLoader;
 			sourceTree = "<group>";
 		};
 		FD85319C1D4A29B700658286 = {
@@ -198,12 +276,14 @@
 			children = (
 				FD8531D41D4A2A8900658286 /* Info.plist */,
 				FD8531D51D4A2A8900658286 /* Spelt.h */,
+				FD6D607D1D4BA51000A7C277 /* Error.swift */,
 				FD8531B51D4A2A3500658286 /* SiteReader.swift */,
 				FD6D5FEF1D4B8FD400A7C277 /* SiteBuilder.swift */,
 				FD6D5FF51D4B90F000A7C277 /* SiteRenderer.swift */,
 				FD6D5FF91D4B968C00A7C277 /* Renderers */,
 				FD6D5FE31D4A4FC700A7C277 /* Model */,
 				FD6D5FE21D4A4FBC00A7C277 /* Helpers */,
+				FD6D60511D4BA19D00A7C277 /* Stencil */,
 			);
 			path = Spelt;
 			sourceTree = "<group>";
@@ -230,6 +310,7 @@
 		FD8531DD1D4A3A4400658286 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD6D607B1D4BA3B100A7C277 /* PathKit.framework */,
 				FD6D5FE81D4B7B1A00A7C277 /* SwiftYAML.framework */,
 				FD8531E31D4A3A7400658286 /* Hoedown.framework */,
 				FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */,
@@ -382,6 +463,7 @@
 				"$(SRCROOT)/Carthage/Build/Mac/SwiftHoedown.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Hoedown.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/SwiftYAML.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/PathKit.framework",
 			);
 			name = "Copy frameworks";
 			outputPaths = (
@@ -406,18 +488,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD6D5FF01D4B8FD400A7C277 /* SiteBuilder.swift in Sources */,
+				FD6D606E1D4BA19D00A7C277 /* Variable.swift in Sources */,
+				FD6D60681D4BA19D00A7C277 /* String+Extensions.swift in Sources */,
+				FD6D60651D4BA19D00A7C277 /* Namespace.swift in Sources */,
+				FD6D60621D4BA19D00A7C277 /* Filters.swift in Sources */,
 				FD6D5FEC1D4B7B6B00A7C277 /* NSRegularExpression+Utilities.swift in Sources */,
+				FD6D606C1D4BA19D00A7C277 /* TemplateLoader.swift in Sources */,
 				FD6D5FE71D4B778E00A7C277 /* Metadata.swift in Sources */,
+				FD6D60611D4BA19D00A7C277 /* Context.swift in Sources */,
+				FD6D60691D4BA19D00A7C277 /* Template.swift in Sources */,
 				FD6D5FF81D4B91F800A7C277 /* YAMLDateFormatter.swift in Sources */,
+				FD6D60661D4BA19D00A7C277 /* Node.swift in Sources */,
+				FD6D60701D4BA21B00A7C277 /* TemplateRenderer.swift in Sources */,
 				FD8531DA1D4A2A8D00658286 /* SiteReader.swift in Sources */,
+				FD6D607A1D4BA36A00A7C277 /* MarkdownRenderer.swift in Sources */,
 				FD6D5FF61D4B90F000A7C277 /* SiteRenderer.swift in Sources */,
 				FD6D5FE11D4A4BE600A7C277 /* String+Paths.swift in Sources */,
 				FD6D5FE51D4B4E7100A7C277 /* Document.swift in Sources */,
+				FD6D60671D4BA19D00A7C277 /* Parser.swift in Sources */,
+				FD6D60641D4BA19D00A7C277 /* Lexer.swift in Sources */,
 				FD8531D91D4A2A8D00658286 /* Site.swift in Sources */,
 				FD6D5FFD1D4B975400A7C277 /* File.swift in Sources */,
+				FD6D606B1D4BA19D00A7C277 /* Inheritence.swift in Sources */,
+				FD6D606A1D4BA19D00A7C277 /* Include.swift in Sources */,
 				FD6D5FEE1D4B7F8700A7C277 /* Utilities.swift in Sources */,
 				FD8531D81D4A2A8D00658286 /* Post.swift in Sources */,
+				FD6D607E1D4BA51000A7C277 /* Error.swift in Sources */,
+				FD6D606D1D4BA19D00A7C277 /* Tokenizer.swift in Sources */,
+				FD6D60741D4BA2AE00A7C277 /* Stencil+MathFilters.swift in Sources */,
+				FD6D60721D4BA27900A7C277 /* Stencil+Spelt.swift in Sources */,
+				FD6D60761D4BA2D500A7C277 /* String+HTML.swift in Sources */,
 				FD8531DB1D4A2A8D00658286 /* StaticFile.swift in Sources */,
+				FD6D60781D4BA30700A7C277 /* String+XML.swift in Sources */,
 				FD6D5FFB1D4B969B00A7C277 /* Permalinks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

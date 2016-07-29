@@ -22,7 +22,7 @@ class SiteReaderTests: XCTestCase {
     }
     
     func testThatItReadsPosts() {
-        XCTAssertEqual(site.posts.count, 1)
+        XCTAssertEqual(site.posts.count, 2)
     }
     
     func testThatItReadsPostContents() {

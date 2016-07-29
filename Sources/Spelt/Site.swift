@@ -3,6 +3,7 @@ public final class Site {
     public let posts: [Post]
     public let staticFiles: [StaticFile]
     public let documents: [Document]
+    public let metadata: Metadata
     
     var files: [File] {
         var files = [File]()
@@ -17,5 +18,8 @@ public final class Site {
         self.posts = posts
         self.staticFiles = staticFiles
         self.documents = documents
+        
+        // FIXME: load metadata from _config.yml
+        self.metadata = [:]
     }
 }

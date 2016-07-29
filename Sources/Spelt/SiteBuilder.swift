@@ -1,10 +1,8 @@
 public struct SiteBuilder {
     let site: Site
     
-    func build() {
-        SiteRenderer(site: site).render()
+    func build() throws {
+        try SiteRenderer(site: site).render()
     }
-    
-    
 }
 

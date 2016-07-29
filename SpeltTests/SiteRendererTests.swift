@@ -16,8 +16,10 @@ class SiteRendererTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        SiteRenderer(site: site).render()
+        try! SiteRenderer(site: site).render()
     }
+    
+    // MARK: destination paths
     
     func testThatDestinationPathIsCorrectForPost() {
         let post = site.posts.filter({ $0.fileName == "hello-world.md" }).first
@@ -32,5 +34,12 @@ class SiteRendererTests: XCTestCase {
     func testThatDestinationPathIsCorrectForStaticFile() {
         let page = site.staticFiles.filter({ $0.fileName == "index.html" }).first
         XCTAssertEqual(page?.destinationPath, "index.html")
+    }
+    
+    // MARK: templating
+    
+    func testThatTemplateTagIsRendered() {
+        let post = site.posts.filter({ $0.fileName == "templating.md" }).first
+        XCTAssertEqual(post?.contents, "Spelt")
     }
 }
