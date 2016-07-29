@@ -3,6 +3,7 @@ struct SiteRenderer {
     
     func render() {
         renderDestinationPaths()
+        renderContents()
     }
     
     func renderDestinationPaths() {
@@ -15,5 +16,9 @@ struct SiteRenderer {
                 file.destinationPath = file.relativePath(to: site.path)
             }
         }
+    }
+    
+    func renderContents() {
+        
     }
 }
