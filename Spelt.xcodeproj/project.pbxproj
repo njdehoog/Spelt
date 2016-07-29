@@ -1,0 +1,774 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FD6D5FD81D4A3C1100A7C277 /* SiteReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */; };
+		FD6D5FDD1D4A3F9A00A7C277 /* Hoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E31D4A3A7400658286 /* Hoedown.framework */; };
+		FD6D5FDE1D4A3F9A00A7C277 /* SwiftHoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */; };
+		FD6D5FE11D4A4BE600A7C277 /* String+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */; };
+		FD6D5FE51D4B4E7100A7C277 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FE41D4B4E7100A7C277 /* Document.swift */; };
+		FD8531B71D4A2A3A00658286 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B11D4A2A3500658286 /* main.swift */; };
+		FD8531C61D4A2A6200658286 /* Spelt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* Spelt.framework */; };
+		FD8531CD1D4A2A6200658286 /* Spelt.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8531BF1D4A2A6200658286 /* Spelt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD8531D61D4A2A8900658286 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD8531D41D4A2A8900658286 /* Info.plist */; };
+		FD8531D71D4A2A8900658286 /* Spelt.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8531D51D4A2A8900658286 /* Spelt.h */; };
+		FD8531D81D4A2A8D00658286 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B31D4A2A3500658286 /* Post.swift */; };
+		FD8531D91D4A2A8D00658286 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B41D4A2A3500658286 /* Site.swift */; };
+		FD8531DA1D4A2A8D00658286 /* SiteReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B51D4A2A3500658286 /* SiteReader.swift */; };
+		FD8531DB1D4A2A8D00658286 /* StaticFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B61D4A2A3500658286 /* StaticFile.swift */; };
+		FD8531DC1D4A2B4800658286 /* Spelt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* Spelt.framework */; };
+		FD8531E21D4A3A7200658286 /* SwiftHoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */; };
+		FD8531E41D4A3A7400658286 /* Hoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E31D4A3A7400658286 /* Hoedown.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FD8531C71D4A2A6200658286 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD85319D1D4A29B700658286 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FD8531BC1D4A2A6200658286;
+			remoteInfo = Spelt;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FD8531A51D4A2A1200658286 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteReaderTests.swift; sourceTree = "<group>"; };
+		FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Paths.swift"; sourceTree = "<group>"; };
+		FD6D5FE41D4B4E7100A7C277 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		FD8531A71D4A2A1200658286 /* CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CLI; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD8531B11D4A2A3500658286 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FD8531B31D4A2A3500658286 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		FD8531B41D4A2A3500658286 /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
+		FD8531B51D4A2A3500658286 /* SiteReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteReader.swift; sourceTree = "<group>"; };
+		FD8531B61D4A2A3500658286 /* StaticFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFile.swift; sourceTree = "<group>"; };
+		FD8531BD1D4A2A6200658286 /* Spelt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spelt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD8531BF1D4A2A6200658286 /* Spelt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spelt.h; sourceTree = "<group>"; };
+		FD8531C01D4A2A6200658286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD8531C51D4A2A6200658286 /* SpeltTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeltTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD8531CC1D4A2A6200658286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD8531D41D4A2A8900658286 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD8531D51D4A2A8900658286 /* Spelt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spelt.h; sourceTree = "<group>"; };
+		FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHoedown.framework; path = Carthage/Build/Mac/SwiftHoedown.framework; sourceTree = "<group>"; };
+		FD8531E31D4A3A7400658286 /* Hoedown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hoedown.framework; path = Carthage/Build/Mac/Hoedown.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FD8531A41D4A2A1200658286 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD8531DC1D4A2B4800658286 /* Spelt.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD8531B91D4A2A6200658286 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD8531E21D4A3A7200658286 /* SwiftHoedown.framework in Frameworks */,
+				FD8531E41D4A3A7400658286 /* Hoedown.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD8531C21D4A2A6200658286 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD8531C61D4A2A6200658286 /* Spelt.framework in Frameworks */,
+				FD6D5FDD1D4A3F9A00A7C277 /* Hoedown.framework in Frameworks */,
+				FD6D5FDE1D4A3F9A00A7C277 /* SwiftHoedown.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FD6D5FE21D4A4FBC00A7C277 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		FD6D5FE31D4A4FC700A7C277 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD8531B31D4A2A3500658286 /* Post.swift */,
+				FD8531B41D4A2A3500658286 /* Site.swift */,
+				FD8531B61D4A2A3500658286 /* StaticFile.swift */,
+				FD6D5FE41D4B4E7100A7C277 /* Document.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		FD85319C1D4A29B700658286 = {
+			isa = PBXGroup;
+			children = (
+				FD8531AF1D4A2A3500658286 /* Sources */,
+				FD8531BE1D4A2A6200658286 /* Spelt */,
+				FD8531C91D4A2A6200658286 /* SpeltTests */,
+				FD8531A81D4A2A1200658286 /* Products */,
+				FD8531DD1D4A3A4400658286 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FD8531A81D4A2A1200658286 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD8531A71D4A2A1200658286 /* CLI */,
+				FD8531BD1D4A2A6200658286 /* Spelt.framework */,
+				FD8531C51D4A2A6200658286 /* SpeltTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FD8531AF1D4A2A3500658286 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FD8531B01D4A2A3500658286 /* CLI */,
+				FD8531B21D4A2A3500658286 /* Spelt */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FD8531B01D4A2A3500658286 /* CLI */ = {
+			isa = PBXGroup;
+			children = (
+				FD8531B11D4A2A3500658286 /* main.swift */,
+			);
+			path = CLI;
+			sourceTree = "<group>";
+		};
+		FD8531B21D4A2A3500658286 /* Spelt */ = {
+			isa = PBXGroup;
+			children = (
+				FD8531D41D4A2A8900658286 /* Info.plist */,
+				FD8531D51D4A2A8900658286 /* Spelt.h */,
+				FD8531B51D4A2A3500658286 /* SiteReader.swift */,
+				FD6D5FE31D4A4FC700A7C277 /* Model */,
+				FD6D5FE21D4A4FBC00A7C277 /* Helpers */,
+			);
+			path = Spelt;
+			sourceTree = "<group>";
+		};
+		FD8531BE1D4A2A6200658286 /* Spelt */ = {
+			isa = PBXGroup;
+			children = (
+				FD8531BF1D4A2A6200658286 /* Spelt.h */,
+				FD8531C01D4A2A6200658286 /* Info.plist */,
+			);
+			path = Spelt;
+			sourceTree = "<group>";
+		};
+		FD8531C91D4A2A6200658286 /* SpeltTests */ = {
+			isa = PBXGroup;
+			children = (
+				FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */,
+				FD8531CC1D4A2A6200658286 /* Info.plist */,
+			);
+			path = SpeltTests;
+			sourceTree = "<group>";
+		};
+		FD8531DD1D4A3A4400658286 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD8531E31D4A3A7400658286 /* Hoedown.framework */,
+				FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FD8531BA1D4A2A6200658286 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD8531CD1D4A2A6200658286 /* Spelt.h in Headers */,
+				FD8531D71D4A2A8900658286 /* Spelt.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		FD8531A61D4A2A1200658286 /* CLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD8531AE1D4A2A1200658286 /* Build configuration list for PBXNativeTarget "CLI" */;
+			buildPhases = (
+				FD8531A31D4A2A1200658286 /* Sources */,
+				FD8531A41D4A2A1200658286 /* Frameworks */,
+				FD8531A51D4A2A1200658286 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CLI;
+			productName = CLI;
+			productReference = FD8531A71D4A2A1200658286 /* CLI */;
+			productType = "com.apple.product-type.tool";
+		};
+		FD8531BC1D4A2A6200658286 /* Spelt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD8531CE1D4A2A6200658286 /* Build configuration list for PBXNativeTarget "Spelt" */;
+			buildPhases = (
+				FD8531B81D4A2A6200658286 /* Sources */,
+				FD8531B91D4A2A6200658286 /* Frameworks */,
+				FD8531BA1D4A2A6200658286 /* Headers */,
+				FD8531BB1D4A2A6200658286 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Spelt;
+			productName = Spelt;
+			productReference = FD8531BD1D4A2A6200658286 /* Spelt.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FD8531C41D4A2A6200658286 /* SpeltTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD8531D11D4A2A6200658286 /* Build configuration list for PBXNativeTarget "SpeltTests" */;
+			buildPhases = (
+				FD8531C11D4A2A6200658286 /* Sources */,
+				FD8531C21D4A2A6200658286 /* Frameworks */,
+				FD8531C31D4A2A6200658286 /* Resources */,
+				FD6D5FDF1D4A471000A7C277 /* Copy frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD8531C81D4A2A6200658286 /* PBXTargetDependency */,
+			);
+			name = SpeltTests;
+			productName = SpeltTests;
+			productReference = FD8531C51D4A2A6200658286 /* SpeltTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FD85319D1D4A29B700658286 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				TargetAttributes = {
+					FD8531A61D4A2A1200658286 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = A9NP4475VH;
+						DevelopmentTeamName = "Niels de Hoog";
+						ProvisioningStyle = Automatic;
+					};
+					FD8531BC1D4A2A6200658286 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = A9NP4475VH;
+						DevelopmentTeamName = "Niels de Hoog";
+						ProvisioningStyle = Automatic;
+					};
+					FD8531C41D4A2A6200658286 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = A9NP4475VH;
+						DevelopmentTeamName = "Niels de Hoog";
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FD8531A01D4A29B700658286 /* Build configuration list for PBXProject "Spelt" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FD85319C1D4A29B700658286;
+			productRefGroup = FD8531A81D4A2A1200658286 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FD8531A61D4A2A1200658286 /* CLI */,
+				FD8531BC1D4A2A6200658286 /* Spelt */,
+				FD8531C41D4A2A6200658286 /* SpeltTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FD8531BB1D4A2A6200658286 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD8531D61D4A2A8900658286 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD8531C31D4A2A6200658286 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FD6D5FDF1D4A471000A7C277 /* Copy frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/Mac/SwiftHoedown.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/Hoedown.framework",
+			);
+			name = "Copy frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FD8531A31D4A2A1200658286 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD8531B71D4A2A3A00658286 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD8531B81D4A2A6200658286 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD8531DA1D4A2A8D00658286 /* SiteReader.swift in Sources */,
+				FD6D5FE11D4A4BE600A7C277 /* String+Paths.swift in Sources */,
+				FD6D5FE51D4B4E7100A7C277 /* Document.swift in Sources */,
+				FD8531D91D4A2A8D00658286 /* Site.swift in Sources */,
+				FD8531D81D4A2A8D00658286 /* Post.swift in Sources */,
+				FD8531DB1D4A2A8D00658286 /* StaticFile.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD8531C11D4A2A6200658286 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD6D5FD81D4A3C1100A7C277 /* SiteReaderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FD8531C81D4A2A6200658286 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD8531BC1D4A2A6200658286 /* Spelt */;
+			targetProxy = FD8531C71D4A2A6200658286 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FD8531A11D4A29B700658286 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		FD8531A21D4A29B700658286 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		FD8531AC1D4A2A1200658286 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FD8531AD1D4A2A1200658286 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FD8531CF1D4A2A6200658286 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Spelt/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.Spelt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FD8531D01D4A2A6200658286 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = Spelt/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.Spelt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FD8531D21D4A2A6200658286 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = SpeltTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.SpeltTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FD8531D31D4A2A6200658286 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = SpeltTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.SpeltTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FD8531A01D4A29B700658286 /* Build configuration list for PBXProject "Spelt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD8531A11D4A29B700658286 /* Debug */,
+				FD8531A21D4A29B700658286 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD8531AE1D4A2A1200658286 /* Build configuration list for PBXNativeTarget "CLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD8531AC1D4A2A1200658286 /* Debug */,
+				FD8531AD1D4A2A1200658286 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD8531CE1D4A2A6200658286 /* Build configuration list for PBXNativeTarget "Spelt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD8531CF1D4A2A6200658286 /* Debug */,
+				FD8531D01D4A2A6200658286 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FD8531D11D4A2A6200658286 /* Build configuration list for PBXNativeTarget "SpeltTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD8531D21D4A2A6200658286 /* Debug */,
+				FD8531D31D4A2A6200658286 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FD85319D1D4A29B700658286 /* Project object */;
+}
