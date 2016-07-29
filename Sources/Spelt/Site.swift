@@ -1,17 +1,21 @@
-import SwiftHoedown
-
 public final class Site {
-//    var documents: [Document]
+    public let path: String
+    public let posts: [Post]
     public let staticFiles: [StaticFile]
+    public let documents: [Document]
     
-    public init(staticFiles: [StaticFile]) {
-//        documents = []
-        self.staticFiles = staticFiles
+    var files: [File] {
+        var files = [File]()
+        files.appendContentsOf(posts.map({ $0 as File }))
+        files.appendContentsOf(staticFiles.map({ $0 as File }))
+        files.appendContentsOf(documents.map({ $0 as File }))
+        return files
     }
     
-    public var html: String? {
-        let markdown = "# Header 1"
-        let html = Hoedown.renderHTMLForMarkdown(markdown)
-        return html
+    public init(path: String, posts: [Post], staticFiles: [StaticFile], documents: [Document]) {
+        self.path = path
+        self.posts = posts
+        self.staticFiles = staticFiles
+        self.documents = documents
     }
 }

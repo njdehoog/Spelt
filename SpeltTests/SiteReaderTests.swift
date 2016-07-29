@@ -4,6 +4,7 @@ import XCTest
 class SiteReaderTests: XCTestCase {
     
     var sampleProjectPath: String {
+        // TODO: find a way to link to project directory, or copy fixtures to build folder
         let fixturesPath = "~/Projects/Spelt/framework/SpeltTests/Fixtures".stringByExpandingTildeInPath
         return fixturesPath.stringByAppendingPathComponent("test-site")
     }
@@ -12,9 +13,44 @@ class SiteReaderTests: XCTestCase {
         super.setUp()
     }
     
-    func testThatItReadsStaticFile() {
-        let reader = SiteReader(siteURL: NSURL(fileURLWithPath: sampleProjectPath))
+    func testThatItReadsStaticFiles() {
+        let reader = SiteReader(path: sampleProjectPath)
         let site = try! reader.read()
-        XCTAssert(site.staticFiles.count == 1)
+        XCTAssertEqual(site.staticFiles.filter({ $0.fileName == "index.html" }).count, 1)
+    }
+    
+    func testThatItReadsPosts() {
+        let reader = SiteReader(path: sampleProjectPath)
+        let site = try! reader.read()
+        XCTAssertEqual(site.posts.count, 1)
+    }
+    
+    func testThatItReadsPostContents() {
+        let reader = SiteReader(path: sampleProjectPath)
+        let site = try! reader.read()
+        XCTAssertEqual(site.posts.first?.contents, "Hello world")
+    }
+    
+    func testThatItReadsPages() {
+        let reader = SiteReader(path: sampleProjectPath)
+        let site = try! reader.read()
+        XCTAssertEqual(site.documents.count, 1)
+    }
+    
+    func testThatItSkipsDirectoriesPrefixedWithUnderscore() {
+        let reader = SiteReader(path: sampleProjectPath)
+        let site = try! reader.read()
+        for file in site.files {
+            let relativePath = file.relativePath(to: site.path)
+            XCTAssertFalse(relativePath.hasPrefix("_layouts"))
+        }
+    }
+    
+    func testThatItSkipsFilesPrefixedWithUnderscore() {
+        let reader = SiteReader(path: sampleProjectPath)
+        let site = try! reader.read()
+        for file in site.files {
+            XCTAssertFalse(file.fileName == "_config.yml")
+        }
     }
 }
