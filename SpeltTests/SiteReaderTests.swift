@@ -9,35 +9,31 @@ class SiteReaderTests: XCTestCase {
         return fixturesPath.stringByAppendingPathComponent("test-site")
     }
     
+    lazy var site: Site = { [unowned self] in
+        return try! SiteReader(sitePath: self.sampleProjectPath).read()
+    }()
+    
     override func setUp() {
         super.setUp()
     }
     
     func testThatItReadsStaticFiles() {
-        let site = try! SiteReader(sitePath: sampleProjectPath).read()
         XCTAssertEqual(site.staticFiles.filter({ $0.fileName == "index.html" }).count, 1)
     }
     
     func testThatItReadsPosts() {
-        let site = try! SiteReader(sitePath: sampleProjectPath).read()
         XCTAssertEqual(site.posts.count, 1)
     }
     
     func testThatItReadsPostContents() {
-        let reader = SiteReader(sitePath: sampleProjectPath)
-        let site = try! reader.read()
         XCTAssertEqual(site.posts.first?.contents, "Hello world")
     }
     
     func testThatItReadsPages() {
-        let reader = SiteReader(sitePath: sampleProjectPath)
-        let site = try! reader.read()
         XCTAssertEqual(site.documents.filter({ $0.fileName == "about.md" }).count, 1)
     }
     
     func testThatItSkipsDirectoriesPrefixedWithUnderscore() {
-        let reader = SiteReader(sitePath: sampleProjectPath)
-        let site = try! reader.read()
         for file in site.files {
             let relativePath = file.relativePath(to: site.path)
             XCTAssertFalse(relativePath.hasPrefix("_layouts"))
@@ -45,22 +41,16 @@ class SiteReaderTests: XCTestCase {
     }
     
     func testThatItSkipsFilesPrefixedWithUnderscore() {
-        let reader = SiteReader(sitePath: sampleProjectPath)
-        let site = try! reader.read()
         for file in site.files {
             XCTAssertFalse(file.fileName == "_config.yml")
         }
     }
     
     func testThatItReadsFrontMatterForPage() {
-        let reader = SiteReader(sitePath: sampleProjectPath)
-        let site = try! reader.read()
         XCTAssertEqual(site.documents.first?.metadata, ["layout": "page"])
     }
     
     func testThatItReadsFrontMatterForPost() {
-        let reader = SiteReader(sitePath: sampleProjectPath)
-        let site = try! reader.read()
         XCTAssertEqual(site.posts.first?.metadata, ["layout": "post", "date": "2016-07-29 09:39:21 +0200"])
     }
 }
