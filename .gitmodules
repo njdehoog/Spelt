@@ -19,3 +19,6 @@
 [submodule "Carthage/Checkouts/Witness"]
 	path = Carthage/Checkouts/Witness
 	url = https://github.com/njdehoog/Witness.git
+[submodule "Stencil"]
+	path = Stencil
+	url = https://github.com/njdehoog/Stencil.git
