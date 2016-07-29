@@ -34,7 +34,7 @@ class SiteReaderTests: XCTestCase {
     func testThatItReadsPages() {
         let reader = SiteReader(path: sampleProjectPath)
         let site = try! reader.read()
-        XCTAssertEqual(site.documents.count, 1)
+        XCTAssertEqual(site.documents.filter({ $0.fileName == "about.md" }).count, 1)
     }
     
     func testThatItSkipsDirectoriesPrefixedWithUnderscore() {
@@ -52,5 +52,17 @@ class SiteReaderTests: XCTestCase {
         for file in site.files {
             XCTAssertFalse(file.fileName == "_config.yml")
         }
+    }
+    
+    func testThatItReadsFrontMatterForPage() {
+        let reader = SiteReader(path: sampleProjectPath)
+        let site = try! reader.read()
+        XCTAssertEqual(site.documents.first?.metadata, ["layout": "page"])
+    }
+    
+    func testThatItReadsFrontMatterForPost() {
+        let reader = SiteReader(path: sampleProjectPath)
+        let site = try! reader.read()
+        XCTAssertEqual(site.posts.first?.metadata, ["layout": "post"])
     }
 }

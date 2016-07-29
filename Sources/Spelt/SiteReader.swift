@@ -1,4 +1,5 @@
 import Foundation
+import SwiftYAML
 
 public struct SiteConfiguration {
     public enum Path: String {
@@ -25,7 +26,6 @@ public struct SiteReader {
     
     let sitePath: String
     
-    // TODO: init with SiteConfiguration?
     init(path: String) {
         self.sitePath = path
     }
@@ -46,18 +46,19 @@ public struct SiteReader {
             
             var isDirectory: ObjCBool = false
             if fileManager.fileExistsAtPath(path, isDirectory: &isDirectory) && !isDirectory {
-                let stringContents = try? String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
-                if let contents = stringContents where pathIsPost(path) {
-                    let post = Post(path: path, contents: contents)
-                    posts.append(post)
-                }
-                else if let contents = stringContents where stringContainsFrontMatter(contents) {
-                    let document = Document(path: path, contents: contents)
-                    documents.append(document)
-                }
-                else {
+                guard let stringContents = try? String(contentsOfFile: path, encoding: NSUTF8StringEncoding) where FrontMatterReader.stringContainsFrontMatter(stringContents) else {
                     let file = StaticFile(path: path)
                     staticFiles.append(file)
+                    continue
+                }
+                
+                if pathIsPost(path) {
+                    let post = try FileReader<Post>(path: path, contents: stringContents).read()
+                    posts.append(post)
+                }
+                else {
+                    let document = try FileReader<Document>(path: path, contents: stringContents).read()
+                    documents.append(document)
                 }
             }
         }
@@ -90,9 +91,50 @@ public struct SiteReader {
         
         return false
     }
+}
+
+struct FileReader<T: FileWithMetadata> {
+    let path: String
+    let contents: String
     
-    func stringContainsFrontMatter(string: String) -> Bool {
-        let matches = Document.frontMatterRegex.matchesInString(string, options: NSMatchingOptions(), range: NSMakeRange(0, string.characters.count))
+    func read() throws -> T {
+        let metadata = try FrontMatterReader.frontMatterForString(contents).metadata
+        let strippedContents = contents.stringByReplacingFrontMatter("")
+        return T(path: path, contents: strippedContents, metadata: metadata)
+    }
+}
+
+struct FrontMatterReader {
+    static let frontMatterPattern = "^---.*?[\r\n]*(.*?[\r\n]+)---[\r\n]*"
+    static let frontMatterRegex = try! NSRegularExpression(pattern: frontMatterPattern, options: .DotMatchesLineSeparators)
+    
+    enum Error: ErrorType {
+        case NoFrontMatterDetected
+        case ParseError(ErrorType)
+    }
+    
+    static func stringContainsFrontMatter(string: String) -> Bool {
+        let matches = frontMatterRegex.matchesInString(string, options: NSMatchingOptions(), range: NSMakeRange(0, string.characters.count))
         return matches.count > 0
+    }
+    
+    static func frontMatterForString(string: String) throws -> YAMLValue {
+        if let match = frontMatterRegex.stringForFirstMatch(string, options: NSMatchingOptions(), rangeAtIndex: 1) {
+            do {
+                return try YAML.load(match)
+            }
+            catch {
+                throw Error.ParseError(error)
+            }
+        }
+        
+        throw Error.NoFrontMatterDetected
+    }
+}
+
+extension String {
+    func stringByReplacingFrontMatter(replacementString: String) -> String {
+        let regex = try! NSRegularExpression(pattern: FrontMatterReader.frontMatterPattern, options: .DotMatchesLineSeparators)
+        return regex.stringByReplacingMatchesInString(self, options:.Anchored, range: NSMakeRange(0, self.characters.count), withTemplate: replacementString)
     }
 }

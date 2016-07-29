@@ -12,6 +12,11 @@
 		FD6D5FDE1D4A3F9A00A7C277 /* SwiftHoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */; };
 		FD6D5FE11D4A4BE600A7C277 /* String+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */; };
 		FD6D5FE51D4B4E7100A7C277 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FE41D4B4E7100A7C277 /* Document.swift */; };
+		FD6D5FE71D4B778E00A7C277 /* Metadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FE61D4B778E00A7C277 /* Metadata.swift */; };
+		FD6D5FE91D4B7B1A00A7C277 /* SwiftYAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6D5FE81D4B7B1A00A7C277 /* SwiftYAML.framework */; };
+		FD6D5FEA1D4B7B2700A7C277 /* SwiftYAML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6D5FE81D4B7B1A00A7C277 /* SwiftYAML.framework */; };
+		FD6D5FEC1D4B7B6B00A7C277 /* NSRegularExpression+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FEB1D4B7B6B00A7C277 /* NSRegularExpression+Utilities.swift */; };
+		FD6D5FEE1D4B7F8700A7C277 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FED1D4B7F8700A7C277 /* Utilities.swift */; };
 		FD8531B71D4A2A3A00658286 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B11D4A2A3500658286 /* main.swift */; };
 		FD8531C61D4A2A6200658286 /* Spelt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* Spelt.framework */; };
 		FD8531CD1D4A2A6200658286 /* Spelt.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8531BF1D4A2A6200658286 /* Spelt.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -52,6 +57,10 @@
 		FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteReaderTests.swift; sourceTree = "<group>"; };
 		FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Paths.swift"; sourceTree = "<group>"; };
 		FD6D5FE41D4B4E7100A7C277 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		FD6D5FE61D4B778E00A7C277 /* Metadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Metadata.swift; sourceTree = "<group>"; };
+		FD6D5FE81D4B7B1A00A7C277 /* SwiftYAML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftYAML.framework; path = Carthage/Build/Mac/SwiftYAML.framework; sourceTree = "<group>"; };
+		FD6D5FEB1D4B7B6B00A7C277 /* NSRegularExpression+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSRegularExpression+Utilities.swift"; sourceTree = "<group>"; };
+		FD6D5FED1D4B7F8700A7C277 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		FD8531A71D4A2A1200658286 /* CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8531B11D4A2A3500658286 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FD8531B31D4A2A3500658286 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -84,6 +93,7 @@
 			files = (
 				FD8531E21D4A3A7200658286 /* SwiftHoedown.framework in Frameworks */,
 				FD8531E41D4A3A7400658286 /* Hoedown.framework in Frameworks */,
+				FD6D5FEA1D4B7B2700A7C277 /* SwiftYAML.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,6 +103,7 @@
 			files = (
 				FD8531C61D4A2A6200658286 /* Spelt.framework in Frameworks */,
 				FD6D5FDD1D4A3F9A00A7C277 /* Hoedown.framework in Frameworks */,
+				FD6D5FE91D4B7B1A00A7C277 /* SwiftYAML.framework in Frameworks */,
 				FD6D5FDE1D4A3F9A00A7C277 /* SwiftHoedown.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */,
+				FD6D5FEB1D4B7B6B00A7C277 /* NSRegularExpression+Utilities.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -111,6 +123,8 @@
 		FD6D5FE31D4A4FC700A7C277 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FD6D5FED1D4B7F8700A7C277 /* Utilities.swift */,
+				FD6D5FE61D4B778E00A7C277 /* Metadata.swift */,
 				FD8531B31D4A2A3500658286 /* Post.swift */,
 				FD8531B41D4A2A3500658286 /* Site.swift */,
 				FD8531B61D4A2A3500658286 /* StaticFile.swift */,
@@ -190,6 +204,7 @@
 		FD8531DD1D4A3A4400658286 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD6D5FE81D4B7B1A00A7C277 /* SwiftYAML.framework */,
 				FD8531E31D4A3A7400658286 /* Hoedown.framework */,
 				FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */,
 			);
@@ -340,6 +355,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/Mac/SwiftHoedown.framework",
 				"$(SRCROOT)/Carthage/Build/Mac/Hoedown.framework",
+				"$(SRCROOT)/Carthage/Build/Mac/SwiftYAML.framework",
 			);
 			name = "Copy frameworks";
 			outputPaths = (
@@ -363,10 +379,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6D5FEC1D4B7B6B00A7C277 /* NSRegularExpression+Utilities.swift in Sources */,
+				FD6D5FE71D4B778E00A7C277 /* Metadata.swift in Sources */,
 				FD8531DA1D4A2A8D00658286 /* SiteReader.swift in Sources */,
 				FD6D5FE11D4A4BE600A7C277 /* String+Paths.swift in Sources */,
 				FD6D5FE51D4B4E7100A7C277 /* Document.swift in Sources */,
 				FD8531D91D4A2A8D00658286 /* Site.swift in Sources */,
+				FD6D5FEE1D4B7F8700A7C277 /* Utilities.swift in Sources */,
 				FD8531D81D4A2A8D00658286 /* Post.swift in Sources */,
 				FD8531DB1D4A2A8D00658286 /* StaticFile.swift in Sources */,
 			);

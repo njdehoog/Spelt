@@ -1,16 +1,18 @@
 // Any file which contains front matter and is not a blog post is considered front matter
-public final class Document: File {
+public final class Document: FileWithMetadata {
     public let path: String
-    var contents: String
+    public var contents: String
+    public var metadata: Metadata
     
-    init(path: String, contents: String = "") {
+    public init(path: String, contents: String = "", metadata: Metadata = .None) {
         self.path = path
         self.contents = contents
+        self.metadata = metadata
     }
 }
 
 // front matter
+// FIXME: should this be an extension on SiteReader
 extension Document {
-    static let frontMatterPattern = "^---.*?[\r\n]*(.*?[\r\n]+)---[\r\n]*"
-    static let frontMatterRegex = try! NSRegularExpression(pattern: frontMatterPattern, options: .DotMatchesLineSeparators)
+
 }

@@ -1,1 +1,5 @@
+---
+layout: post
+---
+
 Hello world
