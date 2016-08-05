@@ -4,6 +4,22 @@ public struct SiteRenderer {
     public func render() throws {
         try PermalinkRenderer(site: site).render()
         try TemplateRenderer(site: site, type: .InPlace).render()
+        
+        try convert()
+    }
+    
+    private func convert() throws {
+        let converters = [MarkdownConverter()]
+        for case let file as FileWithMetadata in site.files {
+            let matchingConverters = converters.filter({ $0.matches(file.path.pathExtension) })
+            file.contents = try matchingConverters.reduce(file.contents) { contents, converter in
+                return try converter.convert(contents)
+            }
+            
+            if let outputPathExtension = matchingConverters.last?.outputPathExtension {
+                file.destinationPath = file.destinationPath?.stringByReplacingPathExtension(withExtension: outputPathExtension)
+            }
+        }
     }
 }
 
@@ -25,5 +41,12 @@ protocol Renderer {
     var site: Site { get }
     
     func render() throws
+}
+
+protocol Converter {
+    var outputPathExtension: String { get }
+    
+    func matches(pathExtension: String) -> Bool
+    func convert(content: String) throws -> String
 }
 

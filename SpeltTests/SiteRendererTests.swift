@@ -42,4 +42,12 @@ class SiteRendererTests: XCTestCase {
         let post = site.posts.filter({ $0.fileName == "templating.md" }).first
         XCTAssertEqual(post?.contents, "Spelt")
     }
+    
+    // MARK: markdown conversion
+    
+    func testThatMarkdownIsConverted() {
+        let post = site.posts.filter({ $0.fileName == "markdown.md" }).first
+        XCTAssertEqual(post?.contents, "<h1>Header 1</h1>\n")
+        XCTAssertEqual(post?.destinationPath?.pathExtension, "html")
+    }
 }
