@@ -48,6 +48,24 @@ class SiteRendererTests: XCTestCase {
     func testThatMarkdownIsConverted() {
         let post = site.posts.filter({ $0.fileName == "markdown.md" }).first
         XCTAssertEqual(post?.contents, "<h1>Header 1</h1>\n")
+    }
+    
+    func testThatMarkdownPathExtensionIsCorrect() {
+        let post = site.posts.filter({ $0.fileName == "markdown.md" }).first
         XCTAssertEqual(post?.destinationPath?.pathExtension, "html")
     }
+    
+    // MARK: Sass conversion
+    
+    func testThatSassIsConverted() {
+        let sassFile = site.documents.filter({ $0.fileName == "main.scss" }).first
+        XCTAssertEqual(sassFile?.contents, ".foo {\n  width: 50%; }\n")
+    }
+    
+    func testThatSassPathExtensionIsCorrect() {
+        let sassFile = site.documents.filter({ $0.fileName == "main.scss" }).first
+        XCTAssertEqual(sassFile?.destinationPath?.pathExtension, "css")
+    }
+    
+    
 }

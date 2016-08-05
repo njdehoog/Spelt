@@ -5,7 +5,7 @@ struct MarkdownConverter: Converter {
         case ConversionError
     }
     
-    let outputPathExtension: String = "html"
+    let outputPathExtension = "html"
     
     func matches(pathExtension: String) -> Bool {
         return ["md", "markdown"].contains(pathExtension)

@@ -14,7 +14,7 @@ public struct SiteConfiguration {
         case Build = "_build"
     
         // returns absolute path
-        func relativeToSitePath(path: String) -> String {
+        func relativeToPath(path: String) -> String {
             return path.stringByAppendingPathComponent(rawValue)
         }
     }

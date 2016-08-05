@@ -9,7 +9,7 @@ public struct SiteRenderer {
     }
     
     private func convert() throws {
-        let converters = [MarkdownConverter()]
+        let converters: [Converter] = [MarkdownConverter(), SassConverter(site: site)]
         for case let file as FileWithMetadata in site.files {
             let matchingConverters = converters.filter({ $0.matches(file.path.pathExtension) })
             file.contents = try matchingConverters.reduce(file.contents) { contents, converter in

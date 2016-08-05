@@ -59,7 +59,7 @@ struct TemplateRenderer: Renderer {
     }
     
     private func renderFileWithTemplate(file: FileWithMetadata, templateName: String) throws {
-        let templatesPath = SiteConfiguration.Path.Layouts.relativeToSitePath(site.path)
+        let templatesPath = SiteConfiguration.Path.Layouts.relativeToPath(site.path)
         let templatePath = Path(templatesPath) + Path(templateName.stringByAppendingPathExtension("html")!)
         
         let context = defaultContext
