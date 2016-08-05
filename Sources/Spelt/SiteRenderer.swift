@@ -6,6 +6,8 @@ public struct SiteRenderer {
         try TemplateRenderer(site: site, type: .InPlace).render()
         
         try convert()
+        
+        try TemplateRenderer(site: site, type: .UsingTemplate).render()
     }
     
     private func convert() throws {

@@ -67,5 +67,10 @@ class SiteRendererTests: XCTestCase {
         XCTAssertEqual(sassFile?.destinationPath?.pathExtension, "css")
     }
     
+    // MARK: layouts
     
+    func testThatOutputIsPlacedInLayout() {
+        let page = site.documents.filter({ $0.fileName == "about.md" }).first
+        XCTAssertEqual(page?.contents, "<article><p>Sample About page</p>\n</article>")
+    }
 }

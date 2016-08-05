@@ -36,5 +36,40 @@ extension FileWithMetadata {
         
         return nil
     }
+    
+    var URLString: String {
+        guard let destinationPath = destinationPath else {
+            return ""
+        }
+        
+        let permalink = destinationPath.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        if permalink.lastPathComponent == "index.html" {
+            // if path points to an index.html file, don't include this in permalink
+            return "/" + permalink.stringByDeletingLastPathComponent
+        }
+        return "/" + permalink
+    }
+
+    // this is the payload for rendering file in layout
+    var payload: Metadata {
+        var properties: Metadata = [:];
+        properties["url"] = .String(URLString)
+        properties["contents"] = Metadata.String(contents)
+        properties["content"] = Metadata.String(contents)
+        
+        if let date = date {
+            properties["date"] = Metadata.Date(date)
+        }
+        
+//        if let categories = categories {
+//            properties["categories"] = Metadata.Array(categories.map({ Metadata.String($0) }))
+//        }
+        
+        // workaround for better Jekyll compatability. include all properties under page
+        var combined = metadata + properties
+        combined["page"] = combined
+        
+        return combined
+    }
 }
 
