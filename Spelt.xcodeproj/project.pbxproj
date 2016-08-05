@@ -41,7 +41,7 @@
 		FD6D60741D4BA2AE00A7C277 /* Stencil+MathFilters.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60731D4BA2AE00A7C277 /* Stencil+MathFilters.swift */; };
 		FD6D60761D4BA2D500A7C277 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60751D4BA2D500A7C277 /* String+HTML.swift */; };
 		FD6D60781D4BA30700A7C277 /* String+XML.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60771D4BA30700A7C277 /* String+XML.swift */; };
-		FD6D607A1D4BA36A00A7C277 /* MarkdownRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60791D4BA36A00A7C277 /* MarkdownRenderer.swift */; };
+		FD6D607A1D4BA36A00A7C277 /* MarkdownConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60791D4BA36A00A7C277 /* MarkdownConverter.swift */; };
 		FD6D607C1D4BA3B100A7C277 /* PathKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6D607B1D4BA3B100A7C277 /* PathKit.framework */; };
 		FD6D607E1D4BA51000A7C277 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D607D1D4BA51000A7C277 /* Error.swift */; };
 		FD8531B71D4A2A3A00658286 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B11D4A2A3500658286 /* main.swift */; };
@@ -112,7 +112,7 @@
 		FD6D60731D4BA2AE00A7C277 /* Stencil+MathFilters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stencil+MathFilters.swift"; sourceTree = "<group>"; };
 		FD6D60751D4BA2D500A7C277 /* String+HTML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HTML.swift"; sourceTree = "<group>"; };
 		FD6D60771D4BA30700A7C277 /* String+XML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+XML.swift"; sourceTree = "<group>"; };
-		FD6D60791D4BA36A00A7C277 /* MarkdownRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownRenderer.swift; sourceTree = "<group>"; };
+		FD6D60791D4BA36A00A7C277 /* MarkdownConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownConverter.swift; sourceTree = "<group>"; };
 		FD6D607B1D4BA3B100A7C277 /* PathKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PathKit.framework; path = Carthage/Build/Mac/PathKit.framework; sourceTree = "<group>"; };
 		FD6D607D1D4BA51000A7C277 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		FD8531A71D4A2A1200658286 /* CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CLI; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,7 +199,6 @@
 			children = (
 				FD6D5FFA1D4B969B00A7C277 /* Permalinks.swift */,
 				FD6D606F1D4BA21B00A7C277 /* TemplateRenderer.swift */,
-				FD6D60791D4BA36A00A7C277 /* MarkdownRenderer.swift */,
 			);
 			name = Renderers;
 			sourceTree = "<group>";
@@ -280,6 +279,7 @@
 				FD8531B51D4A2A3500658286 /* SiteReader.swift */,
 				FD6D5FEF1D4B8FD400A7C277 /* SiteBuilder.swift */,
 				FD6D5FF51D4B90F000A7C277 /* SiteRenderer.swift */,
+				FDB9A8A71D54B6BA0016CDB7 /* Converters */,
 				FD6D5FF91D4B968C00A7C277 /* Renderers */,
 				FD6D5FE31D4A4FC700A7C277 /* Model */,
 				FD6D5FE21D4A4FBC00A7C277 /* Helpers */,
@@ -316,6 +316,14 @@
 				FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FDB9A8A71D54B6BA0016CDB7 /* Converters */ = {
+			isa = PBXGroup;
+			children = (
+				FD6D60791D4BA36A00A7C277 /* MarkdownConverter.swift */,
+			);
+			name = Converters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,7 +509,7 @@
 				FD6D60661D4BA19D00A7C277 /* Node.swift in Sources */,
 				FD6D60701D4BA21B00A7C277 /* TemplateRenderer.swift in Sources */,
 				FD8531DA1D4A2A8D00658286 /* SiteReader.swift in Sources */,
-				FD6D607A1D4BA36A00A7C277 /* MarkdownRenderer.swift in Sources */,
+				FD6D607A1D4BA36A00A7C277 /* MarkdownConverter.swift in Sources */,
 				FD6D5FF61D4B90F000A7C277 /* SiteRenderer.swift in Sources */,
 				FD6D5FE11D4A4BE600A7C277 /* String+Paths.swift in Sources */,
 				FD6D5FE51D4B4E7100A7C277 /* Document.swift in Sources */,

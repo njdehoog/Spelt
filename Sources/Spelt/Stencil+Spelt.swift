@@ -35,7 +35,7 @@ func markdownFilter(value: Any?) throws -> Any? {
     guard let string = value as? String else {
         return TemplateSyntaxError("'markdown' filter expects string input")
     }
-    return htmlFromMarkdown(string)
+    return MarkdownConverter.htmlFromMarkdown(string)
 }
 
 func dateFilter(value: Any?, arguments: [Any?]) throws -> Any? {

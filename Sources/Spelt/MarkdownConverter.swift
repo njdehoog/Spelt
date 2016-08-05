@@ -1,9 +1,5 @@
 import SwiftHoedown
 
-func htmlFromMarkdown(markdown: String) -> String? {
-    return Hoedown.renderHTMLForMarkdown(markdown, extensions: [.Tables, .FootNotes, .AutoLinkURLs, .FencedCodeBlocks, .Quote, .NoIntraEmphasis, .StrikeThrough])
-}
-
 struct MarkdownConverter: Converter {
     enum Error: ErrorType {
         case ConversionError
@@ -16,9 +12,13 @@ struct MarkdownConverter: Converter {
     }
     
     func convert(content: String) throws -> String {
-        guard let html = htmlFromMarkdown(content) else {
+        guard let html = MarkdownConverter.htmlFromMarkdown(content) else {
             throw Error.ConversionError
         }
         return html
+    }
+    
+    static func htmlFromMarkdown(markdown: String) -> String? {
+        return Hoedown.renderHTMLForMarkdown(markdown, extensions: [.Tables, .FootNotes, .AutoLinkURLs, .FencedCodeBlocks, .Quote, .NoIntraEmphasis, .StrikeThrough])
     }
 }

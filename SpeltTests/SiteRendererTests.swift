@@ -28,7 +28,7 @@ class SiteRendererTests: XCTestCase {
     
     func testThatDestinationPathIsCorrectForPage() {
         let page = site.documents.filter({ $0.fileName == "about.md" }).first
-        XCTAssertEqual(page?.destinationPath, "about.md")
+        XCTAssertEqual(page?.destinationPath, "about.html")
     }
     
     func testThatDestinationPathIsCorrectForStaticFile() {
@@ -40,7 +40,7 @@ class SiteRendererTests: XCTestCase {
     
     func testThatTemplateTagIsRendered() {
         let post = site.posts.filter({ $0.fileName == "templating.md" }).first
-        XCTAssertEqual(post?.contents, "Spelt")
+        XCTAssertEqual(post?.contents, "<p>Spelt</p>\n")
     }
     
     // MARK: markdown conversion
