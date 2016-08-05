@@ -1,7 +1,7 @@
 struct PermalinkRenderer: Renderer {
     let site: Site
     
-    func render() {
+    func render() throws {
         for file in site.files {
             if let file = file as? FileWithMetadata, let generator = PermalinkGenerator(file: file) {
                 file.destinationPath = generator.permalink

@@ -12,6 +12,11 @@ public struct SiteConfiguration {
         case Includes = "_includes"
         case Assets = "assets"
         case Build = "_build"
+    
+        // returns absolute path
+        func relativeToSitePath(path: String) -> String {
+            return path.stringByAppendingPathComponent(rawValue)
+        }
     }
     
     static var defaultPaths: [Path] {

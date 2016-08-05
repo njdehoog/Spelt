@@ -1,25 +1,9 @@
 public struct SiteRenderer {
     public let site: Site
-    
+        
     public func render() throws {
-        PermalinkRenderer(site: site).render()
-        try renderContents()
-    }
-    
-    private func renderContents() throws {
-        try renderTemplates()
-    }
-    
-    private func renderTemplates() throws {
-        for case let file as FileWithMetadata in site.files {
-            let renderer = TemplateRenderer(templatesPath: nil, includesPath: SiteConfiguration.Path.Includes.rawValue, metadata: site.metadata)
-            do {
-                try renderer.renderFileContents(file)
-            }
-            catch {
-                throw Error(filePath: file.path, underlyingError: error)
-            }
-        }
+        try PermalinkRenderer(site: site).render()
+        try TemplateRenderer(site: site, type: .InPlace).render()
     }
 }
 
@@ -40,7 +24,6 @@ extension SiteRenderer {
 protocol Renderer {
     var site: Site { get }
     
-    init(site: Site)
     func render() throws
 }
 

@@ -284,3 +284,37 @@ extension YAMLValue: MetadataConvertible {
         }
     }
 }
+
+extension Metadata {
+    public var rawValue: Any {
+        switch self {
+        case .None:
+            return ""
+        case .String(let string):
+            return string
+        case .Bool(let bool):
+            return bool
+        case .Int(let int):
+            return int
+        case .Double(let double):
+            return double
+        case .Date(let date):
+            return date
+        case .File(let file):
+            return file.metadata.rawValue
+        case .Array(let array):
+            var raw: [Any] = []
+            for element in array {
+                raw.append(element.rawValue)
+            }
+            return raw
+        case .Dictionary(let dictionary):
+            var boxed: [Swift.String: Any] = [:]
+            for (k, v) in dictionary {
+                boxed[k] = v.rawValue
+            }
+            return boxed
+        }
+    }
+}
+

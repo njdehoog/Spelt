@@ -1,22 +1,38 @@
 import PathKit
 
-struct TemplateRenderer {
-    enum TemplateRenderingError: ErrorType {
-        case TemplatesPathUndefined
+struct TemplateRenderer: Renderer {
+    enum RendererType {
+        case InPlace
+        case UsingTemplate
     }
     
-    let templatesPath: String?
-    let includesPath: String
-    let metadata: Metadata
-    
     private var defaultContext: Context {
-        var contextDict = metadata.rawValue as! [String: Any]
-        contextDict["loader"] = TemplateLoader(paths: [Path(includesPath)])
+        var contextDict = site.metadata.rawValue as! [String: Any]
+        contextDict["loader"] = TemplateLoader(paths: [Path(SiteConfiguration.Path.Includes.rawValue)])
         return Context(dictionary: contextDict)
     }
     
+    let site: Site
+    let type: RendererType
+    
+    init(site: Site, type: RendererType = .InPlace) {
+        self.site = site
+        self.type = type
+    }
+    
+    func render() throws {
+        for case let file as FileWithMetadata in site.files {
+            switch type {
+            case .InPlace:
+                try renderInPlace(file)
+            case .UsingTemplate:
+                try renderUsingTemplate(file)
+            }
+        }
+    }
+    
     // only renders file contents. ignores template name metadata
-    func renderFileContents(file: FileWithMetadata) throws {
+    private func renderInPlace(file: FileWithMetadata) throws {
         let context = defaultContext
         context.push(file.metadata.rawValue as? [Swift.String: Any])
         
@@ -33,8 +49,7 @@ struct TemplateRenderer {
     }
     
     // renders file contents recursively into defined template
-    func renderTemplate(file: FileWithMetadata) throws {
-        
+    private func renderUsingTemplate(file: FileWithMetadata) throws {
         guard let templateName = file.metadata.templateName else {
             // if no template name is defined, rendering stops here
             return
@@ -44,10 +59,7 @@ struct TemplateRenderer {
     }
     
     private func renderFileWithTemplate(file: FileWithMetadata, templateName: String) throws {
-        guard let templatesPath = templatesPath else {
-            throw TemplateRenderingError.TemplatesPathUndefined
-        }
-        
+        let templatesPath = SiteConfiguration.Path.Layouts.relativeToSitePath(site.path)
         let templatePath = Path(templatesPath) + Path(templateName.stringByAppendingPathExtension("html")!)
         
         let context = defaultContext
@@ -73,39 +85,6 @@ struct TemplateRenderer {
         }
         catch {
             throw SiteRenderer.Error(filePath: templatePath.description, lineNumber: nil, underlyingError: error)
-        }
-    }
-}
-
-extension Metadata {
-    public var rawValue: Any {
-        switch self {
-        case .None:
-            return ""
-        case .String(let string):
-            return string
-        case .Bool(let bool):
-            return bool
-        case .Int(let int):
-            return int
-        case .Double(let double):
-            return double
-        case .Date(let date):
-            return date
-        case .File(let file):
-            return file.metadata.rawValue
-        case .Array(let array):
-            var raw: [Any] = []
-            for element in array {
-                raw.append(element.rawValue)
-            }
-            return raw
-        case .Dictionary(let dictionary):
-            var boxed: [Swift.String: Any] = [:]
-            for (k, v) in dictionary {
-                boxed[k] = v.rawValue
-            }
-            return boxed
         }
     }
 }
