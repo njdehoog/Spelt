@@ -11,9 +11,3 @@ public final class Document: FileWithMetadata {
         self.metadata = metadata
     }
 }
-
-// front matter
-// FIXME: should this be an extension on SiteReader
-extension Document {
-
-}
