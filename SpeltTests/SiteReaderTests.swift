@@ -24,7 +24,7 @@ class SiteReaderTests: XCTestCase {
     
     func testThatItReadsPosts() {
         let site = try! siteReader!.read()
-        XCTAssertEqual(site.posts.count, 3)
+        XCTAssertEqual(site.posts.count, 4)
     }
     
     func testThatItReadsPostContents() {

@@ -39,8 +39,13 @@ class SiteRendererTests: XCTestCase {
     // MARK: templating
     
     func testThatTemplateTagIsRendered() {
-        let post = site.posts.filter({ $0.fileName == "templating.md" }).first
-        XCTAssertEqual(post?.contents, "<p>Spelt</p>\n")
+        let post = site.posts.filter({ $0.fileName == "templating.md" }).first!
+        XCTAssertEqual(post.contents, "<p>Spelt</p>\n")
+    }
+    
+    func testThatItRendersSiteTitle() {
+        let post = site.posts.filter({ $0.fileName == "site-title.md" }).first!
+        XCTAssertEqual(post.contents, "<p>My Blog</p>\n")
     }
     
     // MARK: markdown conversion
