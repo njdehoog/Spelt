@@ -19,7 +19,7 @@ public protocol FileWithMetadata: File {
     var contents: String { get set }
     var metadata: Metadata { get set }
     
-    init(path: String, contents: String, metadata: Metadata)
+    init(path: String, contents: String, metadata: Metadata) throws
 }
 
 extension FileWithMetadata {

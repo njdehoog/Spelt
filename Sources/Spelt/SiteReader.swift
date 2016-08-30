@@ -101,7 +101,7 @@ struct FileReader<T: FileWithMetadata> {
     func read() throws -> T {
         let metadata = try FrontMatterReader.frontMatterForString(contents).metadata
         let strippedContents = contents.stringByReplacingFrontMatter("")
-        return T(path: path, contents: strippedContents, metadata: metadata)
+        return try T(path: path, contents: strippedContents, metadata: metadata)
     }
 }
 
