@@ -17,16 +17,36 @@ class SiteBuilderTests: XCTestCase {
         return try! SiteReader(sitePath: self.sampleProjectPath).read()
         }()
     
+    var siteBuilder: SiteBuilder?
+    
     override func setUp() {
         super.setUp()
         
+        // render site before building
         try! SiteRenderer(site: site).render()
+        siteBuilder = SiteBuilder(site: site, buildPath: buildPath)
     }
     
     func testThatBuildDirectoryIsRemoved() {
-        try! SiteBuilder(site: site, buildPath: buildPath).build()
-        let fileManager = NSFileManager()
-        XCTAssertFalse(fileManager.fileExistsAtPath(buildPath))
+        // create test file in build directory to check if it is removed by build command
+        try! NSFileManager().createDirectoryAtPath(buildPath, withIntermediateDirectories: true, attributes: nil)
+        let testFilePath = buildPath.stringByAppendingPathComponent("test.txt")
+        try! "hello world".writeToFile(testFilePath, atomically: true, encoding: NSUTF8StringEncoding)
+        
+        try! siteBuilder?.build()
+        XCTAssertFalse(NSFileManager().fileExistsAtPath(testFilePath))
     }
     
+    func testThatBuildDirectoryIsCreated() {
+        try! siteBuilder?.build()
+        XCTAssertTrue(NSFileManager().fileExistsAtPath(buildPath))
+    }
+    
+    func testThatStaticFileIsCopied() {
+        try! siteBuilder?.build()
+        
+        let indexHTMLFile = site.staticFiles.filter({ $0.fileName == "index.html" }).first!
+        let filePath = buildPath.stringByAppendingPathComponent(indexHTMLFile.destinationPath!)
+        XCTAssertTrue(NSFileManager().fileExistsAtPath(filePath))
+    }
 }
