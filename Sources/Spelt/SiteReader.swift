@@ -6,9 +6,13 @@ public struct SiteReader {
         case DirectoryNotFound
     }
     
-    let sitePath: String
+    public let sitePath: String
     
-    func read() throws -> Site {
+    public init(sitePath: String) {
+        self.sitePath = sitePath
+    }
+    
+    public func read() throws -> Site {
         let fileManager = NSFileManager()
         guard let enumerator = fileManager.enumeratorAtURL(NSURL(fileURLWithPath: sitePath), includingPropertiesForKeys:nil, options: .SkipsHiddenFiles, errorHandler: nil) else {
             throw Error.DirectoryNotFound
