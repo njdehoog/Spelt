@@ -46,8 +46,8 @@ class SiteRendererTests: XCTestCase {
     // MARK: markdown conversion
     
     func testThatMarkdownIsConverted() {
-        let post = site.posts.filter({ $0.fileName == "markdown.md" }).first
-        XCTAssertEqual(post?.contents, "<h1>Header 1</h1>\n")
+        let post = site.posts.filter({ $0.fileName == "markdown.md" }).first!
+        XCTAssertEqual(post.contents, "<h1>Header 1</h1>\n")
     }
     
     func testThatMarkdownPathExtensionIsCorrect() {
