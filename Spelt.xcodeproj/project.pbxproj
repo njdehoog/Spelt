@@ -43,8 +43,6 @@
 		FD6D607E1D4BA51000A7C277 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D607D1D4BA51000A7C277 /* Error.swift */; };
 		FD8531B71D4A2A3A00658286 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B11D4A2A3500658286 /* main.swift */; };
 		FD8531CD1D4A2A6200658286 /* Spelt.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8531BF1D4A2A6200658286 /* Spelt.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FD8531D61D4A2A8900658286 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD8531D41D4A2A8900658286 /* Info.plist */; };
-		FD8531D71D4A2A8900658286 /* Spelt.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8531D51D4A2A8900658286 /* Spelt.h */; };
 		FD8531D81D4A2A8D00658286 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B31D4A2A3500658286 /* Post.swift */; };
 		FD8531D91D4A2A8D00658286 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B41D4A2A3500658286 /* Site.swift */; };
 		FD8531DA1D4A2A8D00658286 /* SiteReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B51D4A2A3500658286 /* SiteReader.swift */; };
@@ -127,8 +125,6 @@
 		FD8531C01D4A2A6200658286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD8531C51D4A2A6200658286 /* SpeltTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeltTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8531CC1D4A2A6200658286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD8531D41D4A2A8900658286 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD8531D51D4A2A8900658286 /* Spelt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spelt.h; sourceTree = "<group>"; };
 		FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHoedown.framework; path = Carthage/Build/Mac/SwiftHoedown.framework; sourceTree = "<group>"; };
 		FD8531E31D4A3A7400658286 /* Hoedown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hoedown.framework; path = Carthage/Build/Mac/Hoedown.framework; sourceTree = "<group>"; };
 		FD94A8B91D75B279000D3888 /* PostTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTests.swift; sourceTree = "<group>"; };
@@ -277,8 +273,6 @@
 		FD8531B21D4A2A3500658286 /* Spelt */ = {
 			isa = PBXGroup;
 			children = (
-				FD8531D41D4A2A8900658286 /* Info.plist */,
-				FD8531D51D4A2A8900658286 /* Spelt.h */,
 				FD6D607D1D4BA51000A7C277 /* Error.swift */,
 				FD8531B51D4A2A3500658286 /* SiteReader.swift */,
 				FD6D5FEF1D4B8FD400A7C277 /* SiteBuilder.swift */,
@@ -342,7 +336,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD8531CD1D4A2A6200658286 /* Spelt.h in Headers */,
-				FD8531D71D4A2A8900658286 /* Spelt.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,7 +449,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD8531D61D4A2A8900658286 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
