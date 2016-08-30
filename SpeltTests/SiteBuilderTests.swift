@@ -50,10 +50,26 @@ class SiteBuilderTests: XCTestCase {
         XCTAssertTrue(NSFileManager().fileExistsAtPath(filePath))
     }
     
+    func testThatStaticFileIsCopiedToSubfolder() {
+        try! siteBuilder?.build()
+        
+        let peacockImageFile = site.staticFiles.filter({ $0.fileName == "peacock.jpeg" }).first!
+        let filePath = buildPath.stringByAppendingPathComponent(peacockImageFile.destinationPath!)
+        XCTAssertTrue(NSFileManager().fileExistsAtPath(filePath))
+    }
+    
     func testThatDocumentIsWritten() {
         try! siteBuilder?.build()
         
         let aboutPage = site.documents.filter({ $0.fileName == "about.md" }).first!
+        let filePath = buildPath.stringByAppendingPathComponent(aboutPage.destinationPath!)
+        XCTAssertTrue(NSFileManager().fileExistsAtPath(filePath))
+    }
+    
+    func testThatDocumentIsWrittenToSubfolder() {
+        try! siteBuilder?.build()
+        
+        let aboutPage = site.documents.filter({ $0.fileName == "info.html" }).first!
         let filePath = buildPath.stringByAppendingPathComponent(aboutPage.destinationPath!)
         XCTAssertTrue(NSFileManager().fileExistsAtPath(filePath))
     }

@@ -25,37 +25,24 @@ public struct SiteBuilder {
     }
     
     private func writeFiles() throws {
-        for file in site.staticFiles {
+        for file in site.files {
             guard let relativeDestinationPath = file.destinationPath else {
                 continue
             }
-            
-            // copy static files to build directory
+
             let destinationPath = buildPath.stringByAppendingPathComponent(relativeDestinationPath)
-            try fileManager.copyItemAtPath(file.path, toPath: destinationPath)
-        }
-        
-        
-        for document in site.documents {
-            guard let relativeDestinationPath = document.destinationPath else {
-                continue
-            }
             
-            let destinationPath = buildPath.stringByAppendingPathComponent(relativeDestinationPath)
-            try document.contents.writeToFile(destinationPath, atomically: true, encoding: NSUTF8StringEncoding)
-        }
-        
-        for post in site.posts {
-            guard let relativeDestinationPath = post.destinationPath else {
-                continue
-            }
-            
-            let destinationPath = buildPath.stringByAppendingPathComponent(relativeDestinationPath)
+            // create subdirectories if required
             if relativeDestinationPath.pathComponents.count > 1 {
                 try fileManager.createDirectoryAtPath(destinationPath.stringByDeletingLastPathComponent, withIntermediateDirectories: true, attributes: nil)
             }
             
-            try post.contents.writeToFile(destinationPath, atomically: true, encoding: NSUTF8StringEncoding)
+            if file is StaticFile {
+                try fileManager.copyItemAtPath(file.path, toPath: destinationPath)
+            }
+            else if let file = file as? FileWithMetadata {
+                try file.contents.writeToFile(destinationPath, atomically: true, encoding: NSUTF8StringEncoding)
+            }
         }
     }
 }

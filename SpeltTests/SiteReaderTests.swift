@@ -33,6 +33,10 @@ class SiteReaderTests: XCTestCase {
         XCTAssertEqual(site.documents.filter({ $0.fileName == "about.md" }).count, 1)
     }
     
+    func testThatItReadsPageFromSubfolder() {
+        XCTAssertEqual(site.documents.filter({ $0.fileName == "info.html" }).count, 1)
+    }
+    
     func testThatItSkipsDirectoriesPrefixedWithUnderscore() {
         for file in site.files {
             let relativePath = file.relativePath(to: site.path)
