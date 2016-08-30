@@ -52,6 +52,7 @@
 		FD8531DC1D4A2B4800658286 /* Spelt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* Spelt.framework */; };
 		FD8531E21D4A3A7200658286 /* SwiftHoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */; };
 		FD8531E41D4A3A7400658286 /* Hoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E31D4A3A7400658286 /* Hoedown.framework */; };
+		FDB926321D6B4CA200B8D5D3 /* SiteBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB926311D6B4CA200B8D5D3 /* SiteBuilderTests.swift */; };
 		FDB9A8A91D54B99B0016CDB7 /* SassConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9A8A81D54B99B0016CDB7 /* SassConverter.swift */; };
 		FDB9A8AB1D54BF230016CDB7 /* SwiftSass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */; };
 /* End PBXBuildFile section */
@@ -128,6 +129,7 @@
 		FD8531D51D4A2A8900658286 /* Spelt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spelt.h; sourceTree = "<group>"; };
 		FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHoedown.framework; path = Carthage/Build/Mac/SwiftHoedown.framework; sourceTree = "<group>"; };
 		FD8531E31D4A3A7400658286 /* Hoedown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hoedown.framework; path = Carthage/Build/Mac/Hoedown.framework; sourceTree = "<group>"; };
+		FDB926311D6B4CA200B8D5D3 /* SiteBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteBuilderTests.swift; sourceTree = "<group>"; };
 		FDB9A8A81D54B99B0016CDB7 /* SassConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SassConverter.swift; sourceTree = "<group>"; };
 		FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftSass.framework; path = Carthage/Build/Mac/SwiftSass.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -299,6 +301,7 @@
 			children = (
 				FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */,
 				FD6D5FF31D4B90BC00A7C277 /* SiteRendererTests.swift */,
+				FDB926311D6B4CA200B8D5D3 /* SiteBuilderTests.swift */,
 				FD8531CC1D4A2A6200658286 /* Info.plist */,
 			);
 			path = SpeltTests;
@@ -539,6 +542,7 @@
 			files = (
 				FD6D5FD81D4A3C1100A7C277 /* SiteReaderTests.swift in Sources */,
 				FD6D5FF41D4B90BC00A7C277 /* SiteRendererTests.swift in Sources */,
+				FDB926321D6B4CA200B8D5D3 /* SiteBuilderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
