@@ -53,6 +53,7 @@
 		FD8531E21D4A3A7200658286 /* SwiftHoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */; };
 		FD8531E41D4A3A7400658286 /* Hoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E31D4A3A7400658286 /* Hoedown.framework */; };
 		FD94A8BA1D75B279000D3888 /* PostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94A8B91D75B279000D3888 /* PostTests.swift */; };
+		FD94A8BD1D75C1D9000D3888 /* SiteConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94A8BB1D75C1AA000D3888 /* SiteConfiguration.swift */; };
 		FDB926321D6B4CA200B8D5D3 /* SiteBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB926311D6B4CA200B8D5D3 /* SiteBuilderTests.swift */; };
 		FDB9A8A91D54B99B0016CDB7 /* SassConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9A8A81D54B99B0016CDB7 /* SassConverter.swift */; };
 		FDB9A8AB1D54BF230016CDB7 /* SwiftSass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */; };
@@ -131,6 +132,7 @@
 		FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHoedown.framework; path = Carthage/Build/Mac/SwiftHoedown.framework; sourceTree = "<group>"; };
 		FD8531E31D4A3A7400658286 /* Hoedown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hoedown.framework; path = Carthage/Build/Mac/Hoedown.framework; sourceTree = "<group>"; };
 		FD94A8B91D75B279000D3888 /* PostTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTests.swift; sourceTree = "<group>"; };
+		FD94A8BB1D75C1AA000D3888 /* SiteConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteConfiguration.swift; sourceTree = "<group>"; };
 		FDB926311D6B4CA200B8D5D3 /* SiteBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteBuilderTests.swift; sourceTree = "<group>"; };
 		FDB9A8A81D54B99B0016CDB7 /* SassConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SassConverter.swift; sourceTree = "<group>"; };
 		FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftSass.framework; path = Carthage/Build/Mac/SwiftSass.framework; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				FD8531B41D4A2A3500658286 /* Site.swift */,
 				FD8531B61D4A2A3500658286 /* StaticFile.swift */,
 				FD6D5FE41D4B4E7100A7C277 /* Document.swift */,
+				FD94A8BB1D75C1AA000D3888 /* SiteConfiguration.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				FD8531DB1D4A2A8D00658286 /* StaticFile.swift in Sources */,
 				FD6D60781D4BA30700A7C277 /* String+XML.swift in Sources */,
 				FD6D5FFB1D4B969B00A7C277 /* Permalinks.swift in Sources */,
+				FD94A8BD1D75C1D9000D3888 /* SiteConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

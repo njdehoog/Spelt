@@ -13,13 +13,11 @@ public final class Site {
         return files
     }
     
-    public init(path: String, posts: [Post], staticFiles: [StaticFile], documents: [Document]) {
+    public init(path: String, posts: [Post], staticFiles: [StaticFile], documents: [Document], metadata: Metadata) {
         self.path = path
         self.posts = posts
         self.staticFiles = staticFiles
         self.documents = documents
-        
-        // FIXME: load metadata from _config.yml
-        self.metadata = [:]
+        self.metadata = metadata
     }
 }

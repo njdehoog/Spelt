@@ -1,29 +1,6 @@
 import Foundation
 import SwiftYAML
 
-public struct SiteConfiguration {
-    public enum Path: String {
-        case Config = "_config.yml"
-        case DestinationConfig = "_destinations.yml"
-        case Source = ""
-        case Posts = "_posts"
-        case Sass = "_sass"
-        case Layouts = "_layouts"
-        case Includes = "_includes"
-        case Assets = "assets"
-        case Build = "_build"
-    
-        // returns absolute path
-        func relativeToPath(path: String) -> String {
-            return path.stringByAppendingPathComponent(rawValue)
-        }
-    }
-    
-    static var defaultPaths: [Path] {
-        return [.Posts, .Sass, .Layouts, .Includes, .Assets]
-    }
-}
-
 public struct SiteReader {
     public enum Error: ErrorType {
         case DirectoryNotFound
@@ -63,8 +40,11 @@ public struct SiteReader {
                 }
             }
         }
+        
+        let configFilePath = SiteConfiguration.Path.Config.relativeToPath(sitePath)
+        let metadata = try ConfigReader(filePath: configFilePath).read()
 
-        return Site(path: sitePath, posts: posts, staticFiles: staticFiles, documents: documents)
+        return Site(path: sitePath, posts: posts, staticFiles: staticFiles, documents: documents, metadata: metadata)
     }
     
     // MARK: private
@@ -137,5 +117,14 @@ extension String {
     func stringByReplacingFrontMatter(replacementString: String) -> String {
         let regex = try! NSRegularExpression(pattern: FrontMatterReader.frontMatterPattern, options: .DotMatchesLineSeparators)
         return regex.stringByReplacingMatchesInString(self, options:.Anchored, range: NSMakeRange(0, self.characters.count), withTemplate: replacementString)
+    }
+}
+
+struct ConfigReader {
+    let filePath: String
+    
+    func read() throws -> Metadata {
+        let configFileContents = try String(contentsOfFile: filePath)
+        return try YAML.load(configFileContents).metadata
     }
 }
