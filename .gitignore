@@ -42,6 +42,7 @@ DerivedData/
 
 build/
 .build/
+_build/
 
 #####
 # Xcode private settings (window sizes, bookmarks, breakpoints, custom executables, smart groups)

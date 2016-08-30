@@ -49,4 +49,28 @@ class SiteBuilderTests: XCTestCase {
         let filePath = buildPath.stringByAppendingPathComponent(indexHTMLFile.destinationPath!)
         XCTAssertTrue(NSFileManager().fileExistsAtPath(filePath))
     }
+    
+    func testThatDocumentIsWritten() {
+        try! siteBuilder?.build()
+        
+        let aboutPage = site.documents.filter({ $0.fileName == "about.md" }).first!
+        let filePath = buildPath.stringByAppendingPathComponent(aboutPage.destinationPath!)
+        XCTAssertTrue(NSFileManager().fileExistsAtPath(filePath))
+    }
+    
+    func testThatPostIsWritten() {
+        try! siteBuilder?.build()
+        
+        let markdownPost = site.posts.filter({ $0.fileName == "markdown.md" }).first!
+        let filePath = buildPath.stringByAppendingPathComponent(markdownPost.destinationPath!)
+        XCTAssertTrue(NSFileManager().fileExistsAtPath(filePath))
+    }
+    
+    func testThatPostContentIsCorrectlyWritten() {
+        try! siteBuilder?.build()
+        
+        let markdownPost = site.posts.filter({ $0.fileName == "markdown.md" }).first!
+        let filePath = buildPath.stringByAppendingPathComponent(markdownPost.destinationPath!)
+        XCTAssertEqual(markdownPost.contents, try? String(contentsOfFile: filePath))
+    }
 }
