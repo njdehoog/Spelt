@@ -55,6 +55,7 @@
 		FDB926321D6B4CA200B8D5D3 /* SiteBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB926311D6B4CA200B8D5D3 /* SiteBuilderTests.swift */; };
 		FDB9A8A91D54B99B0016CDB7 /* SassConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9A8A81D54B99B0016CDB7 /* SassConverter.swift */; };
 		FDB9A8AB1D54BF230016CDB7 /* SwiftSass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */; };
+		FDE1D6181D7D70DE009A1A77 /* Spelt.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* Spelt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FDE6F9301D75DD0F001795FA /* CLI in Copy executable */ = {isa = PBXBuildFile; fileRef = FD8531A71D4A2A1200658286 /* CLI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		FDE6F9321D75DD32001795FA /* SwiftSass.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FDE6F9331D75DD32001795FA /* PathKit.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = FD6D607B1D4BA3B100A7C277 /* PathKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -115,6 +116,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				FDE6F9321D75DD32001795FA /* SwiftSass.framework in Copy frameworks */,
+				FDE1D6181D7D70DE009A1A77 /* Spelt.framework in Copy frameworks */,
 				FDE6F9331D75DD32001795FA /* PathKit.framework in Copy frameworks */,
 				FDE6F9341D75DD32001795FA /* SwiftYAML.framework in Copy frameworks */,
 				FDE6F9351D75DD32001795FA /* Hoedown.framework in Copy frameworks */,
@@ -831,6 +833,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Spelt/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/$(PRODUCT_NAME).bundle/Contents/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -890,6 +893,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Spelt/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.Spelt;
@@ -1152,6 +1156,7 @@
 				FDE6F92C1D75DC80001795FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
