@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD3915821D7DB7BE00F7F5F7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B11D4A2A3500658286 /* main.swift */; };
+		FD3915831D7DB80C00F7F5F7 /* SpeltKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* SpeltKit.framework */; };
+		FD3915841D7DB80C00F7F5F7 /* SpeltKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* SpeltKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD39158A1D7DC56000F7F5F7 /* SwiftSass.framework in Copy Frameworks to Products Directory */ = {isa = PBXBuildFile; fileRef = FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */; };
+		FD39158B1D7DC56000F7F5F7 /* PathKit.framework in Copy Frameworks to Products Directory */ = {isa = PBXBuildFile; fileRef = FD6D607B1D4BA3B100A7C277 /* PathKit.framework */; };
+		FD39158C1D7DC56000F7F5F7 /* SwiftYAML.framework in Copy Frameworks to Products Directory */ = {isa = PBXBuildFile; fileRef = FD6D5FE81D4B7B1A00A7C277 /* SwiftYAML.framework */; };
+		FD39158D1D7DC56000F7F5F7 /* Hoedown.framework in Copy Frameworks to Products Directory */ = {isa = PBXBuildFile; fileRef = FD8531E31D4A3A7400658286 /* Hoedown.framework */; };
+		FD39158E1D7DC56000F7F5F7 /* SwiftHoedown.framework in Copy Frameworks to Products Directory */ = {isa = PBXBuildFile; fileRef = FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */; };
 		FD6D5FD81D4A3C1100A7C277 /* SiteReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */; };
 		FD6D5FE11D4A4BE600A7C277 /* String+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */; };
 		FD6D5FE51D4B4E7100A7C277 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FE41D4B4E7100A7C277 /* Document.swift */; };
@@ -41,13 +49,11 @@
 		FD6D607A1D4BA36A00A7C277 /* MarkdownConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60791D4BA36A00A7C277 /* MarkdownConverter.swift */; };
 		FD6D607C1D4BA3B100A7C277 /* PathKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6D607B1D4BA3B100A7C277 /* PathKit.framework */; };
 		FD6D607E1D4BA51000A7C277 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D607D1D4BA51000A7C277 /* Error.swift */; };
-		FD8531B71D4A2A3A00658286 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B11D4A2A3500658286 /* main.swift */; };
-		FD8531CD1D4A2A6200658286 /* Spelt.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8531BF1D4A2A6200658286 /* Spelt.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD8531CD1D4A2A6200658286 /* SpeltKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8531BF1D4A2A6200658286 /* SpeltKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD8531D81D4A2A8D00658286 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B31D4A2A3500658286 /* Post.swift */; };
 		FD8531D91D4A2A8D00658286 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B41D4A2A3500658286 /* Site.swift */; };
 		FD8531DA1D4A2A8D00658286 /* SiteReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B51D4A2A3500658286 /* SiteReader.swift */; };
 		FD8531DB1D4A2A8D00658286 /* StaticFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B61D4A2A3500658286 /* StaticFile.swift */; };
-		FD8531DC1D4A2B4800658286 /* Spelt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* Spelt.framework */; };
 		FD8531E21D4A3A7200658286 /* SwiftHoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */; };
 		FD8531E41D4A3A7400658286 /* Hoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E31D4A3A7400658286 /* Hoedown.framework */; };
 		FD94A8BA1D75B279000D3888 /* PostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94A8B91D75B279000D3888 /* PostTests.swift */; };
@@ -55,31 +61,22 @@
 		FDB926321D6B4CA200B8D5D3 /* SiteBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB926311D6B4CA200B8D5D3 /* SiteBuilderTests.swift */; };
 		FDB9A8A91D54B99B0016CDB7 /* SassConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9A8A81D54B99B0016CDB7 /* SassConverter.swift */; };
 		FDB9A8AB1D54BF230016CDB7 /* SwiftSass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */; };
-		FDE1D6181D7D70DE009A1A77 /* Spelt.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* Spelt.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FDE6F9301D75DD0F001795FA /* CLI in Copy executable */ = {isa = PBXBuildFile; fileRef = FD8531A71D4A2A1200658286 /* CLI */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		FDE6F9321D75DD32001795FA /* SwiftSass.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FDE6F9331D75DD32001795FA /* PathKit.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = FD6D607B1D4BA3B100A7C277 /* PathKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FDE6F9341D75DD32001795FA /* SwiftYAML.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = FD6D5FE81D4B7B1A00A7C277 /* SwiftYAML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FDE6F9351D75DD32001795FA /* Hoedown.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E31D4A3A7400658286 /* Hoedown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		FDE6F9361D75DD32001795FA /* SwiftHoedown.framework in Copy frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FDE1D6221D7DB72D009A1A77 /* SwiftSass.framework in Copy Frameworks to embed in Framework */ = {isa = PBXBuildFile; fileRef = FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FDE1D6231D7DB72D009A1A77 /* PathKit.framework in Copy Frameworks to embed in Framework */ = {isa = PBXBuildFile; fileRef = FD6D607B1D4BA3B100A7C277 /* PathKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FDE1D6241D7DB72D009A1A77 /* SwiftYAML.framework in Copy Frameworks to embed in Framework */ = {isa = PBXBuildFile; fileRef = FD6D5FE81D4B7B1A00A7C277 /* SwiftYAML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FDE1D6251D7DB72D009A1A77 /* Hoedown.framework in Copy Frameworks to embed in Framework */ = {isa = PBXBuildFile; fileRef = FD8531E31D4A3A7400658286 /* Hoedown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FDE1D6261D7DB72D009A1A77 /* SwiftHoedown.framework in Copy Frameworks to embed in Framework */ = {isa = PBXBuildFile; fileRef = FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FD8531C71D4A2A6200658286 /* PBXContainerItemProxy */ = {
+		FD3915851D7DB80C00F7F5F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FD85319D1D4A29B700658286 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FD8531BC1D4A2A6200658286;
-			remoteInfo = Spelt;
+			remoteInfo = SpeltKit;
 		};
-		FDE6F92D1D75DCFA001795FA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FD85319D1D4A29B700658286 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FD8531A61D4A2A1200658286;
-			remoteInfo = CLI;
-		};
-		FDE6F9371D75DD3E001795FA /* PBXContainerItemProxy */ = {
+		FD8531C71D4A2A6200658286 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FD85319D1D4A29B700658286 /* Project object */;
 			proxyType = 1;
@@ -89,45 +86,52 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FD8531A51D4A2A1200658286 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-		FDE6F92F1D75DD03001795FA /* Copy executable */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 6;
-			files = (
-				FDE6F9301D75DD0F001795FA /* CLI in Copy executable */,
-			);
-			name = "Copy executable";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FDE6F9311D75DD17001795FA /* Copy frameworks */ = {
+		FD3915871D7DB80C00F7F5F7 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				FDE6F9321D75DD32001795FA /* SwiftSass.framework in Copy frameworks */,
-				FDE1D6181D7D70DE009A1A77 /* Spelt.framework in Copy frameworks */,
-				FDE6F9331D75DD32001795FA /* PathKit.framework in Copy frameworks */,
-				FDE6F9341D75DD32001795FA /* SwiftYAML.framework in Copy frameworks */,
-				FDE6F9351D75DD32001795FA /* Hoedown.framework in Copy frameworks */,
-				FDE6F9361D75DD32001795FA /* SwiftHoedown.framework in Copy frameworks */,
+				FD3915841D7DB80C00F7F5F7 /* SpeltKit.framework in Embed Frameworks */,
 			);
-			name = "Copy frameworks";
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FD3915891D7DC55500F7F5F7 /* Copy Frameworks to Products Directory */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				FD39158A1D7DC56000F7F5F7 /* SwiftSass.framework in Copy Frameworks to Products Directory */,
+				FD39158B1D7DC56000F7F5F7 /* PathKit.framework in Copy Frameworks to Products Directory */,
+				FD39158C1D7DC56000F7F5F7 /* SwiftYAML.framework in Copy Frameworks to Products Directory */,
+				FD39158D1D7DC56000F7F5F7 /* Hoedown.framework in Copy Frameworks to Products Directory */,
+				FD39158E1D7DC56000F7F5F7 /* SwiftHoedown.framework in Copy Frameworks to Products Directory */,
+			);
+			name = "Copy Frameworks to Products Directory";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FDE1D6211D7DB717009A1A77 /* Copy Frameworks to embed in Framework */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FDE1D6221D7DB72D009A1A77 /* SwiftSass.framework in Copy Frameworks to embed in Framework */,
+				FDE1D6231D7DB72D009A1A77 /* PathKit.framework in Copy Frameworks to embed in Framework */,
+				FDE1D6241D7DB72D009A1A77 /* SwiftYAML.framework in Copy Frameworks to embed in Framework */,
+				FDE1D6251D7DB72D009A1A77 /* Hoedown.framework in Copy Frameworks to embed in Framework */,
+				FDE1D6261D7DB72D009A1A77 /* SwiftHoedown.framework in Copy Frameworks to embed in Framework */,
+			);
+			name = "Copy Frameworks to embed in Framework";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FD3915751D7DB78E00F7F5F7 /* spelt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spelt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD39157E1D7DB78E00F7F5F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteReaderTests.swift; sourceTree = "<group>"; };
 		FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Paths.swift"; sourceTree = "<group>"; };
 		FD6D5FE41D4B4E7100A7C277 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -162,14 +166,13 @@
 		FD6D60791D4BA36A00A7C277 /* MarkdownConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownConverter.swift; sourceTree = "<group>"; };
 		FD6D607B1D4BA3B100A7C277 /* PathKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PathKit.framework; path = Carthage/Build/Mac/PathKit.framework; sourceTree = "<group>"; };
 		FD6D607D1D4BA51000A7C277 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		FD8531A71D4A2A1200658286 /* CLI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CLI; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8531B11D4A2A3500658286 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FD8531B31D4A2A3500658286 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FD8531B41D4A2A3500658286 /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
 		FD8531B51D4A2A3500658286 /* SiteReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiteReader.swift; sourceTree = "<group>"; };
 		FD8531B61D4A2A3500658286 /* StaticFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticFile.swift; sourceTree = "<group>"; };
-		FD8531BD1D4A2A6200658286 /* Spelt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Spelt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD8531BF1D4A2A6200658286 /* Spelt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Spelt.h; sourceTree = "<group>"; };
+		FD8531BD1D4A2A6200658286 /* SpeltKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SpeltKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD8531BF1D4A2A6200658286 /* SpeltKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeltKit.h; sourceTree = "<group>"; };
 		FD8531C01D4A2A6200658286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD8531C51D4A2A6200658286 /* SpeltTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeltTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD8531CC1D4A2A6200658286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -180,16 +183,14 @@
 		FDB926311D6B4CA200B8D5D3 /* SiteBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteBuilderTests.swift; sourceTree = "<group>"; };
 		FDB9A8A81D54B99B0016CDB7 /* SassConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SassConverter.swift; sourceTree = "<group>"; };
 		FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftSass.framework; path = Carthage/Build/Mac/SwiftSass.framework; sourceTree = "<group>"; };
-		FDE6F9271D75DC80001795FA /* CLI.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CLI.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDE6F9291D75DC80001795FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FD8531A41D4A2A1200658286 /* Frameworks */ = {
+		FD3915721D7DB78E00F7F5F7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD8531DC1D4A2B4800658286 /* Spelt.framework in Frameworks */,
+				FD3915831D7DB80C00F7F5F7 /* SpeltKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,16 +213,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FDE6F9241D75DC80001795FA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD3915761D7DB78E00F7F5F7 /* spelt */ = {
+			isa = PBXGroup;
+			children = (
+				FD39157E1D7DB78E00F7F5F7 /* Info.plist */,
+			);
+			path = spelt;
+			sourceTree = "<group>";
+		};
 		FD6D5FE21D4A4FBC00A7C277 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,7 +297,7 @@
 				FD8531AF1D4A2A3500658286 /* Sources */,
 				FD8531BE1D4A2A6200658286 /* Spelt */,
 				FD8531C91D4A2A6200658286 /* SpeltTests */,
-				FDE6F9281D75DC80001795FA /* CLIBundle */,
+				FD3915761D7DB78E00F7F5F7 /* spelt */,
 				FD8531A81D4A2A1200658286 /* Products */,
 				FD8531DD1D4A3A4400658286 /* Frameworks */,
 			);
@@ -304,10 +306,9 @@
 		FD8531A81D4A2A1200658286 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FD8531A71D4A2A1200658286 /* CLI */,
-				FD8531BD1D4A2A6200658286 /* Spelt.framework */,
+				FD8531BD1D4A2A6200658286 /* SpeltKit.framework */,
 				FD8531C51D4A2A6200658286 /* SpeltTests.xctest */,
-				FDE6F9271D75DC80001795FA /* CLI.bundle */,
+				FD3915751D7DB78E00F7F5F7 /* spelt.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -348,7 +349,7 @@
 		FD8531BE1D4A2A6200658286 /* Spelt */ = {
 			isa = PBXGroup;
 			children = (
-				FD8531BF1D4A2A6200658286 /* Spelt.h */,
+				FD8531BF1D4A2A6200658286 /* SpeltKit.h */,
 				FD8531C01D4A2A6200658286 /* Info.plist */,
 			);
 			path = Spelt;
@@ -387,14 +388,6 @@
 			name = Converters;
 			sourceTree = "<group>";
 		};
-		FDE6F9281D75DC80001795FA /* CLIBundle */ = {
-			isa = PBXGroup;
-			children = (
-				FDE6F9291D75DC80001795FA /* Info.plist */,
-			);
-			path = CLIBundle;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -402,47 +395,52 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD8531CD1D4A2A6200658286 /* Spelt.h in Headers */,
+				FD8531CD1D4A2A6200658286 /* SpeltKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		FD8531A61D4A2A1200658286 /* CLI */ = {
+		FD3915741D7DB78E00F7F5F7 /* spelt */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FD8531AE1D4A2A1200658286 /* Build configuration list for PBXNativeTarget "CLI" */;
+			buildConfigurationList = FD3915811D7DB78E00F7F5F7 /* Build configuration list for PBXNativeTarget "spelt" */;
 			buildPhases = (
-				FD8531A31D4A2A1200658286 /* Sources */,
-				FD8531A41D4A2A1200658286 /* Frameworks */,
-				FD8531A51D4A2A1200658286 /* CopyFiles */,
+				FD3915711D7DB78E00F7F5F7 /* Sources */,
+				FD3915721D7DB78E00F7F5F7 /* Frameworks */,
+				FD3915731D7DB78E00F7F5F7 /* Resources */,
+				FD3915871D7DB80C00F7F5F7 /* Embed Frameworks */,
+				FD3915881D7DB92300F7F5F7 /* Extract CLI Tool */,
+				FD39158F1D7DC91E00F7F5F7 /* Install executable */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				FDE6F9381D75DD3E001795FA /* PBXTargetDependency */,
+				FD3915861D7DB80C00F7F5F7 /* PBXTargetDependency */,
 			);
-			name = CLI;
-			productName = CLI;
-			productReference = FD8531A71D4A2A1200658286 /* CLI */;
-			productType = "com.apple.product-type.tool";
+			name = spelt;
+			productName = spelt;
+			productReference = FD3915751D7DB78E00F7F5F7 /* spelt.app */;
+			productType = "com.apple.product-type.application";
 		};
-		FD8531BC1D4A2A6200658286 /* Spelt */ = {
+		FD8531BC1D4A2A6200658286 /* SpeltKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FD8531CE1D4A2A6200658286 /* Build configuration list for PBXNativeTarget "Spelt" */;
+			buildConfigurationList = FD8531CE1D4A2A6200658286 /* Build configuration list for PBXNativeTarget "SpeltKit" */;
 			buildPhases = (
 				FD8531B81D4A2A6200658286 /* Sources */,
 				FD8531B91D4A2A6200658286 /* Frameworks */,
 				FD8531BA1D4A2A6200658286 /* Headers */,
 				FD8531BB1D4A2A6200658286 /* Resources */,
+				FDE1D6211D7DB717009A1A77 /* Copy Frameworks to embed in Framework */,
+				FD3915891D7DC55500F7F5F7 /* Copy Frameworks to Products Directory */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Spelt;
+			name = SpeltKit;
 			productName = Spelt;
-			productReference = FD8531BD1D4A2A6200658286 /* Spelt.framework */;
+			productReference = FD8531BD1D4A2A6200658286 /* SpeltKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FD8531C41D4A2A6200658286 /* SpeltTests */ = {
@@ -464,45 +462,20 @@
 			productReference = FD8531C51D4A2A6200658286 /* SpeltTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FDE6F9261D75DC80001795FA /* CLIBundle */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FDE6F92A1D75DC80001795FA /* Build configuration list for PBXNativeTarget "CLIBundle" */;
-			buildPhases = (
-				FDE6F9231D75DC80001795FA /* Sources */,
-				FDE6F9241D75DC80001795FA /* Frameworks */,
-				FDE6F9251D75DC80001795FA /* Resources */,
-				FDE6F92F1D75DD03001795FA /* Copy executable */,
-				FDE6F9311D75DD17001795FA /* Copy frameworks */,
-				FDE1D61A1D7D7F77009A1A77 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FDE6F92E1D75DCFA001795FA /* PBXTargetDependency */,
-			);
-			name = CLIBundle;
-			productName = CLIBundle;
-			productReference = FDE6F9271D75DC80001795FA /* CLI.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		FD85319D1D4A29B700658286 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0800;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0800;
 				TargetAttributes = {
-					FD8531A61D4A2A1200658286 = {
-						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = A9NP4475VH;
-						DevelopmentTeamName = "Niels de Hoog";
-						ProvisioningStyle = Automatic;
+					FD3915741D7DB78E00F7F5F7 = {
+						CreatedOnToolsVersion = 7.3.1;
 					};
 					FD8531BC1D4A2A6200658286 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = A9NP4475VH;
 						DevelopmentTeamName = "Niels de Hoog";
 						ProvisioningStyle = Automatic;
 					};
@@ -512,9 +485,6 @@
 						DevelopmentTeamName = "Niels de Hoog";
 						ProvisioningStyle = Automatic;
 					};
-					FDE6F9261D75DC80001795FA = {
-						CreatedOnToolsVersion = 7.3.1;
-					};
 				};
 			};
 			buildConfigurationList = FD8531A01D4A29B700658286 /* Build configuration list for PBXProject "Spelt" */;
@@ -523,21 +493,28 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = FD85319C1D4A29B700658286;
 			productRefGroup = FD8531A81D4A2A1200658286 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FD8531A61D4A2A1200658286 /* CLI */,
-				FD8531BC1D4A2A6200658286 /* Spelt */,
+				FD8531BC1D4A2A6200658286 /* SpeltKit */,
 				FD8531C41D4A2A6200658286 /* SpeltTests */,
-				FDE6F9261D75DC80001795FA /* CLIBundle */,
+				FD3915741D7DB78E00F7F5F7 /* spelt */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FD3915731D7DB78E00F7F5F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FD8531BB1D4A2A6200658286 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -552,16 +529,39 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FDE6F9251D75DC80001795FA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		FD3915881D7DB92300F7F5F7 /* Extract CLI Tool */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_PATH)",
+			);
+			name = "Extract CLI Tool";
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_NAME)",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/bash;
+			shellScript = "./Scripts/extract-tool";
+		};
+		FD39158F1D7DC91E00F7F5F7 /* Install executable */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Install executable";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make install";
+		};
 		FD6D5FDF1D4A471000A7C277 /* Copy frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -581,27 +581,14 @@
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
-		FDE1D61A1D7D7F77009A1A77 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "make install";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FD8531A31D4A2A1200658286 /* Sources */ = {
+		FD3915711D7DB78E00F7F5F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD8531B71D4A2A3A00658286 /* main.swift in Sources */,
+				FD3915821D7DB7BE00F7F5F7 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,47 +646,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FDE6F9231D75DC80001795FA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FD3915861D7DB80C00F7F5F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FD8531BC1D4A2A6200658286 /* SpeltKit */;
+			targetProxy = FD3915851D7DB80C00F7F5F7 /* PBXContainerItemProxy */;
+		};
 		FD8531C81D4A2A6200658286 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FD8531BC1D4A2A6200658286 /* Spelt */;
+			target = FD8531BC1D4A2A6200658286 /* SpeltKit */;
 			targetProxy = FD8531C71D4A2A6200658286 /* PBXContainerItemProxy */;
-		};
-		FDE6F92E1D75DCFA001795FA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FD8531A61D4A2A1200658286 /* CLI */;
-			targetProxy = FDE6F92D1D75DCFA001795FA /* PBXContainerItemProxy */;
-		};
-		FDE6F9381D75DD3E001795FA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FD8531BC1D4A2A6200658286 /* Spelt */;
-			targetProxy = FDE6F9371D75DD3E001795FA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		FD8531A11D4A29B700658286 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Debug;
-		};
-		FD8531A21D4A29B700658286 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Release;
-		};
-		FD8531AC1D4A2A1200658286 /* Debug */ = {
+		FD39157F1D7DB78E00F7F5F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -711,7 +674,6 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
@@ -719,14 +681,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -741,18 +701,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/$(PRODUCT_NAME).bundle/Contents/Frameworks";
+				INFOPLIST_FILE = spelt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/. @executable_path/../Frameworks @executable_path/SpeltKit.framework/Versions/Current/Frameworks /Library/Frameworks /Library/Frameworks/CarthageKit.framework/Versions/Current/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.spelt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		FD8531AD1D4A2A1200658286 /* Release */ = {
+		FD3915801D7DB78E00F7F5F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -764,7 +725,6 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
@@ -772,14 +732,12 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/Mac",
-				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -788,12 +746,25 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/$(PRODUCT_NAME).bundle/Contents/Frameworks";
+				INFOPLIST_FILE = spelt/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/. @executable_path/../Frameworks @executable_path/SpeltKit.framework/Versions/Current/Frameworks /Library/Frameworks /Library/Frameworks/CarthageKit.framework/Versions/Current/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.spelt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
-				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		FD8531A11D4A29B700658286 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		FD8531A21D4A29B700658286 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
 			};
 			name = Release;
 		};
@@ -816,6 +787,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -847,11 +819,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Spelt/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/$(PRODUCT_NAME).bundle/Contents/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.Spelt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.SpeltKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -882,6 +853,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
@@ -907,10 +879,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = Spelt/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.Spelt;
+				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.SpeltKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1027,106 +998,18 @@
 			};
 			name = Release;
 		};
-		FDE6F92B1D75DC80001795FA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = CLIBundle/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.CLIBundle;
-				PRODUCT_NAME = CLI;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		FDE6F92C1D75DC80001795FA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
-				COMBINE_HIDPI_IMAGES = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = CLIBundle/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.CLIBundle;
-				PRODUCT_NAME = CLI;
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FD3915811D7DB78E00F7F5F7 /* Build configuration list for PBXNativeTarget "spelt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD39157F1D7DB78E00F7F5F7 /* Debug */,
+				FD3915801D7DB78E00F7F5F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FD8531A01D4A29B700658286 /* Build configuration list for PBXProject "Spelt" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1136,16 +1019,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FD8531AE1D4A2A1200658286 /* Build configuration list for PBXNativeTarget "CLI" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FD8531AC1D4A2A1200658286 /* Debug */,
-				FD8531AD1D4A2A1200658286 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FD8531CE1D4A2A6200658286 /* Build configuration list for PBXNativeTarget "Spelt" */ = {
+		FD8531CE1D4A2A6200658286 /* Build configuration list for PBXNativeTarget "SpeltKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FD8531CF1D4A2A6200658286 /* Debug */,
@@ -1159,15 +1033,6 @@
 			buildConfigurations = (
 				FD8531D21D4A2A6200658286 /* Debug */,
 				FD8531D31D4A2A6200658286 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FDE6F92A1D75DC80001795FA /* Build configuration list for PBXNativeTarget "CLIBundle" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FDE6F92B1D75DC80001795FA /* Debug */,
-				FDE6F92C1D75DC80001795FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,3 +1,5 @@
+import Foundation
+
 public struct SiteBuilder {
     let site: Site
     let buildPath: String

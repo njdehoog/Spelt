@@ -7,9 +7,9 @@ public enum Metadata {
     case Int(Swift.Int)
     case Double(Swift.Double)
     case Date(NSDate)
-    indirect case File(Spelt.FileWithMetadata)
-    case Array([Spelt.Metadata])
-    case Dictionary([Swift.String: Spelt.Metadata])
+    indirect case File(SpeltKit.FileWithMetadata)
+    case Array([SpeltKit.Metadata])
+    case Dictionary([Swift.String: SpeltKit.Metadata])
 }
 
 extension Metadata {
@@ -34,7 +34,7 @@ extension Metadata {
         return nil
     }
     
-    var fileValue: Spelt.File? {
+    var fileValue: SpeltKit.File? {
         if case .File(let file) = self {
             return file
         }

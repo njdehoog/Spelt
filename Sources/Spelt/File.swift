@@ -1,3 +1,5 @@
+import Foundation
+
 public protocol File: class {
     var path: String { get }
     

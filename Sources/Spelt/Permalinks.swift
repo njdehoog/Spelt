@@ -1,3 +1,5 @@
+import Foundation
+
 struct PermalinkRenderer: Renderer {
     let site: Site
     

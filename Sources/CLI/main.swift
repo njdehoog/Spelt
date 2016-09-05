@@ -1,7 +1,7 @@
-import Spelt
-import Commandant
+import SpeltKit
+//import Commandant
 
-print("Hello CLI 3")
+print("Hello CLI!!!")
 
 let fixturesPath = "~/Projects/Spelt/framework/SpeltTests/Fixtures".stringByExpandingTildeInPath
 let sampleProjectPath = fixturesPath.stringByAppendingPathComponent("test-site")
