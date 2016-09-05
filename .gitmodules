@@ -22,3 +22,9 @@
 [submodule "Stencil"]
 	path = Stencil
 	url = https://github.com/njdehoog/Stencil.git
+[submodule "Carthage/Checkouts/Result"]
+	path = Carthage/Checkouts/Result
+	url = https://github.com/antitypical/Result.git
+[submodule "Carthage/Checkouts/Commandant"]
+	path = Carthage/Checkouts/Commandant
+	url = https://github.com/Carthage/Commandant.git

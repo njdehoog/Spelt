@@ -1,4 +1,5 @@
 import Spelt
+import Commandant
 
 print("Hello CLI 3")
 

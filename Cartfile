@@ -4,3 +4,4 @@ github "njdehoog/Witness" "master"
 github "sagmor/GCDWebServer" "frameworks"
 github "njdehoog/swift-sass" == 0.1.0
 github "kylef/PathKit"
+github "Carthage/Commandant"
