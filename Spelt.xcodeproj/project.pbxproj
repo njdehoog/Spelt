@@ -15,6 +15,13 @@
 		FD39158C1D7DC56000F7F5F7 /* SwiftYAML.framework in Copy Frameworks to Products Directory */ = {isa = PBXBuildFile; fileRef = FD6D5FE81D4B7B1A00A7C277 /* SwiftYAML.framework */; };
 		FD39158D1D7DC56000F7F5F7 /* Hoedown.framework in Copy Frameworks to Products Directory */ = {isa = PBXBuildFile; fileRef = FD8531E31D4A3A7400658286 /* Hoedown.framework */; };
 		FD39158E1D7DC56000F7F5F7 /* SwiftHoedown.framework in Copy Frameworks to Products Directory */ = {isa = PBXBuildFile; fileRef = FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */; };
+		FD3915921D7DCBAE00F7F5F7 /* Commandant.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3915901D7DCBAE00F7F5F7 /* Commandant.framework */; };
+		FD3915931D7DCBAE00F7F5F7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD3915911D7DCBAE00F7F5F7 /* Result.framework */; };
+		FD3915941D7DCBB800F7F5F7 /* Commandant.framework in Copy Frameworks to embed in Framework */ = {isa = PBXBuildFile; fileRef = FD3915901D7DCBAE00F7F5F7 /* Commandant.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD3915951D7DCBBB00F7F5F7 /* Result.framework in Copy Frameworks to embed in Framework */ = {isa = PBXBuildFile; fileRef = FD3915911D7DCBAE00F7F5F7 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD3915961D7DCBBF00F7F5F7 /* Commandant.framework in Copy Frameworks to Products Directory */ = {isa = PBXBuildFile; fileRef = FD3915901D7DCBAE00F7F5F7 /* Commandant.framework */; };
+		FD3915971D7DCBC100F7F5F7 /* Result.framework in Copy Frameworks to Products Directory */ = {isa = PBXBuildFile; fileRef = FD3915911D7DCBAE00F7F5F7 /* Result.framework */; };
+		FD3915991D7EEF8600F7F5F7 /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3915981D7EEF8600F7F5F7 /* Build.swift */; };
 		FD6D5FD81D4A3C1100A7C277 /* SiteReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */; };
 		FD6D5FE11D4A4BE600A7C277 /* String+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */; };
 		FD6D5FE51D4B4E7100A7C277 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FE41D4B4E7100A7C277 /* Document.swift */; };
@@ -104,6 +111,8 @@
 			dstSubfolderSpec = 16;
 			files = (
 				FD39158A1D7DC56000F7F5F7 /* SwiftSass.framework in Copy Frameworks to Products Directory */,
+				FD3915961D7DCBBF00F7F5F7 /* Commandant.framework in Copy Frameworks to Products Directory */,
+				FD3915971D7DCBC100F7F5F7 /* Result.framework in Copy Frameworks to Products Directory */,
 				FD39158B1D7DC56000F7F5F7 /* PathKit.framework in Copy Frameworks to Products Directory */,
 				FD39158C1D7DC56000F7F5F7 /* SwiftYAML.framework in Copy Frameworks to Products Directory */,
 				FD39158D1D7DC56000F7F5F7 /* Hoedown.framework in Copy Frameworks to Products Directory */,
@@ -120,6 +129,8 @@
 			files = (
 				FDE1D6221D7DB72D009A1A77 /* SwiftSass.framework in Copy Frameworks to embed in Framework */,
 				FDE1D6231D7DB72D009A1A77 /* PathKit.framework in Copy Frameworks to embed in Framework */,
+				FD3915951D7DCBBB00F7F5F7 /* Result.framework in Copy Frameworks to embed in Framework */,
+				FD3915941D7DCBB800F7F5F7 /* Commandant.framework in Copy Frameworks to embed in Framework */,
 				FDE1D6241D7DB72D009A1A77 /* SwiftYAML.framework in Copy Frameworks to embed in Framework */,
 				FDE1D6251D7DB72D009A1A77 /* Hoedown.framework in Copy Frameworks to embed in Framework */,
 				FDE1D6261D7DB72D009A1A77 /* SwiftHoedown.framework in Copy Frameworks to embed in Framework */,
@@ -132,6 +143,9 @@
 /* Begin PBXFileReference section */
 		FD3915751D7DB78E00F7F5F7 /* spelt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spelt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD39157E1D7DB78E00F7F5F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD3915901D7DCBAE00F7F5F7 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
+		FD3915911D7DCBAE00F7F5F7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
+		FD3915981D7EEF8600F7F5F7 /* Build.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
 		FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteReaderTests.swift; sourceTree = "<group>"; };
 		FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Paths.swift"; sourceTree = "<group>"; };
 		FD6D5FE41D4B4E7100A7C277 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -198,6 +212,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD3915921D7DCBAE00F7F5F7 /* Commandant.framework in Frameworks */,
+				FD3915931D7DCBAE00F7F5F7 /* Result.framework in Frameworks */,
 				FD8531E21D4A3A7200658286 /* SwiftHoedown.framework in Frameworks */,
 				FD8531E41D4A3A7400658286 /* Hoedown.framework in Frameworks */,
 				FD6D607C1D4BA3B100A7C277 /* PathKit.framework in Frameworks */,
@@ -326,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				FD8531B11D4A2A3500658286 /* main.swift */,
+				FD3915981D7EEF8600F7F5F7 /* Build.swift */,
 			);
 			path = CLI;
 			sourceTree = "<group>";
@@ -370,6 +387,8 @@
 		FD8531DD1D4A3A4400658286 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD3915901D7DCBAE00F7F5F7 /* Commandant.framework */,
+				FD3915911D7DCBAE00F7F5F7 /* Result.framework */,
 				FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */,
 				FD6D607B1D4BA3B100A7C277 /* PathKit.framework */,
 				FD6D5FE81D4B7B1A00A7C277 /* SwiftYAML.framework */,
@@ -588,6 +607,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD3915991D7EEF8600F7F5F7 /* Build.swift in Sources */,
 				FD3915821D7DB7BE00F7F5F7 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
