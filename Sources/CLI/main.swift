@@ -14,6 +14,7 @@ enum SpeltError: ErrorType {
 
 let registry = CommandRegistry<SpeltError>()
 registry.register(BuildCommand())
+registry.register(ServeCommand())
 
 let helpCommand = HelpCommand(registry: registry)
 registry.register(helpCommand)

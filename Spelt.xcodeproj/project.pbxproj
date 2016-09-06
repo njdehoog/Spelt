@@ -22,6 +22,14 @@
 		FD3915961D7DCBBF00F7F5F7 /* Commandant.framework in Copy Frameworks to Products Directory */ = {isa = PBXBuildFile; fileRef = FD3915901D7DCBAE00F7F5F7 /* Commandant.framework */; };
 		FD3915971D7DCBC100F7F5F7 /* Result.framework in Copy Frameworks to Products Directory */ = {isa = PBXBuildFile; fileRef = FD3915911D7DCBAE00F7F5F7 /* Result.framework */; };
 		FD3915991D7EEF8600F7F5F7 /* Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3915981D7EEF8600F7F5F7 /* Build.swift */; };
+		FD39159E1D7F015E00F7F5F7 /* GCDWebServers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD39159C1D7F015E00F7F5F7 /* GCDWebServers.framework */; };
+		FD39159F1D7F015E00F7F5F7 /* Witness.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD39159D1D7F015E00F7F5F7 /* Witness.framework */; };
+		FD3915A01D7F016600F7F5F7 /* GCDWebServers.framework in Copy Frameworks to embed in Framework */ = {isa = PBXBuildFile; fileRef = FD39159C1D7F015E00F7F5F7 /* GCDWebServers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD3915A11D7F016600F7F5F7 /* Witness.framework in Copy Frameworks to embed in Framework */ = {isa = PBXBuildFile; fileRef = FD39159D1D7F015E00F7F5F7 /* Witness.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FD3915A21D7F016A00F7F5F7 /* GCDWebServers.framework in Copy Frameworks to Products Directory */ = {isa = PBXBuildFile; fileRef = FD39159C1D7F015E00F7F5F7 /* GCDWebServers.framework */; };
+		FD3915A31D7F016A00F7F5F7 /* Witness.framework in Copy Frameworks to Products Directory */ = {isa = PBXBuildFile; fileRef = FD39159D1D7F015E00F7F5F7 /* Witness.framework */; };
+		FD3915A51D7F01B300F7F5F7 /* Serve.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3915A41D7F01B300F7F5F7 /* Serve.swift */; };
+		FD3915A61D7F01B700F7F5F7 /* SiteServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39159A1D7F011600F7F5F7 /* SiteServer.swift */; };
 		FD6D5FD81D4A3C1100A7C277 /* SiteReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */; };
 		FD6D5FE11D4A4BE600A7C277 /* String+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */; };
 		FD6D5FE51D4B4E7100A7C277 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FE41D4B4E7100A7C277 /* Document.swift */; };
@@ -110,6 +118,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				FD3915A21D7F016A00F7F5F7 /* GCDWebServers.framework in Copy Frameworks to Products Directory */,
+				FD3915A31D7F016A00F7F5F7 /* Witness.framework in Copy Frameworks to Products Directory */,
 				FD39158A1D7DC56000F7F5F7 /* SwiftSass.framework in Copy Frameworks to Products Directory */,
 				FD3915961D7DCBBF00F7F5F7 /* Commandant.framework in Copy Frameworks to Products Directory */,
 				FD3915971D7DCBC100F7F5F7 /* Result.framework in Copy Frameworks to Products Directory */,
@@ -134,6 +144,8 @@
 				FDE1D6241D7DB72D009A1A77 /* SwiftYAML.framework in Copy Frameworks to embed in Framework */,
 				FDE1D6251D7DB72D009A1A77 /* Hoedown.framework in Copy Frameworks to embed in Framework */,
 				FDE1D6261D7DB72D009A1A77 /* SwiftHoedown.framework in Copy Frameworks to embed in Framework */,
+				FD3915A01D7F016600F7F5F7 /* GCDWebServers.framework in Copy Frameworks to embed in Framework */,
+				FD3915A11D7F016600F7F5F7 /* Witness.framework in Copy Frameworks to embed in Framework */,
 			);
 			name = "Copy Frameworks to embed in Framework";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,6 +158,10 @@
 		FD3915901D7DCBAE00F7F5F7 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
 		FD3915911D7DCBAE00F7F5F7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		FD3915981D7EEF8600F7F5F7 /* Build.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
+		FD39159A1D7F011600F7F5F7 /* SiteServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteServer.swift; sourceTree = "<group>"; };
+		FD39159C1D7F015E00F7F5F7 /* GCDWebServers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GCDWebServers.framework; path = Carthage/Build/Mac/GCDWebServers.framework; sourceTree = "<group>"; };
+		FD39159D1D7F015E00F7F5F7 /* Witness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Witness.framework; path = Carthage/Build/Mac/Witness.framework; sourceTree = "<group>"; };
+		FD3915A41D7F01B300F7F5F7 /* Serve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serve.swift; sourceTree = "<group>"; };
 		FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteReaderTests.swift; sourceTree = "<group>"; };
 		FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Paths.swift"; sourceTree = "<group>"; };
 		FD6D5FE41D4B4E7100A7C277 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -212,6 +228,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD39159E1D7F015E00F7F5F7 /* GCDWebServers.framework in Frameworks */,
+				FD39159F1D7F015E00F7F5F7 /* Witness.framework in Frameworks */,
 				FD3915921D7DCBAE00F7F5F7 /* Commandant.framework in Frameworks */,
 				FD3915931D7DCBAE00F7F5F7 /* Result.framework in Frameworks */,
 				FD8531E21D4A3A7200658286 /* SwiftHoedown.framework in Frameworks */,
@@ -343,6 +361,7 @@
 			children = (
 				FD8531B11D4A2A3500658286 /* main.swift */,
 				FD3915981D7EEF8600F7F5F7 /* Build.swift */,
+				FD3915A41D7F01B300F7F5F7 /* Serve.swift */,
 			);
 			path = CLI;
 			sourceTree = "<group>";
@@ -354,6 +373,7 @@
 				FD8531B51D4A2A3500658286 /* SiteReader.swift */,
 				FD6D5FEF1D4B8FD400A7C277 /* SiteBuilder.swift */,
 				FD6D5FF51D4B90F000A7C277 /* SiteRenderer.swift */,
+				FD39159A1D7F011600F7F5F7 /* SiteServer.swift */,
 				FDB9A8A71D54B6BA0016CDB7 /* Converters */,
 				FD6D5FF91D4B968C00A7C277 /* Renderers */,
 				FD6D5FE31D4A4FC700A7C277 /* Model */,
@@ -387,6 +407,8 @@
 		FD8531DD1D4A3A4400658286 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD39159C1D7F015E00F7F5F7 /* GCDWebServers.framework */,
+				FD39159D1D7F015E00F7F5F7 /* Witness.framework */,
 				FD3915901D7DCBAE00F7F5F7 /* Commandant.framework */,
 				FD3915911D7DCBAE00F7F5F7 /* Result.framework */,
 				FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */,
@@ -609,6 +631,7 @@
 			files = (
 				FD3915991D7EEF8600F7F5F7 /* Build.swift in Sources */,
 				FD3915821D7DB7BE00F7F5F7 /* main.swift in Sources */,
+				FD3915A51D7F01B300F7F5F7 /* Serve.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +669,7 @@
 				FD6D607E1D4BA51000A7C277 /* Error.swift in Sources */,
 				FD6D606D1D4BA19D00A7C277 /* Tokenizer.swift in Sources */,
 				FD6D60741D4BA2AE00A7C277 /* Stencil+MathFilters.swift in Sources */,
+				FD3915A61D7F01B700F7F5F7 /* SiteServer.swift in Sources */,
 				FD6D60721D4BA27900A7C277 /* Stencil+Spelt.swift in Sources */,
 				FD6D60761D4BA2D500A7C277 /* String+HTML.swift in Sources */,
 				FD8531DB1D4A2A8D00658286 /* StaticFile.swift in Sources */,
