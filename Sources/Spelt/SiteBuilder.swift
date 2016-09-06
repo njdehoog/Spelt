@@ -6,7 +6,12 @@ public struct SiteBuilder {
     
     private let fileManager = NSFileManager()
     
-    func build() throws {
+    public init(site: Site, buildPath: String) {
+        self.site = site
+        self.buildPath = buildPath
+    }
+    
+    public func build() throws {
         try SiteRenderer(site: site).render()
         try cleanBuildDirectory()
         try createBuildDirectory()

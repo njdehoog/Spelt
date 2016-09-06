@@ -10,8 +10,16 @@ import Result
 //
 ////print("building site: \(site)")
 
-struct SpeltError: ErrorType {
-    let description = "Placeholder description"
+enum SpeltError: ErrorType {
+    case defaultError
+    
+    var description: String {
+        switch self {
+        case .defaultError:
+            // FIXME
+            return "Some error occurred"
+        }
+    }
 }
 
 

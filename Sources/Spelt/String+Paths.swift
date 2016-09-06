@@ -56,6 +56,10 @@ public extension String {
     var stringByExpandingTildeInPath: String {
         return (self as NSString).stringByExpandingTildeInPath
     }
+    
+    var stringByStandardizingPath: String {
+        return (self as NSString).stringByStandardizingPath
+    }
 }
 
 // Add method for extracting root domain
@@ -100,5 +104,25 @@ public extension String {
             return false
         }
         return true
+    }
+}
+
+// Relative and absolute paths
+
+public extension String {
+    var isAbsolutePath: Bool {
+        return hasPrefix("/")
+    }
+    
+    var isRelativePath: Bool {
+        return !isAbsolutePath
+    }
+    
+    var absolutePath: String {
+        guard isRelativePath else {
+            return self
+        }
+        
+        return NSFileManager().currentDirectoryPath.stringByAppendingPathComponent(self)
     }
 }
