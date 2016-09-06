@@ -1,14 +1,4 @@
-import SpeltKit
 import Commandant
-import Result
-
-
-//let fixturesPath = "~/Projects/Spelt/framework/SpeltTests/Fixtures".stringByExpandingTildeInPath
-//let sampleProjectPath = fixturesPath.stringByAppendingPathComponent("test-site")
-//
-//let site = try SiteReader(sitePath: sampleProjectPath).read()
-//
-////print("building site: \(site)")
 
 enum SpeltError: ErrorType {
     case defaultError
@@ -21,7 +11,6 @@ enum SpeltError: ErrorType {
         }
     }
 }
-
 
 let registry = CommandRegistry<SpeltError>()
 registry.register(BuildCommand())
