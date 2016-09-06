@@ -26,10 +26,15 @@ struct BuildCommand: CommandType {
     let function = "Build your site"
     
     func run(options: Options) -> Result<(), SpeltError> {
+        print("Source: \(options.sourcePath)")
+        print("Destination: \(options.destinationPath)")
+        
         do {
+            print("Generating...")
             let site = try SiteReader(sitePath: options.sourcePath).read()
             let siteBuilder = SiteBuilder(site: site, buildPath: options.destinationPath)
             try siteBuilder.build()
+            print("Done")
         }
         catch {
             // FIXME: fix error handling
