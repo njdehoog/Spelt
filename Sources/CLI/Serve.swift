@@ -21,10 +21,8 @@ struct ServeCommand: CommandType {
             return Result.Failure(SpeltError.defaultError)
         }
         
-        if options.watch {
-            // keep process alive
-            CFRunLoopRun()
-        }
+        // keep process alive
+        CFRunLoopRun()
         
         return Result.Success()
     }
