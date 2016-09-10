@@ -10,15 +10,21 @@ public class SiteServer {
         self.indexFilename = indexFilename
         
         // log only warnings, errors and exceptions
-//        GCDWebServer.setLogLevel(3)
+        GCDWebServer.setLogLevel(3)
+        
+        server.addGETHandlerForBasePath("/", directoryPath: directoryPath, indexFilename: indexFilename , cacheAge: 0, allowRangeRequests: true)
     }
     
     deinit {
         server.stop()
     }
     
-    public func run() -> Bool {
-        server.addGETHandlerForBasePath("/", directoryPath: directoryPath, indexFilename: indexFilename , cacheAge: 0, allowRangeRequests: true)
-        return server.runWithPort(8080, bonjourName: nil)
+    public func run() throws {
+        try server.runWithOptions([:])
+    }
+    
+    public func start() throws -> (NSURL, UInt) {
+        try server.startWithOptions([:])
+        return (server.serverURL!, server.port)
     }
 }

@@ -2,16 +2,20 @@ import SpeltKit
 import Commandant
 import Result
 
+var server: SiteServer?
+
 struct ServeCommand: CommandType {
     typealias Options = BuildOptions
     
-    let verb = "serve"
+    let verb = "preview"
     let function = "Preview your site locally"
     
     func run(options: Options) -> Result<(), SpeltError> {
         do {
             try BuildCommand().build(options)
-            SiteServer(directoryPath: options.destinationPath).run()
+            server = SiteServer(directoryPath: options.destinationPath)
+            let (_, port) = try server!.start()
+            print("Preview your site at: http://0.0.0.0:\(port)")
         }
         catch {
             return Result.Failure(SpeltError.defaultError)
