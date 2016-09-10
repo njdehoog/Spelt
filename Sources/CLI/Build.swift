@@ -19,7 +19,7 @@ struct BuildOptions: OptionsType {
         return create
             <*> m <| Option(key: "source", defaultValue: BuildCommand.currentDirectoryPath, usage: "Source directory (defaults to ./)")
             <*> m <| Option(key: "destination", defaultValue: BuildCommand.currentDirectoryPath.stringByAppendingPathComponent("_build"), usage: "Destination directory (defaults to ./_build)")
-            <*> m <| Option(key: "watch", defaultValue: true, usage: "Watch for changes and rebuild")
+            <*> m <| Option(key: "watch", defaultValue: true, usage: "Disable auto-regeneration")
     }
 }
 
