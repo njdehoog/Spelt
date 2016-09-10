@@ -1,5 +1,5 @@
 import XCTest
-@testable import Spelt
+@testable import SpeltKit
 
 class SiteRendererTests: XCTestCase {
 
@@ -77,5 +77,14 @@ class SiteRendererTests: XCTestCase {
     func testThatOutputIsPlacedInLayout() {
         let page = site.documents.filter({ $0.fileName == "about.md" }).first
         XCTAssertEqual(page?.contents, "<article><p>Sample About page</p>\n</article>")
+    }
+    
+    // MARK: collections
+    
+    func testThatPostsCollectionIsRendered() {
+        let indexPage = site.documents.filter({ $0.fileName == "blog.html" }).first
+        let string = indexPage?.contents.containsString("hello")
+        print(indexPage?.contents)
+        XCTAssertNotNil(indexPage)
     }
 }

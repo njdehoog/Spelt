@@ -1,5 +1,5 @@
 import XCTest
-@testable import Spelt
+@testable import SpeltKit
 
 class SiteBuilderTests: XCTestCase {
     

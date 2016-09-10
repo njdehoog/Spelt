@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import Spelt
+@testable import SpeltKit
 
 class PostTests: XCTestCase {
     

@@ -8,7 +8,7 @@ struct TemplateRenderer: Renderer {
     
     private var defaultContext: Context {
         var contextDict = [String: Any]()
-        contextDict["site"] = site.metadata.rawValue as! [String: Any]
+        contextDict["site"] = site.payload
         contextDict["loader"] = TemplateLoader(paths: [Path(SiteConfiguration.Path.Includes.rawValue)])
         return Context(dictionary: contextDict)
     }

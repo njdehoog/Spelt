@@ -21,3 +21,13 @@ public final class Site {
         self.metadata = metadata
     }
 }
+
+extension Site {
+    var payload: [String: Any] {
+        
+        var siteMetadata = metadata
+        siteMetadata["posts"] = Metadata(posts: posts)
+        
+        return siteMetadata.rawValue as! [String: Any]
+    }
+}

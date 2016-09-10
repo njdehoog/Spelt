@@ -318,3 +318,11 @@ extension Metadata {
     }
 }
 
+extension Metadata {
+    // FIXME: this should be an array of FileWithMetadata
+     init(posts: [Post]) {
+        let fileArray: [Metadata] = posts.map({ Metadata.File($0) })
+        self = Metadata.Array(fileArray)
+    }
+}
+
