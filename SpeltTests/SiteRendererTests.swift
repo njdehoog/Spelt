@@ -82,7 +82,12 @@ class SiteRendererTests: XCTestCase {
     // MARK: collections
     
     func testThatPostsCollectionIsRendered() {
-        XCTAssertEqual(site.metadata["posts"]!.arrayValue!.map({ $0.fileValue! as! Post }), site.posts)
+        XCTAssertEqual(site.metadata["posts"]!.arrayValue!.map({ $0.fileValue! as! Post }), site.posts.sort(Site.defaultFileSorting))
+    }
+    
+    func testThatPostsCollectionIsSortedByDate() {
+        let markdownPost = site.posts.filter({ $0.fileName == "markdown.md" }).first!
+        XCTAssertEqual(site.metadata["posts"]!.arrayValue!.map({ $0.fileValue! as! Post }).last, markdownPost)
     }
     
     func testThatPostsCollectionIsRenderedInPage() {

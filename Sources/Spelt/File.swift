@@ -72,12 +72,12 @@ extension FileWithMetadata {
 }
 
 extension FileWithMetadata {
-    public var categories: [String]? {
+    public var categories: [String] {
         if let categories = metadata["categories"]?.arrayValue {
             return categories.map({ $0.stringValue! })
         }
         
-        return nil
+        return []
     }
 }
 

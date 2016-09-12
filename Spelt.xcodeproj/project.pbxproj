@@ -599,7 +599,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/bash;
-			shellScript = "./Scripts/extract-tool";
+			shellScript = "./Scripts/extract-tool\n";
 		};
 		FD39158F1D7DC91E00F7F5F7 /* Install executable */ = {
 			isa = PBXShellScriptBuildPhase;

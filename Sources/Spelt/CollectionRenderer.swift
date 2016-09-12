@@ -3,32 +3,35 @@
  */
 
 struct CollectionRenderer: Renderer {
+    static let defaultSortingKey = "date"
+    
     let site: Site
     
     func render() throws {
-        var collections = [String: [FileWithMetadata]]()
+        let categoryNames = site.filesWithMetadata.flatMap({ $0.categories })
+        print(categoryNames)
         
-        for file in site.filesWithMetadata {
-            var categories = file.categories ?? [String]()
-            if file is Post {
-                // posts are in "posts" collection by default
-                categories.append("posts")
-            }
-            
-            for category in categories {
-                var filesInCategory = collections[category] ?? [FileWithMetadata]()
-                filesInCategory.append(file)
-                collections[category] = filesInCategory
-            }
+        site.metadata["collections"] = Metadata.Array(categoryNames.map({ Metadata.String($0) }))
+        
+        for categoryName in categoryNames {
+            let sortedFiles = site.filesInCategory(categoryName).sort(Site.defaultFileSorting)
+            site.metadata[categoryName] = Metadata(files: sortedFiles)
         }
         
-        var siteMetadata = site.metadata
-        siteMetadata["collections"] = Metadata.Array(collections.keys.map({ Metadata.String($0) }))
-        
-        for (category, files) in collections {
-            siteMetadata[category] = Metadata(files: files)
+        // posts are in "posts" collection by default
+        let sortedPosts = site.posts.map({ $0 as FileWithMetadata }).sort(Site.defaultFileSorting)
+        site.metadata["posts"] = Metadata(files: sortedPosts)
+    }
+}
+
+extension Site {
+    public static func defaultFileSorting(first: FileWithMetadata, second: FileWithMetadata) -> Bool {
+        return first.metadata["date"] > second.metadata["date"]
+    }
+    
+    public func filesInCategory(categoryName: String) -> [FileWithMetadata] {
+        return filesWithMetadata.filter() { file in
+            return file.categories.contains(categoryName)
         }
-        
-        site.metadata = siteMetadata
     }
 }
