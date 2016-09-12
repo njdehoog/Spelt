@@ -94,4 +94,16 @@ class SiteRendererTests: XCTestCase {
         let post = site.posts.filter({ $0.fileName == "markdown.md" }).first!
         XCTAssertEqual(site.metadata["writing"]!.arrayValue!.first!.fileValue as? Post, post)
     }
+    
+    // MARK: excerpts
+    
+    func testThatExcerptMetadataIsNotOverWritten() {
+        let post = site.posts.filter({ $0.fileName == "site-title.md" }).first!
+        XCTAssertEqual(post.metadata["excerpt"], "some excerpt")
+    }
+    
+    func testThatExcerptIsRendered() {
+        let post = site.posts.filter({ $0.fileName == "hello-world.md" }).first!
+        XCTAssertEqual(post.metadata["excerpt"], "Hello world")
+    }
 }

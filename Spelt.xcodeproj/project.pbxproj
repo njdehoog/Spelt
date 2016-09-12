@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD2EE1041D86CA1C00700C58 /* ExcerptRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2EE1031D86CA1C00700C58 /* ExcerptRenderer.swift */; };
 		FD3915821D7DB7BE00F7F5F7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B11D4A2A3500658286 /* main.swift */; };
 		FD3915831D7DB80C00F7F5F7 /* SpeltKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* SpeltKit.framework */; };
 		FD3915841D7DB80C00F7F5F7 /* SpeltKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* SpeltKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -155,6 +156,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FD2EE1031D86CA1C00700C58 /* ExcerptRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcerptRenderer.swift; sourceTree = "<group>"; };
 		FD3915751D7DB78E00F7F5F7 /* spelt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spelt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD39157E1D7DB78E00F7F5F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD3915901D7DCBAE00F7F5F7 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				FD6D5FFA1D4B969B00A7C277 /* Permalinks.swift */,
 				FD6D606F1D4BA21B00A7C277 /* TemplateRenderer.swift */,
 				FDF93A061D84554100C9C8FF /* CollectionRenderer.swift */,
+				FD2EE1031D86CA1C00700C58 /* ExcerptRenderer.swift */,
 			);
 			name = Renderers;
 			sourceTree = "<group>";
@@ -647,6 +650,7 @@
 			files = (
 				FD6D5FF01D4B8FD400A7C277 /* SiteBuilder.swift in Sources */,
 				FD6D606E1D4BA19D00A7C277 /* Variable.swift in Sources */,
+				FD2EE1041D86CA1C00700C58 /* ExcerptRenderer.swift in Sources */,
 				FDB9A8A91D54B99B0016CDB7 /* SassConverter.swift in Sources */,
 				FD6D60681D4BA19D00A7C277 /* String+Extensions.swift in Sources */,
 				FD6D60651D4BA19D00A7C277 /* Namespace.swift in Sources */,

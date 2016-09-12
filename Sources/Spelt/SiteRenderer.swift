@@ -8,6 +8,7 @@ public struct SiteRenderer {
         
         try convert()
         
+        try ExcerptRenderer(site: site).render()
         try TemplateRenderer(site: site, type: .UsingTemplate).render()
     }
     
