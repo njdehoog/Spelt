@@ -9,7 +9,7 @@ struct TemplateRenderer: Renderer {
     private var defaultContext: Context {
         var contextDict = [String: Any]()
         contextDict["site"] = site.payload
-        contextDict["loader"] = TemplateLoader(paths: [Path(SiteConfiguration.Path.Includes.rawValue)])
+        contextDict["loader"] = TemplateLoader(paths: [Path(SiteConfiguration.Path.Includes.relativeToPath(site.path))])
         return Context(dictionary: contextDict)
     }
     
