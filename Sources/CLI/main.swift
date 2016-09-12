@@ -1,14 +1,12 @@
 import Commandant
 
-enum SpeltError: ErrorType {
-    case defaultError
-    
+struct SpeltError: ErrorType {
+    let underlyingError: ErrorType
+}
+
+extension SpeltError: CustomStringConvertible {
     var description: String {
-        switch self {
-        case .defaultError:
-            // FIXME
-            return "Some error occurred"
-        }
+        return "\(underlyingError)"
     }
 }
 

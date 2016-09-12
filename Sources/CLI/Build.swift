@@ -37,7 +37,7 @@ struct BuildCommand: CommandType {
         }
         catch {
             // FIXME: fix error handling
-            return Result.Failure(SpeltError.defaultError)
+            return Result.Failure(SpeltError(underlyingError: error))
         }
         
         if options.watch {

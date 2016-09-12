@@ -18,7 +18,7 @@ struct ServeCommand: CommandType {
             print("Preview your site at: http://0.0.0.0:\(port)")
         }
         catch {
-            return Result.Failure(SpeltError.defaultError)
+            return Result.Failure(SpeltError(underlyingError: error))
         }
         
         // keep process alive
