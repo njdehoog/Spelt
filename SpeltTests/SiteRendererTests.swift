@@ -32,8 +32,8 @@ class SiteRendererTests: XCTestCase {
     }
     
     func testThatDestinationPathIsCorrectForStaticFile() {
-        let page = site.staticFiles.filter({ $0.fileName == "index.html" }).first
-        XCTAssertEqual(page?.destinationPath, "index.html")
+        let page = site.staticFiles.filter({ $0.fileName == "static.html" }).first
+        XCTAssertEqual(page?.destinationPath, "static.html")
     }
     
     // MARK: templating
@@ -86,8 +86,8 @@ class SiteRendererTests: XCTestCase {
     }
     
     func testThatPostsCollectionIsRenderedInPage() {
-        let indexPage = site.documents.filter({ $0.fileName == "blog.html" }).first
-        XCTAssertTrue(indexPage!.contents.containsString("Templating"))
+        let page = site.documents.filter({ $0.fileName == "blog.html" }).first
+        XCTAssertTrue(page!.contents.containsString("Templating"))
     }
     
     func testThatWritingCollectionIsRendered() {
@@ -105,5 +105,26 @@ class SiteRendererTests: XCTestCase {
     func testThatExcerptIsRendered() {
         let post = site.posts.filter({ $0.fileName == "hello-world.md" }).first!
         XCTAssertEqual(post.metadata["excerpt"], "Hello world")
+    }
+    
+    // MARK: pagination
+    
+    func testThatPaginationIsEnabled() {
+        XCTAssertEqual(site.maxItemsPerPage, 3)
+    }
+    
+    func testThatPaginatorContainsPosts() {
+        let page = site.documents.filter({ $0.fileName == "index.html" }).first
+        XCTAssertEqual(page!.metadata["paginator"]!["posts"]!.arrayValue!.map({ $0.fileValue! as! Post }), Array(site.posts[0..<3]))
+    }
+    
+    func testThatPaginatorCreatesDocumentsForPages() {
+        let page = site.documents.filter({ $0.destinationPath! == "1/index.html" }).first
+        XCTAssertNotNil(page)
+    }
+    
+    func testThatDocumentForPageOneContainsPosts() {
+        let page = site.documents.filter({ $0.destinationPath! == "1/index.html" }).first
+        XCTAssertEqual(page!.metadata["paginator"]!["posts"]!.arrayValue!.map({ $0.fileValue! as! Post }), Array(site.posts[3..<site.posts.endIndex]))
     }
 }

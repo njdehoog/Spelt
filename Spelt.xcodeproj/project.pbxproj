@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FD2EE1041D86CA1C00700C58 /* ExcerptRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2EE1031D86CA1C00700C58 /* ExcerptRenderer.swift */; };
+		FD2EE1061D86CCD900700C58 /* Paginate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2EE1051D86CCD900700C58 /* Paginate.swift */; };
 		FD3915821D7DB7BE00F7F5F7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B11D4A2A3500658286 /* main.swift */; };
 		FD3915831D7DB80C00F7F5F7 /* SpeltKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* SpeltKit.framework */; };
 		FD3915841D7DB80C00F7F5F7 /* SpeltKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531BD1D4A2A6200658286 /* SpeltKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -157,6 +158,7 @@
 
 /* Begin PBXFileReference section */
 		FD2EE1031D86CA1C00700C58 /* ExcerptRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcerptRenderer.swift; sourceTree = "<group>"; };
+		FD2EE1051D86CCD900700C58 /* Paginate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paginate.swift; sourceTree = "<group>"; };
 		FD3915751D7DB78E00F7F5F7 /* spelt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spelt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD39157E1D7DB78E00F7F5F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD3915901D7DCBAE00F7F5F7 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 				FD6D606F1D4BA21B00A7C277 /* TemplateRenderer.swift */,
 				FDF93A061D84554100C9C8FF /* CollectionRenderer.swift */,
 				FD2EE1031D86CA1C00700C58 /* ExcerptRenderer.swift */,
+				FD2EE1051D86CCD900700C58 /* Paginate.swift */,
 			);
 			name = Renderers;
 			sourceTree = "<group>";
@@ -674,6 +677,7 @@
 				FD8531D91D4A2A8D00658286 /* Site.swift in Sources */,
 				FD6D5FFD1D4B975400A7C277 /* File.swift in Sources */,
 				FD6D606B1D4BA19D00A7C277 /* Inheritence.swift in Sources */,
+				FD2EE1061D86CCD900700C58 /* Paginate.swift in Sources */,
 				FD3915A81D7F13A500F7F5F7 /* SiteObserver.swift in Sources */,
 				FD6D606A1D4BA19D00A7C277 /* Include.swift in Sources */,
 				FD6D5FEE1D4B7F8700A7C277 /* Utilities.swift in Sources */,

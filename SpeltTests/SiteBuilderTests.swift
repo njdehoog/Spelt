@@ -45,8 +45,8 @@ class SiteBuilderTests: XCTestCase {
     func testThatStaticFileIsCopied() {
         try! siteBuilder?.build()
         
-        let indexHTMLFile = site.staticFiles.filter({ $0.fileName == "index.html" }).first!
-        let filePath = buildPath.stringByAppendingPathComponent(indexHTMLFile.destinationPath!)
+        let staticHTMLFile = site.staticFiles.filter({ $0.fileName == "static.html" }).first!
+        let filePath = buildPath.stringByAppendingPathComponent(staticHTMLFile.destinationPath!)
         XCTAssertTrue(NSFileManager().fileExistsAtPath(filePath))
     }
     

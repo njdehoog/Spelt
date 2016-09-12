@@ -19,7 +19,7 @@ class SiteReaderTests: XCTestCase {
     
     func testThatItReadsStaticFiles() {
         let site = try! siteReader!.read()
-        XCTAssertEqual(site.staticFiles.filter({ $0.fileName == "index.html" }).count, 1)
+        XCTAssertEqual(site.staticFiles.filter({ $0.fileName == "static.html" }).count, 1)
     }
     
     func testThatItReadsPosts() {

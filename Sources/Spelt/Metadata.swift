@@ -46,7 +46,15 @@ extension Metadata {
             return bool
         }
         
-        return false
+        return nil
+    }
+    
+    var intValue: Swift.Int? {
+        if case .Int(let int) = self {
+            return int
+        }
+        
+        return nil
     }
 }
 
@@ -318,13 +326,7 @@ extension Metadata {
     }
 }
 
-extension Metadata {
-    // FIXME: this should be an array of FileWithMetadata
-     init(posts: [Post]) {
-        let fileArray: [Metadata] = posts.map({ Metadata.File($0) })
-        self = Metadata.Array(fileArray)
-    }
-    
+extension Metadata {    
     init(files: [FileWithMetadata]) {
         let fileArray: [Metadata] = files.map({ Metadata.File($0) })
         self = Metadata.Array(fileArray)

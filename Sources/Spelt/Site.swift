@@ -1,8 +1,8 @@
 public final class Site {
     public let path: String
-    public let posts: [Post]
-    public let staticFiles: [StaticFile]
-    public let documents: [Document]
+    public var posts: [Post]
+    public var staticFiles: [StaticFile]
+    public var documents: [Document]
     public var metadata: Metadata
     
     var files: [File] {
@@ -32,5 +32,9 @@ public final class Site {
 extension Site {
     var payload: [String: Any] {
         return metadata.rawValue as! [String: Any]
+    }
+    
+    var collections: [String]? {
+        return metadata["collections"]?.arrayValue?.flatMap({ $0.stringValue })
     }
 }
