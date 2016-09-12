@@ -9,7 +9,6 @@ struct CollectionRenderer: Renderer {
     
     func render() throws {
         let categoryNames = site.filesWithMetadata.flatMap({ $0.categories })
-        print(categoryNames)
         
         site.metadata["collections"] = Metadata.Array(categoryNames.map({ Metadata.String($0) }))
         
