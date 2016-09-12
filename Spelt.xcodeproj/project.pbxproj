@@ -613,7 +613,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "make install";
+			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ]; then\n  make install\nfi";
 		};
 		FD6D5FDF1D4A471000A7C277 /* Copy frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
