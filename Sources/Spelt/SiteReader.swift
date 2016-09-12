@@ -91,11 +91,13 @@ struct FileReader<T: FileWithMetadata> {
 
 extension Metadata {
     func normalizeCategories() -> Metadata {
-        var metadata = self
-        if let categories = categories {
-            metadata["categories"] = Metadata.Array(categories.map({ Metadata.String($0) }))
+        guard var metadataDict = dictionaryValue, let categories = categories  else {
+            return self;
         }
-        return metadata
+        
+        metadataDict["categories"] = Metadata.Array(categories.map({ Metadata.String($0) }))
+        metadataDict["category"] = nil
+        return Metadata.Dictionary(metadataDict)
     }
     
     private var categories: [Swift.String]? {

@@ -76,7 +76,7 @@ class SiteReaderTests: XCTestCase {
     
     func testThatItReadsFrontMatterForPost() {
         let site = try! siteReader!.read()
-        XCTAssertEqual(site.posts.first?.metadata, ["layout": "post", "date": "2016-07-29 09:39:21 +0200", "title": "Hello World"])
+        XCTAssertEqual(site.posts.first?.metadata, ["layout": "post", "date": "2016-07-29 09:39:21 +0200", "title": "Hello World", "categories": ["new"]])
     }
     
     func testThatItReadsConfigFile() {
