@@ -64,7 +64,7 @@ struct TemplateRenderer: Renderer {
         let templatePath = Path(templatesPath) + Path(templateName.stringByAppendingPathExtension("html")!)
         
         let context = defaultContext
-        context.push(file.payload.rawValue as? [Swift.String: Any])
+        context.push(file.payload)
         
         do {
             let template = try Template(path: templatePath)

@@ -1,4 +1,4 @@
-// Any file which contains front matter and is not a blog post is considered front matter
+// Any file which contains front matter and is not a blog post is considered a document
 public final class Document: FileWithMetadata {
     public let path: String
     public var destinationPath: String?

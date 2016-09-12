@@ -83,9 +83,42 @@ struct FileReader<T: FileWithMetadata> {
     let contents: String
     
     func read() throws -> T {
-        let metadata = try FrontMatterReader.frontMatterForString(contents).metadata
+        let metadata = try FrontMatterReader.frontMatterForString(contents).metadata.normalizeCategories()
         let strippedContents = contents.stringByReplacingFrontMatter("")
         return try T(path: path, contents: strippedContents, metadata: metadata)
+    }
+}
+
+extension Metadata {
+    func normalizeCategories() -> Metadata {
+        var metadata = self
+        if let categories = categories {
+            metadata["categories"] = Metadata.Array(categories.map({ Metadata.String($0) }))
+        }
+        return metadata
+    }
+    
+    private var categories: [Swift.String]? {
+        if let category = self["category"]?.stringValue {
+            return [category]
+        }
+        
+        if let categories = self["categories"]?.stringValue {
+            return categories.split(",").map() { $0.trim(" ") }
+        }
+        
+        if let categories = self["categories"]?.arrayValue {
+            var categoryNames: [Swift.String] = []
+            for category in categories {
+                guard let stringValue = category.stringValue else  {
+                    return nil
+                }
+                categoryNames.append(stringValue)
+            }
+            return categoryNames
+        }
+        
+        return nil
     }
 }
 

@@ -82,9 +82,16 @@ class SiteRendererTests: XCTestCase {
     // MARK: collections
     
     func testThatPostsCollectionIsRendered() {
+        XCTAssertEqual(site.metadata["posts"]!.arrayValue!.map({ $0.fileValue! as! Post }), site.posts)
+    }
+    
+    func testThatPostsCollectionIsRenderedInPage() {
         let indexPage = site.documents.filter({ $0.fileName == "blog.html" }).first
-        let string = indexPage?.contents.containsString("hello")
-        print(indexPage?.contents)
-        XCTAssertNotNil(indexPage)
+        XCTAssertTrue(indexPage!.contents.containsString("Templating"))
+    }
+    
+    func testThatWritingCollectionIsRendered() {
+        let post = site.posts.filter({ $0.fileName == "markdown.md" }).first!
+        XCTAssertEqual(site.metadata["writing"]!.arrayValue!.first!.fileValue as? Post, post)
     }
 }

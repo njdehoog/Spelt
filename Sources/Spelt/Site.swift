@@ -3,13 +3,20 @@ public final class Site {
     public let posts: [Post]
     public let staticFiles: [StaticFile]
     public let documents: [Document]
-    public let metadata: Metadata
+    public var metadata: Metadata
     
     var files: [File] {
         var files = [File]()
-        files.appendContentsOf(posts.map({ $0 as File }))
-        files.appendContentsOf(staticFiles.map({ $0 as File }))
-        files.appendContentsOf(documents.map({ $0 as File }))
+        files += posts.map({ $0 as File })
+        files += staticFiles.map({ $0 as File })
+        files += documents.map({ $0 as File })
+        return files
+    }
+    
+    var filesWithMetadata: [FileWithMetadata] {
+        var files = [FileWithMetadata]()
+        files += posts.map({ $0 as FileWithMetadata })
+        files += documents.map({ $0 as FileWithMetadata })
         return files
     }
     
@@ -24,10 +31,6 @@ public final class Site {
 
 extension Site {
     var payload: [String: Any] {
-        
-        var siteMetadata = metadata
-        siteMetadata["posts"] = Metadata(posts: posts)
-        
-        return siteMetadata.rawValue as! [String: Any]
+        return metadata.rawValue as! [String: Any]
     }
 }

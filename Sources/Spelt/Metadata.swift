@@ -324,5 +324,10 @@ extension Metadata {
         let fileArray: [Metadata] = posts.map({ Metadata.File($0) })
         self = Metadata.Array(fileArray)
     }
+    
+    init(files: [FileWithMetadata]) {
+        let fileArray: [Metadata] = files.map({ Metadata.File($0) })
+        self = Metadata.Array(fileArray)
+    }
 }
 

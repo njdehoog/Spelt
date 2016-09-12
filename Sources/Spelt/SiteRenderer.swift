@@ -2,6 +2,7 @@ public struct SiteRenderer {
     public let site: Site
         
     public func render() throws {
+        try CollectionRenderer(site: site).render()
         try PermalinkRenderer(site: site).render()
         try TemplateRenderer(site: site, type: .InPlace).render()
         

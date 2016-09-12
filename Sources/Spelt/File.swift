@@ -53,7 +53,7 @@ extension FileWithMetadata {
     }
 
     // this is the payload for rendering file in layout
-    var payload: Metadata {
+    var payload: [String: Any] {
         var properties: Metadata = [:];
         properties["url"] = .String(URLString)
         properties["contents"] = Metadata.String(contents)
@@ -63,15 +63,21 @@ extension FileWithMetadata {
             properties["date"] = Metadata.Date(date)
         }
         
-//        if let categories = categories {
-//            properties["categories"] = Metadata.Array(categories.map({ Metadata.String($0) }))
-//        }
-        
         // workaround for better Jekyll compatability. include all properties under page
         var combined = metadata + properties
         combined["page"] = combined
         
-        return combined
+        return combined.rawValue as! [String: Any]
+    }
+}
+
+extension FileWithMetadata {
+    public var categories: [String]? {
+        if let categories = metadata["categories"]?.arrayValue {
+            return categories.map({ $0.stringValue! })
+        }
+        
+        return nil
     }
 }
 

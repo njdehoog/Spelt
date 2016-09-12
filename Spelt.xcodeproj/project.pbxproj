@@ -82,6 +82,7 @@
 		FDE1D6241D7DB72D009A1A77 /* SwiftYAML.framework in Copy Frameworks to embed in Framework */ = {isa = PBXBuildFile; fileRef = FD6D5FE81D4B7B1A00A7C277 /* SwiftYAML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FDE1D6251D7DB72D009A1A77 /* Hoedown.framework in Copy Frameworks to embed in Framework */ = {isa = PBXBuildFile; fileRef = FD8531E31D4A3A7400658286 /* Hoedown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FDE1D6261D7DB72D009A1A77 /* SwiftHoedown.framework in Copy Frameworks to embed in Framework */ = {isa = PBXBuildFile; fileRef = FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FDF93A071D84554200C9C8FF /* CollectionRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF93A061D84554100C9C8FF /* CollectionRenderer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +216,7 @@
 		FDB926311D6B4CA200B8D5D3 /* SiteBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteBuilderTests.swift; sourceTree = "<group>"; };
 		FDB9A8A81D54B99B0016CDB7 /* SassConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SassConverter.swift; sourceTree = "<group>"; };
 		FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftSass.framework; path = Carthage/Build/Mac/SwiftSass.framework; sourceTree = "<group>"; };
+		FDF93A061D84554100C9C8FF /* CollectionRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionRenderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -294,6 +296,7 @@
 			children = (
 				FD6D5FFA1D4B969B00A7C277 /* Permalinks.swift */,
 				FD6D606F1D4BA21B00A7C277 /* TemplateRenderer.swift */,
+				FDF93A061D84554100C9C8FF /* CollectionRenderer.swift */,
 			);
 			name = Renderers;
 			sourceTree = "<group>";
@@ -660,6 +663,7 @@
 				FD6D607A1D4BA36A00A7C277 /* MarkdownConverter.swift in Sources */,
 				FD6D5FF61D4B90F000A7C277 /* SiteRenderer.swift in Sources */,
 				FD6D5FE11D4A4BE600A7C277 /* String+Paths.swift in Sources */,
+				FDF93A071D84554200C9C8FF /* CollectionRenderer.swift in Sources */,
 				FD6D5FE51D4B4E7100A7C277 /* Document.swift in Sources */,
 				FD6D60671D4BA19D00A7C277 /* Parser.swift in Sources */,
 				FD6D60641D4BA19D00A7C277 /* Lexer.swift in Sources */,
