@@ -32,6 +32,12 @@ class SiteReaderTests: XCTestCase {
         XCTAssertEqual(site.posts.first?.contents, "Hello world")
     }
     
+    func testThatItReadsPostCategories() {
+        let site = try! siteReader!.read()
+        let post = site.posts.filter({ $0.fileName == "markdown.md" }).first!
+        XCTAssertEqual(post.categories!, ["writing"])
+    }
+    
     func testThatItReadsPages() {
         let site = try! siteReader!.read()
         XCTAssertEqual(site.documents.filter({ $0.fileName == "about.md" }).count, 1)
