@@ -25,9 +25,12 @@ struct NewCommand: CommandType {
     let function = "Create scaffolding for a new site"
     
     func run(options: Options) -> Result<(), SpeltError> {
+        let executablePath = NSProcessInfo.processInfo().arguments.first!
+        let templatePath = executablePath.stringByAppendingPathComponent("../../share/spelt/default-template").stringByStandardizingPath
+        
         do {
             print("Create project at path: \(options.path)")
-            try SiteScaffolding(path: options.path).create(options.force)
+            try SiteScaffolding(destinationPath: options.path, templatePath: templatePath).create(options.force)
         }
         catch {
             return Result.Failure(SpeltError(underlyingError: error))
