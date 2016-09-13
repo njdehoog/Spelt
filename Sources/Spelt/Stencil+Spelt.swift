@@ -40,6 +40,7 @@ func markdownFilter(value: Any?) throws -> Any? {
 
 func dateFilter(value: Any?, arguments: [Any?]) throws -> Any? {
     guard let date = value as? NSDate else {
+        print(value as? String)
         throw TemplateSyntaxError("'date' filter expects input value to be of type NSDate, not \(value.dynamicType)")
     }
     

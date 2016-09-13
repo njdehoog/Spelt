@@ -5,11 +5,11 @@ public struct SiteRenderer {
         try CollectionRenderer(site: site).render()
         try PermalinkRenderer(site: site).render()
         try PaginationRenderer(site: site).render()
+        try ExcerptRenderer(site: site).render()
         try TemplateRenderer(site: site, type: .InPlace).render()
         
         try convert()
         
-        try ExcerptRenderer(site: site).render()
         try TemplateRenderer(site: site, type: .UsingTemplate).render()
     }
     

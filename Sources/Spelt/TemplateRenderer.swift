@@ -35,7 +35,7 @@ struct TemplateRenderer: Renderer {
     // only renders file contents. ignores template name metadata
     private func renderInPlace(file: FileWithMetadata) throws {
         let context = defaultContext
-        context.push(file.metadata.rawValue as? [Swift.String: Any])
+        context.push(file.payload)
         
         let template = Template(templateString: file.contents)
         do {

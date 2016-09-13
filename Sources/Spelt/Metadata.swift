@@ -309,7 +309,7 @@ extension Metadata {
         case .Date(let date):
             return date
         case .File(let file):
-            return file.metadata.rawValue
+            return file.payload
         case .Array(let array):
             var raw: [Any] = []
             for element in array {
