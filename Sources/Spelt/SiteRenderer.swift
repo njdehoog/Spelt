@@ -1,6 +1,10 @@
 public struct SiteRenderer {
     public let site: Site
-        
+    
+    public init(site: Site) {
+        self.site = site
+    }
+    
     public func render() throws {
         try CollectionRenderer(site: site).render()
         try PermalinkRenderer(site: site).render()

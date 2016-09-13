@@ -12,7 +12,6 @@ public struct SiteBuilder {
     }
     
     public func build() throws {
-        try SiteRenderer(site: site).render()
         try cleanBuildDirectory()
         try createBuildDirectory()
         try writeFiles()

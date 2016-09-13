@@ -34,6 +34,7 @@
 		FD3915A61D7F01B700F7F5F7 /* SiteServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39159A1D7F011600F7F5F7 /* SiteServer.swift */; };
 		FD3915A81D7F13A500F7F5F7 /* SiteObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3915A71D7F13A500F7F5F7 /* SiteObserver.swift */; };
 		FD4B9B501D880335009061F8 /* New.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4B9B4E1D8801F1009061F8 /* New.swift */; };
+		FD4B9B521D881CD2009061F8 /* SiteScaffolding.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4B9B511D881CD2009061F8 /* SiteScaffolding.swift */; };
 		FD6D5FD81D4A3C1100A7C277 /* SiteReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */; };
 		FD6D5FE11D4A4BE600A7C277 /* String+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */; };
 		FD6D5FE51D4B4E7100A7C277 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FE41D4B4E7100A7C277 /* Document.swift */; };
@@ -171,6 +172,7 @@
 		FD3915A41D7F01B300F7F5F7 /* Serve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serve.swift; sourceTree = "<group>"; };
 		FD3915A71D7F13A500F7F5F7 /* SiteObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteObserver.swift; sourceTree = "<group>"; };
 		FD4B9B4E1D8801F1009061F8 /* New.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = New.swift; sourceTree = "<group>"; };
+		FD4B9B511D881CD2009061F8 /* SiteScaffolding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteScaffolding.swift; sourceTree = "<group>"; };
 		FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteReaderTests.swift; sourceTree = "<group>"; };
 		FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Paths.swift"; sourceTree = "<group>"; };
 		FD6D5FE41D4B4E7100A7C277 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 				FD6D5FF51D4B90F000A7C277 /* SiteRenderer.swift */,
 				FD39159A1D7F011600F7F5F7 /* SiteServer.swift */,
 				FD3915A71D7F13A500F7F5F7 /* SiteObserver.swift */,
+				FD4B9B511D881CD2009061F8 /* SiteScaffolding.swift */,
 				FDB9A8A71D54B6BA0016CDB7 /* Converters */,
 				FD6D5FF91D4B968C00A7C277 /* Renderers */,
 				FD6D5FE31D4A4FC700A7C277 /* Model */,
@@ -692,6 +695,7 @@
 				FD3915A61D7F01B700F7F5F7 /* SiteServer.swift in Sources */,
 				FD6D60721D4BA27900A7C277 /* Stencil+Spelt.swift in Sources */,
 				FD6D60761D4BA2D500A7C277 /* String+HTML.swift in Sources */,
+				FD4B9B521D881CD2009061F8 /* SiteScaffolding.swift in Sources */,
 				FD8531DB1D4A2A8D00658286 /* StaticFile.swift in Sources */,
 				FD6D60781D4BA30700A7C277 /* String+XML.swift in Sources */,
 				FD6D5FFB1D4B969B00A7C277 /* Permalinks.swift in Sources */,

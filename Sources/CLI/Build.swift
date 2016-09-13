@@ -76,7 +76,7 @@ struct BuildCommand: CommandType {
     
     private func _build(options: Options) throws {
         let site = try SiteReader(sitePath: options.sourcePath).read()
-        let siteBuilder = SiteBuilder(site: site, buildPath: options.destinationPath)
-        try siteBuilder.build()
+        try SiteRenderer(site: site).render()
+        try SiteBuilder(site: site, buildPath: options.destinationPath).build()
     }
 }
