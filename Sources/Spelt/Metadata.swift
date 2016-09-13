@@ -121,10 +121,8 @@ public func == (lhs: Metadata, rhs: Metadata) -> Bool {
         if case .Double(let rv) = rhs { equal = (lv == rv) }
     case .Date(let lv):
         if case .Date(let rv) = rhs { equal = lv.isEqualToDate(rv) }
-    case .File(_):
-        break
-//         FIXME: equality comparison does not work for files
-//        if case .File(let rv) = rhs { equal = (lv == rv) }
+    case .File(let lv):
+        if case .File(let rv) = rhs { equal = (lv.path == rv.path && lv.destinationPath == rv.destinationPath) }
     case .Array(let lv):
         if case .Array(let rv) = rhs { equal = (lv == rv) }
     case .Dictionary(let lv):
