@@ -3,7 +3,6 @@ struct PaginationRenderer: Renderer {
     
     func render() throws {
         guard let maxItemsPerPage = site.maxItemsPerPage else {
-            print("Pagination disabled")
             return
         }
         

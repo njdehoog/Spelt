@@ -53,8 +53,9 @@ struct BuildCommand: CommandType {
         print("Destination: \(options.destinationPath)")
         
         print("Generating...")
+        let before = NSDate()
         try _build(options)
-        print("Done")
+        print(String(format: "Done in %.3f seconds", NSDate().timeIntervalSinceDate(before)))
 
         if options.watch {
             print("Auto-regeneration enabled")
@@ -62,8 +63,9 @@ struct BuildCommand: CommandType {
             observer = SiteObserver(sourcePath: options.sourcePath, changeHandler: { sourcePath in
                 do {
                     print("Regenerating...")
+                    let before = NSDate()
                     try self._build(options)
-                    print("Done")
+                    print(String(format: "Done in %.3f seconds", NSDate().timeIntervalSinceDate(before)))
                 }
                 catch {
                     // output error to StandardError
