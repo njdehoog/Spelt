@@ -109,7 +109,7 @@ class SiteRendererTests: XCTestCase {
     
     func testThatExcerptIsRendered() {
         let post = site.posts.filter({ $0.fileName == "hello-world.md" }).first!
-        XCTAssertEqual(post.metadata["excerpt"], "Hello world")
+        XCTAssertEqual(post.metadata["excerpt"], "<p>Hello world</p>\n")
     }
     
     // MARK: pagination
