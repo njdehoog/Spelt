@@ -33,6 +33,7 @@
 		FD3915A51D7F01B300F7F5F7 /* Serve.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3915A41D7F01B300F7F5F7 /* Serve.swift */; };
 		FD3915A61D7F01B700F7F5F7 /* SiteServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD39159A1D7F011600F7F5F7 /* SiteServer.swift */; };
 		FD3915A81D7F13A500F7F5F7 /* SiteObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3915A71D7F13A500F7F5F7 /* SiteObserver.swift */; };
+		FD4B9B501D880335009061F8 /* New.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4B9B4E1D8801F1009061F8 /* New.swift */; };
 		FD6D5FD81D4A3C1100A7C277 /* SiteReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */; };
 		FD6D5FE11D4A4BE600A7C277 /* String+Paths.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */; };
 		FD6D5FE51D4B4E7100A7C277 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D5FE41D4B4E7100A7C277 /* Document.swift */; };
@@ -169,6 +170,7 @@
 		FD39159D1D7F015E00F7F5F7 /* Witness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Witness.framework; path = Carthage/Build/Mac/Witness.framework; sourceTree = "<group>"; };
 		FD3915A41D7F01B300F7F5F7 /* Serve.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Serve.swift; sourceTree = "<group>"; };
 		FD3915A71D7F13A500F7F5F7 /* SiteObserver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteObserver.swift; sourceTree = "<group>"; };
+		FD4B9B4E1D8801F1009061F8 /* New.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = New.swift; sourceTree = "<group>"; };
 		FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteReaderTests.swift; sourceTree = "<group>"; };
 		FD6D5FE01D4A4BE600A7C277 /* String+Paths.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Paths.swift"; sourceTree = "<group>"; };
 		FD6D5FE41D4B4E7100A7C277 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				FD8531B11D4A2A3500658286 /* main.swift */,
 				FD3915981D7EEF8600F7F5F7 /* Build.swift */,
 				FD3915A41D7F01B300F7F5F7 /* Serve.swift */,
+				FD4B9B4E1D8801F1009061F8 /* New.swift */,
 			);
 			path = CLI;
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 			files = (
 				FD3915991D7EEF8600F7F5F7 /* Build.swift in Sources */,
 				FD3915821D7DB7BE00F7F5F7 /* main.swift in Sources */,
+				FD4B9B501D880335009061F8 /* New.swift in Sources */,
 				FD3915A51D7F01B300F7F5F7 /* Serve.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

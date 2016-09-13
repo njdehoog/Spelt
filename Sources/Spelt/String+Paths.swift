@@ -125,4 +125,14 @@ public extension String {
         
         return NSFileManager().currentDirectoryPath.stringByAppendingPathComponent(self)
     }
+    
+    // return absolute standardized path for path. used for command line options
+    var absoluteStandardizedPath: String {
+        var path = stringByExpandingTildeInPath
+        if isRelativePath {
+            path = path.absolutePath
+        }
+        
+        return path.stringByStandardizingPath
+    }
 }

@@ -13,6 +13,7 @@ extension SpeltError: CustomStringConvertible {
 let registry = CommandRegistry<SpeltError>()
 registry.register(BuildCommand())
 registry.register(ServeCommand())
+registry.register(NewCommand())
 
 let helpCommand = HelpCommand(registry: registry)
 registry.register(helpCommand)

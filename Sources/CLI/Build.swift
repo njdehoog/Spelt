@@ -11,7 +11,7 @@ struct BuildOptions: OptionsType {
     
     static func create(sourcePath: String) -> String -> Bool -> BuildOptions {
         return { destinationPath in { watch in
-            return BuildOptions(sourcePath: sourcePath.stringByStandardizingPath.absolutePath, destinationPath: destinationPath.stringByStandardizingPath.absolutePath, watch: watch);
+            return BuildOptions(sourcePath: sourcePath.absoluteStandardizedPath, destinationPath: destinationPath.absoluteStandardizedPath, watch: watch);
         }}
     }
     
