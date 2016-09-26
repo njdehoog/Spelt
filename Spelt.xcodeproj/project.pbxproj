@@ -532,16 +532,19 @@
 				TargetAttributes = {
 					FD3915741D7DB78E00F7F5F7 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					FD8531BC1D4A2A6200658286 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeamName = "Niels de Hoog";
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					FD8531C41D4A2A6200658286 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = A9NP4475VH;
 						DevelopmentTeamName = "Niels de Hoog";
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -779,6 +782,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -823,6 +827,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.spelt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

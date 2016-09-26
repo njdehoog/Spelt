@@ -2,8 +2,8 @@ import Foundation
 import SwiftYAML
 
 public struct SiteReader {
-    public enum Error: ErrorType {
-        case DirectoryNotFound
+    public enum ReadError: Error {
+        case directoryNotFound
     }
     
     public let sitePath: String
@@ -13,39 +13,39 @@ public struct SiteReader {
     }
     
     public func read() throws -> Site {
-        let fileManager = NSFileManager()
-        guard let enumerator = fileManager.enumeratorAtURL(NSURL(fileURLWithPath: sitePath), includingPropertiesForKeys:nil, options: .SkipsHiddenFiles, errorHandler: nil) else {
-            throw Error.DirectoryNotFound
+        let fileManager = FileManager()
+        guard let enumerator = fileManager.enumerator(at: URL(fileURLWithPath: sitePath), includingPropertiesForKeys:nil, options: .skipsHiddenFiles, errorHandler: nil) else {
+            throw ReadError.directoryNotFound
         }
         
         var staticFiles = [StaticFile]()
         var posts = [Post]()
         var documents = [Document]()
         for element in enumerator {
-            guard let url = element as? NSURL, let path = url.path where pathIsExcluded(path) == false else {
+            guard let url = element as? URL, pathIsExcluded(url.path) == false else {
                 continue
             }
             
             var isDirectory: ObjCBool = false
-            if fileManager.fileExistsAtPath(path, isDirectory: &isDirectory) && !isDirectory {
-                guard let stringContents = try? String(contentsOfFile: path, encoding: NSUTF8StringEncoding) where FrontMatterReader.stringContainsFrontMatter(stringContents) else {
-                    let file = StaticFile(path: path)
+            if fileManager.fileExists(atPath: url.path, isDirectory: &isDirectory) && !isDirectory.boolValue {
+                guard let stringContents = try? String(contentsOfFile: url.path, encoding: String.Encoding.utf8) , FrontMatterReader.stringContainsFrontMatter(stringContents) else {
+                    let file = StaticFile(path: url.path)
                     staticFiles.append(file)
                     continue
                 }
                 
-                if pathIsPost(path) {
-                    let post = try FileReader<Post>(path: path, contents: stringContents).read()
+                if pathIsPost(url.path) {
+                    let post = try FileReader<Post>(path: url.path, contents: stringContents).read()
                     posts.append(post)
                 }
                 else {
-                    let document = try FileReader<Document>(path: path, contents: stringContents).read()
+                    let document = try FileReader<Document>(path: url.path, contents: stringContents).read()
                     documents.append(document)
                 }
             }
         }
         
-        let configFilePath = SiteConfiguration.Path.Config.relativeToPath(sitePath)
+        let configFilePath = SiteConfiguration.Path.config.relativeToPath(sitePath)
         let metadata = try ConfigReader(filePath: configFilePath).read()
 
         return Site(path: sitePath, posts: posts, staticFiles: staticFiles, documents: documents, metadata: metadata)
@@ -53,17 +53,17 @@ public struct SiteReader {
     
     // MARK: private
     
-    func pathIsPost(path: String) -> Bool {
-        let postsPath = sitePath.stringByAppendingPathComponent(SiteConfiguration.Path.Posts.rawValue)
+    func pathIsPost(_ path: String) -> Bool {
+        let postsPath = sitePath.stringByAppendingPathComponent(SiteConfiguration.Path.posts.rawValue)
         return path.isSubpath(ofPath: postsPath)
     }
     
-    func pathIsExcluded(path: String) -> Bool {
+    func pathIsExcluded(_ path: String) -> Bool {
         let relativePath = path.pathRelativeToPath(sitePath)
         
         // the _posts directory has special status and is not excluded
         // FIXME: should posts directory not start with an underscore?
-        if relativePath.isSubpath(ofPath: SiteConfiguration.Path.Posts.rawValue) {
+        if relativePath.isSubpath(ofPath: SiteConfiguration.Path.posts.rawValue) {
             return false
         }
         
@@ -95,9 +95,9 @@ extension Metadata {
             return self;
         }
         
-        metadataDict["categories"] = Metadata.Array(categories.map({ Metadata.String($0) }))
+        metadataDict["categories"] = Metadata.array(categories.map({ Metadata.string($0) }))
         metadataDict["category"] = nil
-        return Metadata.Dictionary(metadataDict)
+        return Metadata.dictionary(metadataDict)
     }
     
     private var categories: [Swift.String]? {
@@ -126,36 +126,36 @@ extension Metadata {
 
 struct FrontMatterReader {
     static let frontMatterPattern = "^---.*?[\r\n]*(.*?[\r\n]+)---[\r\n]*"
-    static let frontMatterRegex = try! NSRegularExpression(pattern: frontMatterPattern, options: .DotMatchesLineSeparators)
+    static let frontMatterRegex = try! NSRegularExpression(pattern: frontMatterPattern, options: .dotMatchesLineSeparators)
     
-    enum Error: ErrorType {
-        case NoFrontMatterDetected
-        case ParseError(ErrorType)
+    indirect enum ReadError: Error {
+        case noFrontMatterDetected
+        case parseError(Error)
     }
     
-    static func stringContainsFrontMatter(string: String) -> Bool {
-        let matches = frontMatterRegex.matchesInString(string, options: NSMatchingOptions(), range: NSMakeRange(0, string.characters.count))
+    static func stringContainsFrontMatter(_ string: String) -> Bool {
+        let matches = frontMatterRegex.matches(in: string, options: NSRegularExpression.MatchingOptions(), range: NSMakeRange(0, string.characters.count))
         return matches.count > 0
     }
     
-    static func frontMatterForString(string: String) throws -> YAMLValue {
-        if let match = frontMatterRegex.stringForFirstMatch(string, options: NSMatchingOptions(), rangeAtIndex: 1) {
+    static func frontMatterForString(_ string: String) throws -> YAMLValue {
+        if let match = frontMatterRegex.stringForFirstMatch(string, options: NSRegularExpression.MatchingOptions(), rangeAtIndex: 1) {
             do {
                 return try YAML.load(match)
             }
             catch {
-                throw Error.ParseError(error)
+                throw ReadError.parseError(error)
             }
         }
         
-        throw Error.NoFrontMatterDetected
+        throw ReadError.noFrontMatterDetected
     }
 }
 
 extension String {
-    func stringByReplacingFrontMatter(replacementString: String) -> String {
-        let regex = try! NSRegularExpression(pattern: FrontMatterReader.frontMatterPattern, options: .DotMatchesLineSeparators)
-        return regex.stringByReplacingMatchesInString(self, options:.Anchored, range: NSMakeRange(0, self.characters.count), withTemplate: replacementString)
+    func stringByReplacingFrontMatter(_ replacementString: String) -> String {
+        let regex = try! NSRegularExpression(pattern: FrontMatterReader.frontMatterPattern, options: .dotMatchesLineSeparators)
+        return regex.stringByReplacingMatches(in: self, options:.anchored, range: NSMakeRange(0, self.characters.count), withTemplate: replacementString)
     }
 }
 

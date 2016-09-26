@@ -1,48 +1,48 @@
 import SwiftYAML
 
 public enum Metadata {
-    case None
-    case String(Swift.String)
-    case Bool(Swift.Bool)
-    case Int(Swift.Int)
-    case Double(Swift.Double)
-    case Date(NSDate)
-    indirect case File(SpeltKit.FileWithMetadata)
-    case Array([SpeltKit.Metadata])
-    case Dictionary([Swift.String: SpeltKit.Metadata])
+    case none
+    case string(Swift.String)
+    case bool(Swift.Bool)
+    case int(Swift.Int)
+    case double(Swift.Double)
+    case date(Foundation.Date)
+    indirect case file(SpeltKit.FileWithMetadata)
+    case array([SpeltKit.Metadata])
+    case dictionary([Swift.String: SpeltKit.Metadata])
 }
 
 extension Metadata {
     var stringValue: Swift.String? {
-        if case .String(let string) = self {
+        if case .string(let string) = self {
             return string
         }
         return nil
     }
     
     var arrayValue: [Metadata]? {
-        if case .Array(let array) = self {
+        if case .array(let array) = self {
             return array
         }
         return nil
     }
     
     var dictionaryValue: [Swift.String: Metadata]? {
-        if case .Dictionary(let dictionary) = self {
+        if case .dictionary(let dictionary) = self {
             return dictionary
         }
         return nil
     }
     
     var fileValue: SpeltKit.File? {
-        if case .File(let file) = self {
+        if case .file(let file) = self {
             return file
         }
         return nil
     }
     
     var boolValue: Swift.Bool? {
-        if case .Bool(let bool) = self {
+        if case .bool(let bool) = self {
             return bool
         }
         
@@ -50,7 +50,7 @@ extension Metadata {
     }
     
     var intValue: Swift.Int? {
-        if case .Int(let int) = self {
+        if case .int(let int) = self {
             return int
         }
         
@@ -62,7 +62,7 @@ extension Metadata {
     public subscript(key: Swift.String) -> Metadata? {
         get {
             switch self {
-            case .Dictionary(let dictionary):
+            case .dictionary(let dictionary):
                 return dictionary[key]
             default:
                 return nil
@@ -70,9 +70,9 @@ extension Metadata {
         }
         set {
             switch self {
-            case .Dictionary(var dictionary):
+            case .dictionary(var dictionary):
                 dictionary[key] = newValue
-                self = .Dictionary(dictionary)
+                self = .dictionary(dictionary)
             default:
                 assert(false, "Can't use subscript on type which is not a dictionary")
             }
@@ -83,23 +83,23 @@ extension Metadata {
 extension Metadata: Hashable {
     public var hashValue: Swift.Int {
         switch self {
-        case .None:
+        case .none:
             return 0
-        case .String(let string):
+        case .string(let string):
             return string.hash
-        case .Bool(let bool):
+        case .bool(let bool):
             return bool.hashValue
-        case .Int(let int):
+        case .int(let int):
             return int.hashValue
-        case .Double(let Double):
+        case .double(let Double):
             return Double.hashValue
-        case .Date(let date):
-            return date.hash
-        case .File(let file):
+        case .date(let date):
+            return (date as NSDate).hash
+        case .file(let file):
             return file.path.hash
-        case .Array(let array):
-            return array.reduce(0, combine: { $0 ^ $1.hashValue })
-        case .Dictionary(let dictionary):
+        case .array(let array):
+            return array.reduce(0, { $0 ^ $1.hashValue })
+        case .dictionary(let dictionary):
             return dictionary.keys.reduce(0) { $0 ^ $1.hashValue }
         }
     }
@@ -109,24 +109,24 @@ extension Metadata: Equatable {}
 public func == (lhs: Metadata, rhs: Metadata) -> Bool {
     var equal = false
     switch lhs {
-    case .None:
-        if case .None = rhs { equal = true }
-    case .String(let lv):
-        if case .String(let rv) = rhs { equal = (lv == rv) }
-    case .Bool(let lv):
-        if case .Bool(let rv) = rhs { equal = (lv == rv) }
-    case .Int(let lv):
-        if case .Int(let rv) = rhs { equal = (lv == rv) }
-    case .Double(let lv):
-        if case .Double(let rv) = rhs { equal = (lv == rv) }
-    case .Date(let lv):
-        if case .Date(let rv) = rhs { equal = lv.isEqualToDate(rv) }
-    case .File(let lv):
-        if case .File(let rv) = rhs { equal = (lv.path == rv.path && lv.destinationPath == rv.destinationPath) }
-    case .Array(let lv):
-        if case .Array(let rv) = rhs { equal = (lv == rv) }
-    case .Dictionary(let lv):
-        if case .Dictionary(let rv) = rhs { equal = (lv == rv) }
+    case .none:
+        if case .none = rhs { equal = true }
+    case .string(let lv):
+        if case .string(let rv) = rhs { equal = (lv == rv) }
+    case .bool(let lv):
+        if case .bool(let rv) = rhs { equal = (lv == rv) }
+    case .int(let lv):
+        if case .int(let rv) = rhs { equal = (lv == rv) }
+    case .double(let lv):
+        if case .double(let rv) = rhs { equal = (lv == rv) }
+    case .date(let lv):
+        if case .date(let rv) = rhs { equal = lv == rv }
+    case .file(let lv):
+        if case .file(let rv) = rhs { equal = (lv.path == rv.path && lv.destinationPath == rv.destinationPath) }
+    case .array(let lv):
+        if case .array(let rv) = rhs { equal = (lv == rv) }
+    case .dictionary(let lv):
+        if case .dictionary(let rv) = rhs { equal = (lv == rv) }
     }
     return equal
 }
@@ -135,23 +135,23 @@ extension Metadata: Comparable {}
 public func < (lhs: Metadata, rhs: Metadata) -> Bool {
     var smallerThan = false
     switch lhs {
-    case .None:
+    case .none:
         break
-    case .String(let lv):
-        if case .String(let rv) = rhs { smallerThan = (lv < rv) }
-    case .Bool(_):
+    case .string(let lv):
+        if case .string(let rv) = rhs { smallerThan = (lv < rv) }
+    case .bool(_):
         break
-    case .Int(let lv):
-        if case .Int(let rv) = rhs { smallerThan = (lv < rv) }
-    case .Double(let lv):
-        if case .Double(let rv) = rhs { smallerThan = (lv < rv) }
-    case .Date(let lv):
-        if case .Date(let rv) = rhs { smallerThan = (lv.compare(rv) == .OrderedAscending) }
-    case .File(let lv):
-        if case .File(let rv) = rhs { smallerThan = (lv.metadata < rv.metadata) }
-    case .Array(_):
+    case .int(let lv):
+        if case .int(let rv) = rhs { smallerThan = (lv < rv) }
+    case .double(let lv):
+        if case .double(let rv) = rhs { smallerThan = (lv < rv) }
+    case .date(let lv):
+        if case .date(let rv) = rhs { smallerThan = (lv.compare(rv) == .orderedAscending) }
+    case .file(let lv):
+        if case .file(let rv) = rhs { smallerThan = (lv.metadata < rv.metadata) }
+    case .array(_):
         break
-    case .Dictionary(_):
+    case .dictionary(_):
         break
     }
     return smallerThan
@@ -159,63 +159,63 @@ public func < (lhs: Metadata, rhs: Metadata) -> Bool {
 
 public func +(lhs: Metadata, rhs: Metadata) -> Metadata {
     switch lhs {
-    case .None:
+    case .none:
         return rhs
-    case .String(let lv):
-        if case .String(let rv) = rhs {
-            return .String(lv + rv)
+    case .string(let lv):
+        if case .string(let rv) = rhs {
+            return .string(lv + rv)
         }
-    case .Bool(_):
+    case .bool(_):
         break
-    case .Int(let lv):
-        if case .Int(let rv) = rhs {
-            return .Int(lv + rv)
+    case .int(let lv):
+        if case .int(let rv) = rhs {
+            return .int(lv + rv)
         }
-    case .Double(let lv):
-        if case .Double(let rv) = rhs {
-            return .Double(lv + rv)
+    case .double(let lv):
+        if case .double(let rv) = rhs {
+            return .double(lv + rv)
         }
-    case .Date(_):
+    case .date(_):
         assert(false, "Can't add two metadata parameters of type .Date")
-    case .File(_):
+    case .file(_):
         assert(false, "Can't add two metadata parameters of type .File")
-    case .Array(let lv):
-        if case .Array(let rv) = rhs {
-            return .Array(lv + rv)
+    case .array(let lv):
+        if case .array(let rv) = rhs {
+            return .array(lv + rv)
         }
-    case .Dictionary(let lv):
-        if case .Dictionary(let rv) = rhs {
-            return .Dictionary(lv + rv)
+    case .dictionary(let lv):
+        if case .dictionary(let rv) = rhs {
+            return .dictionary(lv + rv)
         }
     }
     
-    if case .None = rhs {
+    if case .none = rhs {
         return lhs
     }
     
-    return .None
+    return .none
 }
 
 public protocol MetadataConvertible {
     var metadata: Metadata { get }
 }
 
-extension Metadata: NilLiteralConvertible {
+extension Metadata: ExpressibleByNilLiteral {
     public init(nilLiteral: ()) {
-        self = .None
+        self = .none
     }
 }
 
 
-extension Metadata: BooleanLiteralConvertible {
+extension Metadata: ExpressibleByBooleanLiteral {
     public init(booleanLiteral: BooleanLiteralType) {
-        self = .Bool(booleanLiteral)
+        self = .bool(booleanLiteral)
     }
 }
 
-extension Metadata: IntegerLiteralConvertible {
+extension Metadata: ExpressibleByIntegerLiteral {
     public init(integerLiteral: IntegerLiteralType) {
-        self = .Int(integerLiteral)
+        self = .int(integerLiteral)
     }
 }
 
@@ -225,68 +225,68 @@ extension Metadata: IntegerLiteralConvertible {
 //    }
 //}
 
-extension Metadata: StringLiteralConvertible {
+extension Metadata: ExpressibleByStringLiteral {
     public init(stringLiteral: StringLiteralType) {
-        self = .String(stringLiteral)
+        self = .string(stringLiteral)
     }
     
     public init(extendedGraphemeClusterLiteral: StringLiteralType) {
-        self = .String(extendedGraphemeClusterLiteral)
+        self = .string(extendedGraphemeClusterLiteral)
     }
     
     public init(unicodeScalarLiteral: StringLiteralType) {
-        self = .String(unicodeScalarLiteral)
+        self = .string(unicodeScalarLiteral)
     }
 }
 
-extension Metadata: ArrayLiteralConvertible {
+extension Metadata: ExpressibleByArrayLiteral {
     public init(arrayLiteral elements: Metadata...) {
         var array = [Metadata]()
         array.reserveCapacity(elements.count)
         for element in elements {
             array.append(element)
         }
-        self = .Array(array)
+        self = .array(array)
     }
 }
 
-extension Metadata: DictionaryLiteralConvertible {
+extension Metadata: ExpressibleByDictionaryLiteral {
     public init(dictionaryLiteral elements: (Swift.String, Metadata)...) {
         var dictionary: [Swift.String: Metadata] = [:]
         for (k, v) in elements {
             dictionary[k] = v
         }
-        self = .Dictionary(dictionary)
+        self = .dictionary(dictionary)
     }
 }
 
 extension YAMLValue: MetadataConvertible {
     public var metadata: Metadata {
         switch self {
-        case .None:
-            return .None
-        case .String(let string):
-            return .String(string)
-        case .Bool(let bool):
-            return .Bool(bool)
-        case .Int(let int):
-            return .Int(int)
-        case .Double(let double):
-            return .Double(double)
-        case .Array(let array):
+        case .none:
+            return .none
+        case .string(let string):
+            return .string(string)
+        case .bool(let bool):
+            return .bool(bool)
+        case .int(let int):
+            return .int(int)
+        case .double(let double):
+            return .double(double)
+        case .array(let array):
             var metadata = [Metadata]()
             for item in array {
                 metadata.append(item.metadata)
             }
-            return Metadata.Array(metadata)
-        case .Dictionary(let dictionary):
+            return Metadata.array(metadata)
+        case .dictionary(let dictionary):
             var metadata: [Swift.String: Metadata] = [:]
             for (k, v) in dictionary {
-                if case .String(let string) = k {
+                if case .string(let string) = k {
                     metadata[string] = v.metadata
                 }
             }
-            return Metadata.Dictionary(metadata)
+            return Metadata.dictionary(metadata)
         }
     }
 }
@@ -294,27 +294,27 @@ extension YAMLValue: MetadataConvertible {
 extension Metadata {
     public var rawValue: Any {
         switch self {
-        case .None:
+        case .none:
             return ""
-        case .String(let string):
+        case .string(let string):
             return string
-        case .Bool(let bool):
+        case .bool(let bool):
             return bool
-        case .Int(let int):
+        case .int(let int):
             return int
-        case .Double(let double):
+        case .double(let double):
             return double
-        case .Date(let date):
+        case .date(let date):
             return date
-        case .File(let file):
+        case .file(let file):
             return file.payload
-        case .Array(let array):
+        case .array(let array):
             var raw: [Any] = []
             for element in array {
                 raw.append(element.rawValue)
             }
             return raw
-        case .Dictionary(let dictionary):
+        case .dictionary(let dictionary):
             var boxed: [Swift.String: Any] = [:]
             for (k, v) in dictionary {
                 boxed[k] = v.rawValue
@@ -326,8 +326,8 @@ extension Metadata {
 
 extension Metadata {    
     init(files: [FileWithMetadata]) {
-        let fileArray: [Metadata] = files.map({ Metadata.File($0) })
-        self = Metadata.Array(fileArray)
+        let fileArray: [Metadata] = files.map({ Metadata.file($0) })
+        self = Metadata.array(fileArray)
     }
 }
 

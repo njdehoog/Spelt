@@ -25,14 +25,14 @@ public protocol FileWithMetadata: File {
 }
 
 extension FileWithMetadata {
-    var date: NSDate? {
+    var date: Date? {
         if let dateString = metadata["date"]?.stringValue, let myDate = YAMLDateFormatter.dateFromString(dateString) {
             return myDate
         }
         
         // fallback to filename
         let dateRegex = try! NSRegularExpression(pattern: "^[0-9]{4}-[0-9]{2}-[0-9]{2}", options: [])
-        if let dateString = dateRegex.stringForFirstMatch(fileName, options: .Anchored) {
+        if let dateString = dateRegex.stringForFirstMatch(fileName, options: .anchored) {
             return YAMLDateFormatter.dateFromString(dateString)
         }
         
@@ -44,7 +44,7 @@ extension FileWithMetadata {
             return ""
         }
         
-        let permalink = destinationPath.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        let permalink = destinationPath.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         if permalink.lastPathComponent == "index.html" {
             // if path points to an index.html file, don't include this in permalink
             return "/" + permalink.stringByDeletingLastPathComponent
@@ -55,12 +55,12 @@ extension FileWithMetadata {
     // this is the payload for rendering file in layout
     var payload: [String: Any] {
         var properties: Metadata = [:];
-        properties["url"] = .String(URLString)
-        properties["contents"] = Metadata.String(contents)
-        properties["content"] = Metadata.String(contents)
+        properties["url"] = .string(URLString)
+        properties["contents"] = Metadata.string(contents)
+        properties["content"] = Metadata.string(contents)
         
         if let date = date {
-            properties["date"] = Metadata.Date(date)
+            properties["date"] = Metadata.date(date)
         }
         
         // workaround for better Jekyll compatability. include all properties under page

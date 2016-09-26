@@ -82,7 +82,7 @@ class SiteRendererTests: XCTestCase {
     // MARK: collections
     
     func testThatPostsCollectionIsRendered() {
-        XCTAssertEqual(site.metadata["posts"]!.arrayValue!.map({ $0.fileValue! as! Post }), site.posts.sort(Site.defaultFileSorting))
+        XCTAssertEqual(site.metadata["posts"]!.arrayValue!.map({ $0.fileValue! as! Post }), site.posts.sorted(by: Site.defaultFileSorting))
     }
     
     func testThatPostsCollectionIsSortedByDate() {
@@ -92,7 +92,7 @@ class SiteRendererTests: XCTestCase {
     
     func testThatPostsCollectionIsRenderedInPage() {
         let page = site.documents.filter({ $0.fileName == "blog.html" }).first
-        XCTAssertTrue(page!.contents.containsString("Templating"))
+        XCTAssertTrue(page!.contents.contains("Templating"))
     }
     
     func testThatWritingCollectionIsRendered() {

@@ -1,24 +1,24 @@
 import SwiftHoedown
 
 struct MarkdownConverter: Converter {
-    enum Error: ErrorType {
-        case ConversionError
+    enum ConversionError: Error {
+        case conversionError
     }
     
     let outputPathExtension = "html"
     
-    func matches(pathExtension: String) -> Bool {
+    func matches(_ pathExtension: String) -> Bool {
         return ["md", "markdown"].contains(pathExtension)
     }
     
-    func convert(content: String) throws -> String {
+    func convert(_ content: String) throws -> String {
         guard let html = MarkdownConverter.htmlFromMarkdown(content) else {
-            throw Error.ConversionError
+            throw ConversionError.conversionError
         }
         return html
     }
     
-    static func htmlFromMarkdown(markdown: String) -> String? {
+    static func htmlFromMarkdown(_ markdown: String) -> String? {
         return Hoedown.renderHTMLForMarkdown(markdown, extensions: [.Tables, .FootNotes, .AutoLinkURLs, .FencedCodeBlocks, .Quote, .NoIntraEmphasis, .StrikeThrough])
     }
 }

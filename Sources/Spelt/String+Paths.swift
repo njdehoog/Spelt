@@ -15,15 +15,15 @@ import Foundation
 
 public extension String {
     var stringByDeletingPathExtension:String {
-        return (self as NSString).stringByDeletingPathExtension;
+        return (self as NSString).deletingPathExtension;
     }
     
-    func stringByAppendingPathExtension(ext: String) -> String? {
-        return (self as NSString).stringByAppendingPathExtension(ext)
+    func stringByAppendingPathExtension(_ ext: String) -> String? {
+        return (self as NSString).appendingPathExtension(ext)
     }
     
-    func stringByAppendingPathComponent(path: String) -> String {
-        return (self as NSString).stringByAppendingPathComponent(path)
+    func stringByAppendingPathComponent(_ path: String) -> String {
+        return (self as NSString).appendingPathComponent(path)
     }
     
     var pathComponents: [String] {
@@ -34,8 +34,8 @@ public extension String {
         return (self as NSString).pathExtension
     }
     
-    static func pathWithComponents(components: [String]) -> String {
-        return NSString.pathWithComponents(components) as String
+    static func pathWithComponents(_ components: [String]) -> String {
+        return NSString.path(withComponents: components) as String
     }
     
     var lastPathComponent: String {
@@ -43,22 +43,22 @@ public extension String {
     }
     
     var stringByDeletingLastPathComponent: String {
-        return (self as NSString).stringByDeletingLastPathComponent
+        return (self as NSString).deletingLastPathComponent
     }
     
     var stringByDeletingTrailingSlash: String {
         if self.hasSuffix("/") {
-            return self.substringToIndex(self.endIndex.predecessor())
+            return substring(to: self.characters.index(before: self.endIndex))
         }
         return self
     }
     
     var stringByExpandingTildeInPath: String {
-        return (self as NSString).stringByExpandingTildeInPath
+        return (self as NSString).expandingTildeInPath
     }
     
     var stringByStandardizingPath: String {
-        return (self as NSString).stringByStandardizingPath
+        return (self as NSString).standardizingPath
     }
 }
 
@@ -67,13 +67,13 @@ public extension String {
 public extension String {
     
     var pathByExtractingRootDomain: String? {
-        let components = self.componentsSeparatedByString(".")
+        let components = self.components(separatedBy: ".")
         guard components.count > 1 else {
             return nil
         }
         
         // return last 2 components
-        return components.suffix(2).joinWithSeparator(".")
+        return components.suffix(2).joined(separator: ".")
     }
 }
 
@@ -81,16 +81,16 @@ public extension String {
 // Add some extra path utility methods
 
 public extension String {
-    func stringByDeletingPathComponents(components: [String]) -> String {
+    func stringByDeletingPathComponents(_ components: [String]) -> String {
         let filteredComponents = self.pathComponents.filter() { component in
-            return components.indexOf(component) == nil
+            return components.index(of: component) == nil
         }
         return String.pathWithComponents(filteredComponents)
     }
     
-    func pathRelativeToPath(basePath: String) -> String {
+    func pathRelativeToPath(_ basePath: String) -> String {
         // NOTE: will only work if path is longer than basePath. i.e. will not return '../../path' type paths
-        return stringByDeletingPathComponents(basePath.pathComponents).lowercaseString
+        return stringByDeletingPathComponents(basePath.pathComponents).lowercased()
     }
     
     func stringByReplacingPathExtension(withExtension ext: String) -> String? {
@@ -100,7 +100,7 @@ public extension String {
     func isSubpath(ofPath path: String) -> Bool {
         let trimmedPath = stringByDeletingTrailingSlash
         let trimmedParentPath = path.stringByDeletingTrailingSlash
-        guard let range = trimmedPath.rangeOfString(trimmedParentPath, options: [.AnchoredSearch, .CaseInsensitiveSearch]) where range.startIndex == trimmedPath.startIndex else {
+        guard let range = trimmedPath.range(of: trimmedParentPath, options: [.anchored, .caseInsensitive]) , range.lowerBound == trimmedPath.startIndex else {
             return false
         }
         return true
@@ -123,7 +123,7 @@ public extension String {
             return self
         }
         
-        return NSFileManager().currentDirectoryPath.stringByAppendingPathComponent(self)
+        return FileManager().currentDirectoryPath.stringByAppendingPathComponent(self)
     }
     
     // return absolute standardized path for path. used for command line options

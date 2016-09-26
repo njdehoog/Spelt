@@ -24,19 +24,19 @@ struct PermalinkGenerator {
     
     var permalink: String {
         switch type {
-        case .Literal(let literal):
+        case .literal(let literal):
             if literal.pathExtension.isEmpty {
                 return literal.stringByAppendingPathComponent(PermalinkGenerator.indexFileName)
             }
             else {
                 return literal
             }
-        case .Date(let date):
-            let calendar = NSCalendar.currentCalendar()
-            let components = calendar.components([.Year, .Month, .Day], fromDate: date)
+        case .date(let date):
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.year, .month, .day], from: date)
             let lastPathComponent = file.fileName.stringByDeletingPathExtension.slugalizedString.stringByAppendingPathExtension("html")
-            return String.pathWithComponents([String(format: "%02d", components.year), String(format: "%02d", components.month), String(format: "%02d", components.day), lastPathComponent!])
-        case .Format(_):
+            return String.pathWithComponents([String(format: "%02d", components.year!), String(format: "%02d", components.month!), String(format: "%02d", components.day!), lastPathComponent!])
+        case .format(_):
             fatalError("Custom format for permalink not yet implemented")
         }
     }
@@ -46,10 +46,10 @@ extension PermalinkGenerator {
     init?(file: FileWithMetadata) {
         self.file = file
         if let permalink = file.metadata["permalink"]?.stringValue {
-            type = .Literal(permalink)
+            type = .literal(permalink)
         }
-        else if let date = file.date where file is Post {
-            type = .Date(date)
+        else if let date = file.date , file is Post {
+            type = .date(date)
         }
         else {
             return nil
@@ -58,9 +58,9 @@ extension PermalinkGenerator {
 }
 
 enum PermalinkType {
-    case Date(NSDate)
-    case Literal(String)
-    case Format(String) // TODO: implement custom formats
+    case date(Foundation.Date)
+    case literal(String)
+    case format(String) // TODO: implement custom formats
 }
 
 extension String {
@@ -70,20 +70,20 @@ extension String {
         
         // Remove all non-ASCII characters
         let nonASCIICharsRegex = try! NSRegularExpression(pattern: "[^\\x00-\\x7F]+", options: [])
-        slug = nonASCIICharsRegex.stringByReplacingMatchesInString(slug, options: [], range: NSMakeRange(0, slug.characters.count), withTemplate: "")
+        slug = nonASCIICharsRegex.stringByReplacingMatches(in: slug, options: [], range: NSMakeRange(0, slug.characters.count), withTemplate: "")
         
         // Turn non-slug characters into separators
-        let nonSlugCharactersRegex = try! NSRegularExpression(pattern: "[^a-z0-9\\-_\\+]+", options: [.CaseInsensitive])
-        slug = nonSlugCharactersRegex.stringByReplacingMatchesInString(slug, options: [], range: NSMakeRange(0, slug.characters.count), withTemplate: separator)
+        let nonSlugCharactersRegex = try! NSRegularExpression(pattern: "[^a-z0-9\\-_\\+]+", options: [.caseInsensitive])
+        slug = nonSlugCharactersRegex.stringByReplacingMatches(in: slug, options: [], range: NSMakeRange(0, slug.characters.count), withTemplate: separator)
         
         // No more than one of the separator in a row
         let repeatingSeparatorsRegex = try! NSRegularExpression(pattern: "\(separator){2,}", options: [])
-        slug = repeatingSeparatorsRegex.stringByReplacingMatchesInString(slug, options: [], range: NSMakeRange(0, slug.characters.count), withTemplate: separator)
+        slug = repeatingSeparatorsRegex.stringByReplacingMatches(in: slug, options: [], range: NSMakeRange(0, slug.characters.count), withTemplate: separator)
         
         // Remove leading/trailing separator
-        slug = slug.stringByTrimmingCharactersInSet(NSCharacterSet(charactersInString: separator))
+        slug = slug.trimmingCharacters(in: CharacterSet(charactersIn: separator))
         
         // Make lowercase
-        return slug.lowercaseString
+        return slug.lowercased()
     }
 }

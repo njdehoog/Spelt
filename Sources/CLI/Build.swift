@@ -4,18 +4,18 @@ import Result
 
 var observer: SiteObserver?
 
-struct BuildOptions: OptionsType {
+struct BuildOptions: OptionsProtocol {
     let sourcePath: String
     let destinationPath: String
     let watch: Bool
     
-    static func create(sourcePath: String) -> String -> Bool -> BuildOptions {
+    static func create(_ sourcePath: String) -> (String) -> (Bool) -> BuildOptions {
         return { destinationPath in { watch in
             return BuildOptions(sourcePath: sourcePath.absoluteStandardizedPath, destinationPath: destinationPath.absoluteStandardizedPath, watch: watch);
         }}
     }
     
-    static func evaluate(m: CommandMode) -> Result<BuildOptions, CommandantError<SpeltError>> {
+    static func evaluate(_ m: CommandMode) -> Result<BuildOptions, CommandantError<SpeltError>> {
         return create
             <*> m <| Option(key: "source", defaultValue: BuildCommand.currentDirectoryPath, usage: "Source directory (defaults to ./)")
             <*> m <| Option(key: "destination", defaultValue: BuildCommand.currentDirectoryPath.stringByAppendingPathComponent("_build"), usage: "Destination directory (defaults to ./_build)")
@@ -23,20 +23,20 @@ struct BuildOptions: OptionsType {
     }
 }
 
-struct BuildCommand: CommandType {
+struct BuildCommand: CommandProtocol {
     typealias Options = BuildOptions
     
-    static let currentDirectoryPath = NSFileManager().currentDirectoryPath
+    static let currentDirectoryPath = FileManager().currentDirectoryPath
     
     let verb = "build"
     let function = "Build your site"
     
-    func run(options: Options) -> Result<(), SpeltError> {
+    func run(_ options: Options) -> Result<(), SpeltError> {
         do {
             try build(options)
         }
         catch {
-            return Result.Failure(SpeltError(underlyingError: error))
+            return Result.failure(SpeltError(underlyingError: error))
         }
         
         if options.watch {
@@ -44,17 +44,18 @@ struct BuildCommand: CommandType {
             CFRunLoopRun()
         }
         
-        return Result.Success()
+        return Result.success()
     }
     
-    func build(options: Options) throws {
+    func build(_ options: Options) throws {
         print("Source: \(options.sourcePath)")
         print("Destination: \(options.destinationPath)")
         
         print("Generating...")
-        let before = NSDate()
+//        let before = Date()
         try _build(options)
-        print(String(format: "Done in %.3f seconds", NSDate().timeIntervalSinceDate(before)))
+        // FIXME: print time to complete
+//        print(String(format: "Done in %.3f seconds", NSDate().timeIntervalSinceDate(before)))
 
         if options.watch {
             print("Auto-regeneration enabled")
@@ -62,9 +63,10 @@ struct BuildCommand: CommandType {
             observer = SiteObserver(sourcePath: options.sourcePath, changeHandler: { sourcePath in
                 do {
                     print("Regenerating...")
-                    let before = NSDate()
+//                    let before = Date()
                     try self._build(options)
-                    print(String(format: "Done in %.3f seconds", NSDate().timeIntervalSinceDate(before)))
+                    // FIXME: print time to complete
+//                    print(String(format: "Done in %.3f seconds", NSDate().timeIntervalSinceDate(before)))
                 }
                 catch {
                     // output error to StandardError
@@ -74,7 +76,7 @@ struct BuildCommand: CommandType {
         }
     }
     
-    private func _build(options: Options) throws {
+    fileprivate func _build(_ options: Options) throws {
         let site = try SiteReader(sitePath: options.sourcePath).read()
         try SiteRenderer(site: site).render()
         try SiteBuilder(site: site, buildPath: options.destinationPath).build()

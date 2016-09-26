@@ -10,10 +10,10 @@ import Foundation
 
 
 extension NSRegularExpression {
-    func stringForFirstMatch(text: String, options: NSMatchingOptions, rangeAtIndex: Int = 0) -> String? {
+    func stringForFirstMatch(_ text: String, options: NSRegularExpression.MatchingOptions, rangeAtIndex: Int = 0) -> String? {
         let nsString = text as NSString
-        if let result = self.firstMatchInString(text, options: options, range: NSMakeRange(0, nsString.length)) {
-            return nsString.substringWithRange(result.rangeAtIndex(rangeAtIndex))
+        if let result = firstMatch(in: text, options: options, range: NSMakeRange(0, nsString.length)) {
+            return nsString.substring(with: result.rangeAt(rangeAtIndex))
         }
         return nil
     }

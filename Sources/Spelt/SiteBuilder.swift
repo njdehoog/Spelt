@@ -4,7 +4,7 @@ public struct SiteBuilder {
     let site: Site
     let buildPath: String
     
-    private let fileManager = NSFileManager()
+    private let fileManager = FileManager()
     
     public init(site: Site, buildPath: String) {
         self.site = site
@@ -20,14 +20,14 @@ public struct SiteBuilder {
     private func cleanBuildDirectory() throws {
         // delete build directory if it already exists
         var isDirectory: ObjCBool = false
-        let directoryExists = fileManager.fileExistsAtPath(buildPath, isDirectory: &isDirectory)
-        if directoryExists && isDirectory {
-            try fileManager.removeItemAtPath(buildPath)
+        let directoryExists = fileManager.fileExists(atPath: buildPath, isDirectory: &isDirectory)
+        if directoryExists && isDirectory.boolValue {
+            try fileManager.removeItem(atPath: buildPath)
         }
     }
     
     private func createBuildDirectory() throws {
-        try self.fileManager.createDirectoryAtPath(self.buildPath, withIntermediateDirectories: true, attributes: nil)
+        try self.fileManager.createDirectory(atPath: buildPath, withIntermediateDirectories: true, attributes: nil)
     }
     
     private func writeFiles() throws {
@@ -40,14 +40,14 @@ public struct SiteBuilder {
             
             // create subdirectories if required
             if relativeDestinationPath.pathComponents.count > 1 {
-                try fileManager.createDirectoryAtPath(destinationPath.stringByDeletingLastPathComponent, withIntermediateDirectories: true, attributes: nil)
+                try fileManager.createDirectory(atPath: destinationPath.stringByDeletingLastPathComponent, withIntermediateDirectories: true, attributes: nil)
             }
             
             if file is StaticFile {
-                try fileManager.copyItemAtPath(file.path, toPath: destinationPath)
+                try fileManager.copyItem(atPath: file.path, toPath: destinationPath)
             }
             else if let file = file as? FileWithMetadata {
-                try file.contents.writeToFile(destinationPath, atomically: true, encoding: NSUTF8StringEncoding)
+                try file.contents.write(toFile: destinationPath, atomically: true, encoding: String.Encoding.utf8)
             }
         }
     }

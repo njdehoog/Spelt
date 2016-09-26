@@ -1,6 +1,6 @@
 public final class Post: FileWithMetadata {
-    public enum Error: ErrorType {
-        case MissingDate
+    public enum InitializationError: Error {
+        case missingDate
     }
     
     public let path: String
@@ -14,7 +14,7 @@ public final class Post: FileWithMetadata {
         self.metadata = metadata
         
         guard self.date != nil else {
-            throw Error.MissingDate
+            throw InitializationError.missingDate
         }
     }
 }

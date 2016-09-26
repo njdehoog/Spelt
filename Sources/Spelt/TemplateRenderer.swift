@@ -2,21 +2,21 @@ import PathKit
 
 struct TemplateRenderer: Renderer {
     enum RendererType {
-        case InPlace
-        case UsingTemplate
+        case inPlace
+        case usingTemplate
     }
     
     private var defaultContext: Context {
         var contextDict = [String: Any]()
         contextDict["site"] = site.payload
-        contextDict["loader"] = TemplateLoader(paths: [Path(SiteConfiguration.Path.Includes.relativeToPath(site.path))])
+        contextDict["loader"] = TemplateLoader(paths: [Path(SiteConfiguration.Path.includes.relativeToPath(site.path))])
         return Context(dictionary: contextDict)
     }
     
     let site: Site
     let type: RendererType
     
-    init(site: Site, type: RendererType = .InPlace) {
+    init(site: Site, type: RendererType = .inPlace) {
         self.site = site
         self.type = type
     }
@@ -24,16 +24,16 @@ struct TemplateRenderer: Renderer {
     func render() throws {
         for case let file as FileWithMetadata in site.files {
             switch type {
-            case .InPlace:
+            case .inPlace:
                 try renderInPlace(file)
-            case .UsingTemplate:
+            case .usingTemplate:
                 try renderUsingTemplate(file)
             }
         }
     }
     
     // only renders file contents. ignores template name metadata
-    private func renderInPlace(file: FileWithMetadata) throws {
+    private func renderInPlace(_ file: FileWithMetadata) throws {
         let context = defaultContext
         context.push(file.payload)
         
@@ -43,14 +43,14 @@ struct TemplateRenderer: Renderer {
             file.contents = rendered
         }
         catch {
-            throw SiteRenderer.Error(filePath: file.path, lineNumber: nil, underlyingError: error)
+            throw SiteRenderer.RenderError(filePath: file.path, lineNumber: nil, underlyingError: error)
         }
         
         context.pop()
     }
     
     // renders file contents recursively into defined template
-    private func renderUsingTemplate(file: FileWithMetadata) throws {
+    private func renderUsingTemplate(_ file: FileWithMetadata) throws {
         guard let templateName = file.metadata.templateName else {
             // if no template name is defined, rendering stops here
             return
@@ -59,8 +59,8 @@ struct TemplateRenderer: Renderer {
         try renderFileWithTemplate(file, templateName: templateName)
     }
     
-    private func renderFileWithTemplate(file: FileWithMetadata, templateName: String) throws {
-        let templatesPath = SiteConfiguration.Path.Layouts.relativeToPath(site.path)
+    private func renderFileWithTemplate(_ file: FileWithMetadata, templateName: String) throws {
+        let templatesPath = SiteConfiguration.Path.layouts.relativeToPath(site.path)
         let templatePath = Path(templatesPath) + Path(templateName.stringByAppendingPathExtension("html")!)
         
         let context = defaultContext
@@ -80,12 +80,12 @@ struct TemplateRenderer: Renderer {
                 try renderFileWithTemplate(file, templateName: templateName)
             }
         }
-        catch let error as SiteRenderer.Error {
+        catch let error as SiteRenderer.RenderError {
             // method can throw recursively. make sure we only wrap the underlying error once.
             throw error
         }
         catch {
-            throw SiteRenderer.Error(filePath: templatePath.description, lineNumber: nil, underlyingError: error)
+            throw SiteRenderer.RenderError(filePath: templatePath.description, lineNumber: nil, underlyingError: error)
         }
     }
 }
@@ -93,7 +93,7 @@ struct TemplateRenderer: Renderer {
 extension Metadata {
     var templateName: Swift.String? {
         if let metaString = self["layout"] {
-            if case .String(let string) = metaString {
+            if case .string(let string) = metaString {
                 return string
             }
         }

@@ -9,11 +9,11 @@ struct ExcerptRenderer: Renderer {
             }
             
             // match first double newline and return everything before that
-            let paragraphRegex = try NSRegularExpression(pattern: "^(.*?)(\n\n|$)", options: [.CaseInsensitive, .DotMatchesLineSeparators])
-            if let excerpt = paragraphRegex.stringForFirstMatch(post.contents, options: NSMatchingOptions(), rangeAtIndex: 1) {
+            let paragraphRegex = try NSRegularExpression(pattern: "^(.*?)(\n\n|$)", options: [.caseInsensitive, .dotMatchesLineSeparators])
+            if let excerpt = paragraphRegex.stringForFirstMatch(post.contents, options: NSRegularExpression.MatchingOptions(), rangeAtIndex: 1) {
                 // render markdown in excerpt
                 let rendered = try MarkdownConverter().convert(excerpt)
-                post.metadata["excerpt"] = .String(rendered)
+                post.metadata["excerpt"] = .string(rendered)
             }
         }
     }

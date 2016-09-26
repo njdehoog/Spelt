@@ -1,7 +1,7 @@
 import GCDWebServers
 
 public class SiteServer {
-    private lazy var server = GCDWebServer()
+    private lazy var server = GCDWebServer()!
     let directoryPath: String
     let indexFilename: String
     
@@ -12,19 +12,19 @@ public class SiteServer {
         // log only warnings, errors and exceptions
         GCDWebServer.setLogLevel(3)
         
-        server.addGETHandlerForBasePath("/", directoryPath: directoryPath, indexFilename: indexFilename , cacheAge: 0, allowRangeRequests: true)
+        server.addGETHandler(forBasePath: "/", directoryPath: directoryPath, indexFilename: indexFilename , cacheAge: 0, allowRangeRequests: true)
     }
     
     deinit {
         server.stop()
     }
     
-    public func run() throws {
-        try server.runWithOptions([:])
+    open func run() throws {
+        try server.run(options: [:])
     }
     
-    public func start() throws -> (NSURL, UInt) {
-        try server.startWithOptions([:])
+    open func start() throws -> (URL, UInt) {
+        try server.start(options: [:])
         return (server.serverURL!, server.port)
     }
 }

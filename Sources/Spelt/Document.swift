@@ -5,7 +5,7 @@ public final class Document: FileWithMetadata {
     public var contents: String
     public var metadata: Metadata
     
-    public init(path: String, contents: String = "", metadata: Metadata = .None) {
+    public init(path: String, contents: String = "", metadata: Metadata = .none) {
         self.path = path
         self.contents = contents
         self.metadata = metadata

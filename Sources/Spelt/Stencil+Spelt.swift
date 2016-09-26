@@ -31,73 +31,73 @@ extension Namespace {
     }
 }
 
-func markdownFilter(value: Any?) throws -> Any? {
+func markdownFilter(_ value: Any?) throws -> Any? {
     guard let string = value as? String else {
         return TemplateSyntaxError("'markdown' filter expects string input")
     }
     return MarkdownConverter.htmlFromMarkdown(string)
 }
 
-func dateFilter(value: Any?, arguments: [Any?]) throws -> Any? {
-    guard let date = value as? NSDate else {
+func dateFilter(_ value: Any?, arguments: [Any?]) throws -> Any? {
+    guard let date = value as? Date else {
         print(value as? String)
-        throw TemplateSyntaxError("'date' filter expects input value to be of type NSDate, not \(value.dynamicType)")
+        throw TemplateSyntaxError("'date' filter expects input value to be of type NSDate, not \(type(of: value))")
     }
     
     guard let format = arguments.first as? String else {
         throw TemplateSyntaxError("'date' filter expects format argument as string")
     }
     
-    let dateFormatter = NSDateFormatter()
+    let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = format
-    return dateFormatter.stringFromDate(date)
+    return dateFormatter.string(from: date)
 }
 
-func dateToStringFilter(value: Any?) throws -> Any? {
-    guard let date = value as? NSDate else {
+func dateToStringFilter(_ value: Any?) throws -> Any? {
+    guard let date = value as? Date else {
         throw TemplateSyntaxError("'date_to_string' filter expects input value to be of type NSDate")
     }
     
-    let dateFormatter = NSDateFormatter()
-    dateFormatter.dateStyle = .LongStyle
-    return dateFormatter.stringFromDate(date)
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateStyle = .long
+    return dateFormatter.string(from: date)
 }
 
-func dateToRFC822Filter(value: Any?) throws -> Any? {
-    guard let date = value as? NSDate else {
+func dateToRFC822Filter(_ value: Any?) throws -> Any? {
+    guard let date = value as? Date else {
         throw TemplateSyntaxError("'date_to_rfc822' filter expects input value to be of type NSDate")
     }
     
-    let dateFormatter = NSDateFormatter()
+    let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss Z"
-    return dateFormatter.stringFromDate(date)
+    return dateFormatter.string(from: date)
 }
 
-func dateToXMLSchemaFilter(value: Any?) throws -> Any? {
-    guard let date = value as? NSDate else {
+func dateToXMLSchemaFilter(_ value: Any?) throws -> Any? {
+    guard let date = value as? Date else {
         throw TemplateSyntaxError("'date_to_xmlschema' filter expects input value to be of type NSDate")
     }
     
-    let dateFormatter = NSDateFormatter()
+    let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ" // ISO8601 format
-    return dateFormatter.stringFromDate(date)
+    return dateFormatter.string(from: date)
 }
 
-func xmlEscapeFilter(value: Any?) throws -> Any? {
+func xmlEscapeFilter(_ value: Any?) throws -> Any? {
     guard let string = value as? String else {
         return TemplateSyntaxError("'xml_escape' filter expects string input")
     }
     return string.XMLEscapedString
 }
 
-func URLEncodeFilter(value: Any?) throws -> Any? {
+func URLEncodeFilter(_ value: Any?) throws -> Any? {
     guard let string = value as? String else {
         return TemplateSyntaxError("'url_encode' filter expects string input")
     }
-    return string.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+    return string.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
 }
 
-func prependFilter(value: Any?, arguments: [Any?]) throws -> Any? {
+func prependFilter(_ value: Any?, arguments: [Any?]) throws -> Any? {
     guard let string = value as? String else {
         return TemplateSyntaxError("'prepend' filter expects string input")
     }
@@ -109,7 +109,7 @@ func prependFilter(value: Any?, arguments: [Any?]) throws -> Any? {
     return stringToPrepend + string
 }
 
-func appendFilter(value: Any?, arguments: [Any?]) throws -> Any? {
+func appendFilter(_ value: Any?, arguments: [Any?]) throws -> Any? {
     guard let string = value as? String else {
         return TemplateSyntaxError("'prepend' filter expects string input")
     }
@@ -121,7 +121,7 @@ func appendFilter(value: Any?, arguments: [Any?]) throws -> Any? {
     return string + stringToAppend
 }
 
-func replaceFilter(value: Any?, arguments: [Any?]) throws -> Any? {
+func replaceFilter(_ value: Any?, arguments: [Any?]) throws -> Any? {
     guard let string = value as? String else {
         return TemplateSyntaxError("'replace' filter expects string input")
     }
@@ -134,11 +134,11 @@ func replaceFilter(value: Any?, arguments: [Any?]) throws -> Any? {
         return TemplateSyntaxError("'replace' filter expects string arguments")
     }
     
-    return string.stringByReplacingOccurrencesOfString(stringToReplace, withString: substitute)
+    return string.replacingOccurrences(of: stringToReplace, with: substitute)
 }
 
 
-func removeFilter(value: Any?, arguments: [Any?]) throws -> Any? {
+func removeFilter(_ value: Any?, arguments: [Any?]) throws -> Any? {
     guard let string = value as? String else {
         return TemplateSyntaxError("'remove' filter expects string input")
     }
@@ -147,24 +147,24 @@ func removeFilter(value: Any?, arguments: [Any?]) throws -> Any? {
         throw TemplateSyntaxError("'remove' filter expects string argument")
     }
     
-    return string.stringByReplacingOccurrencesOfString(stringToRemove, withString: "")
+    return string.replacingOccurrences(of: stringToRemove, with: "")
 }
 
-func stripHTMLFilter(value: Any?) throws -> Any? {
+func stripHTMLFilter(_ value: Any?) throws -> Any? {
     guard let string = value as? String else {
         return TemplateSyntaxError("'strip_html' filter expects string input")
     }
     return string.stripHTML()
 }
 
-func stripNewlinesFilter(value: Any?) throws -> Any? {
+func stripNewlinesFilter(_ value: Any?) throws -> Any? {
     guard let string = value as? String else {
         return TemplateSyntaxError("'strip_newlines' filter expects string input")
     }
-    return string.componentsSeparatedByCharactersInSet(NSCharacterSet.newlineCharacterSet()).joinWithSeparator("")
+    return string.components(separatedBy: CharacterSet.newlines).joined(separator: "")
 }
 
-func truncateFilter(value: Any?, arguments: [Any?]) throws -> Any? {
+func truncateFilter(_ value: Any?, arguments: [Any?]) throws -> Any? {
     guard let string = value as? String else {
         return TemplateSyntaxError("'truncate' filter expects string input")
     }
@@ -173,11 +173,11 @@ func truncateFilter(value: Any?, arguments: [Any?]) throws -> Any? {
         throw TemplateSyntaxError("'truncate' filter expects integer argument")
     }
     
-    let endIndex = string.startIndex.advancedBy(numberOfCharacters, limit: string.endIndex)
-    return string[string.startIndex..<endIndex]
+    let endIndex = string.characters.index(string.startIndex, offsetBy: numberOfCharacters, limitedBy: string.endIndex)
+    return string[string.startIndex..<endIndex!]
 }
 
-func joinFilter(value: Any?, arguments: [Any?]) throws -> Any? {
+func joinFilter(_ value: Any?, arguments: [Any?]) throws -> Any? {
     guard let array = value as? [Any] else {
         return TemplateSyntaxError("'join' filter expects array input")
     }
@@ -197,10 +197,10 @@ func joinFilter(value: Any?, arguments: [Any?]) throws -> Any? {
         throw TemplateSyntaxError("'join' filter expects separator as argument")
     }
     
-    return stringArray.joinWithSeparator(separator)
+    return stringArray.joined(separator: separator)
 }
 
-func arrayToSentenceStringFilter(value: Any?) throws -> Any? {
+func arrayToSentenceStringFilter(_ value: Any?) throws -> Any? {
     guard let array = value as? [Any] else {
         return TemplateSyntaxError("'array_to_sentence' filter expects array input")
     }
@@ -218,22 +218,22 @@ func arrayToSentenceStringFilter(value: Any?) throws -> Any? {
     case 1:
         return stringArray.first
     case 2:
-        return stringArray.joinWithSeparator(" and ")
+        return stringArray.joined(separator: " and ")
     default:
-        let slice = stringArray[0..<array.endIndex.predecessor()]
-        return "\(slice.joinWithSeparator(", ")) and \(stringArray.last!)"
+        let slice = stringArray[0..<(array.endIndex - 1)]
+        return "\(slice.joined(separator: ", ")) and \(stringArray.last!)"
     }
 }
 
-func numberOfWordsFilter(value: Any?) throws -> Any? {
+func numberOfWordsFilter(_ value: Any?) throws -> Any? {
     guard let string = value as? String else {
         return TemplateSyntaxError("'number_of_words' filter expects string input")
     }
     
-    return string.componentsSeparatedByCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).count
+    return string.components(separatedBy: CharacterSet.whitespaces).count
 }
 
-func defaultFilter(value: Any?, arguments: [Any?]) throws -> Any? {
+func defaultFilter(_ value: Any?, arguments: [Any?]) throws -> Any? {
     guard arguments.count == 1 else {
         return TemplateSyntaxError("'default' filter expects (only) one argument")
     }
@@ -245,7 +245,7 @@ func defaultFilter(value: Any?, arguments: [Any?]) throws -> Any? {
     return value
 }
 
-func gistTag(parser: TokenParser, token: Token) throws -> NodeType {
+func gistTag(_ parser: TokenParser, token: Token) throws -> NodeType {
     let components = token.components()
     guard components.count >= 2 && components.count < 4 else {
         throw TemplateSyntaxError("'gist' tags should have between 1 and 2 arguments`\(token.contents)`.")
@@ -301,7 +301,7 @@ public class KaTexNode : NodeType {
         self.inline = inline
     }
     
-    public func render(context: Context) throws -> String {
+    public func render(_ context: Context) throws -> String {
         return try context.push() {
             let output = try renderNodes(mathNodes, context)
             if inline {
@@ -335,7 +335,7 @@ public class RawNode : NodeType {
         self.rawNodes = rawNodes
     }
     
-    public func render(context: Context) throws -> String {
+    public func render(_ context: Context) throws -> String {
         return try context.push() {
             return try renderNodes(rawNodes, context)
         }

@@ -4,13 +4,13 @@ struct SassConverter: Converter {
     let outputPathExtension = "css"
     let site: Site
     
-    func matches(pathExtension: String) -> Bool {
+    func matches(_ pathExtension: String) -> Bool {
         return ["sass", "scss"].contains(pathExtension)
     }
     
-    func convert(content: String) throws -> String {
+    func convert(_ content: String) throws -> String {
         var options = SassOptions()
-        options.includePath = SiteConfiguration.Path.Sass.relativeToPath(site.path)
+        options.includePath = SiteConfiguration.Path.sass.relativeToPath(site.path)
         return try Sass.compile(content, options: options)
     }
 }

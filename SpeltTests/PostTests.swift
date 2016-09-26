@@ -12,8 +12,8 @@ import XCTest
 class PostTests: XCTestCase {
     
     func testThatItRequiresDate() {
-        XCTAssertThrowsError(try Post(path: "", contents: "", metadata: Metadata.None)) { error in
-            XCTAssertEqual(error as? Post.Error, Post.Error.MissingDate)
+        XCTAssertThrowsError(try Post(path: "", contents: "", metadata: Metadata.none)) { error in
+            XCTAssertEqual(error as? Post.InitializationError, Post.InitializationError.missingDate)
         }
     }
 }

@@ -10,11 +10,11 @@ public struct SiteRenderer {
         try PermalinkRenderer(site: site).render()
         try PaginationRenderer(site: site).render()
         try ExcerptRenderer(site: site).render()
-        try TemplateRenderer(site: site, type: .InPlace).render()
+        try TemplateRenderer(site: site, type: .inPlace).render()
         
         try convert()
         
-        try TemplateRenderer(site: site, type: .UsingTemplate).render()
+        try TemplateRenderer(site: site, type: .usingTemplate).render()
     }
     
     private func convert() throws {
@@ -33,12 +33,12 @@ public struct SiteRenderer {
 }
 
 extension SiteRenderer {
-    public struct Error: ErrorType {
+    public struct RenderError: Error {
         public let filePath: String
         public let lineNumber: Int?
-        public let underlyingError: ErrorType
+        public let underlyingError: Error
         
-        init(filePath: String, lineNumber: Int? = nil, underlyingError: ErrorType) {
+        init(filePath: String, lineNumber: Int? = nil, underlyingError: Error) {
             self.filePath = filePath
             self.lineNumber = lineNumber
             self.underlyingError = underlyingError
@@ -55,7 +55,7 @@ protocol Renderer {
 protocol Converter {
     var outputPathExtension: String { get }
     
-    func matches(pathExtension: String) -> Bool
-    func convert(content: String) throws -> String
+    func matches(_ pathExtension: String) -> Bool
+    func convert(_ content: String) throws -> String
 }
 

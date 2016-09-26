@@ -1,22 +1,22 @@
 public struct SiteConfiguration {
     public enum Path: String {
-        case Config = "_config.yml"
-        case DestinationConfig = "_destinations.yml"
-        case Source = ""
-        case Posts = "_posts"
-        case Sass = "_sass"
-        case Layouts = "_layouts"
-        case Includes = "_includes"
-        case Assets = "assets"
-        case Build = "_build"
+        case config = "_config.yml"
+        case destinationConfig = "_destinations.yml"
+        case source = ""
+        case posts = "_posts"
+        case sass = "_sass"
+        case layouts = "_layouts"
+        case includes = "_includes"
+        case assets = "assets"
+        case build = "_build"
         
         // returns absolute path
-        func relativeToPath(path: String) -> String {
+        func relativeToPath(_ path: String) -> String {
             return path.stringByAppendingPathComponent(rawValue)
         }
     }
     
     static var defaultPaths: [Path] {
-        return [.Posts, .Sass, .Layouts, .Includes, .Assets]
+        return [.posts, .sass, .layouts, .includes, .assets]
     }
 }

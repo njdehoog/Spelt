@@ -29,17 +29,17 @@ class SiteBuilderTests: XCTestCase {
     
     func testThatBuildDirectoryIsRemoved() {
         // create test file in build directory to check if it is removed by build command
-        try! NSFileManager().createDirectoryAtPath(buildPath, withIntermediateDirectories: true, attributes: nil)
+        try! FileManager().createDirectory(atPath: buildPath, withIntermediateDirectories: true, attributes: nil)
         let testFilePath = buildPath.stringByAppendingPathComponent("test.txt")
-        try! "hello world".writeToFile(testFilePath, atomically: true, encoding: NSUTF8StringEncoding)
+        try! "hello world".write(toFile: testFilePath, atomically: true, encoding: String.Encoding.utf8)
         
         try! siteBuilder?.build()
-        XCTAssertFalse(NSFileManager().fileExistsAtPath(testFilePath))
+        XCTAssertFalse(FileManager().fileExists(atPath: testFilePath))
     }
     
     func testThatBuildDirectoryIsCreated() {
         try! siteBuilder?.build()
-        XCTAssertTrue(NSFileManager().fileExistsAtPath(buildPath))
+        XCTAssertTrue(FileManager().fileExists(atPath: buildPath))
     }
     
     func testThatStaticFileIsCopied() {
@@ -47,7 +47,7 @@ class SiteBuilderTests: XCTestCase {
         
         let staticHTMLFile = site.staticFiles.filter({ $0.fileName == "static.html" }).first!
         let filePath = buildPath.stringByAppendingPathComponent(staticHTMLFile.destinationPath!)
-        XCTAssertTrue(NSFileManager().fileExistsAtPath(filePath))
+        XCTAssertTrue(FileManager().fileExists(atPath: filePath))
     }
     
     func testThatStaticFileIsCopiedToSubfolder() {
@@ -55,7 +55,7 @@ class SiteBuilderTests: XCTestCase {
         
         let peacockImageFile = site.staticFiles.filter({ $0.fileName == "peacock.jpeg" }).first!
         let filePath = buildPath.stringByAppendingPathComponent(peacockImageFile.destinationPath!)
-        XCTAssertTrue(NSFileManager().fileExistsAtPath(filePath))
+        XCTAssertTrue(FileManager().fileExists(atPath: filePath))
     }
     
     func testThatDocumentIsWritten() {
@@ -63,7 +63,7 @@ class SiteBuilderTests: XCTestCase {
         
         let aboutPage = site.documents.filter({ $0.fileName == "about.md" }).first!
         let filePath = buildPath.stringByAppendingPathComponent(aboutPage.destinationPath!)
-        XCTAssertTrue(NSFileManager().fileExistsAtPath(filePath))
+        XCTAssertTrue(FileManager().fileExists(atPath: filePath))
     }
     
     func testThatDocumentIsWrittenToSubfolder() {
@@ -71,7 +71,7 @@ class SiteBuilderTests: XCTestCase {
         
         let aboutPage = site.documents.filter({ $0.fileName == "info.html" }).first!
         let filePath = buildPath.stringByAppendingPathComponent(aboutPage.destinationPath!)
-        XCTAssertTrue(NSFileManager().fileExistsAtPath(filePath))
+        XCTAssertTrue(FileManager().fileExists(atPath: filePath))
     }
     
     func testThatPostIsWritten() {
@@ -79,7 +79,7 @@ class SiteBuilderTests: XCTestCase {
         
         let markdownPost = site.posts.filter({ $0.fileName == "markdown.md" }).first!
         let filePath = buildPath.stringByAppendingPathComponent(markdownPost.destinationPath!)
-        XCTAssertTrue(NSFileManager().fileExistsAtPath(filePath))
+        XCTAssertTrue(FileManager().fileExists(atPath: filePath))
     }
     
     func testThatPostContentIsCorrectlyWritten() {

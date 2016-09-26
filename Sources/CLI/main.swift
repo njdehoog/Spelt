@@ -1,7 +1,7 @@
 import Commandant
 
-struct SpeltError: ErrorType {
-    let underlyingError: ErrorType
+struct SpeltError: Error {
+    let underlyingError: Error
 }
 
 extension SpeltError: CustomStringConvertible {

@@ -9,15 +9,15 @@
 import Foundation
 
 enum NumericVariableType {
-    case IntegerType(Int)
-    case DoubleType(Double)
+    case integerType(Int)
+    case doubleType(Double)
     
     init?(_ value: Any?) {
         switch value {
         case let number as Double:
-            self = .DoubleType(number)
+            self = .doubleType(number)
         case let number as Int:
-            self = .IntegerType(number)
+            self = .integerType(number)
         default:
             return nil
         }
@@ -26,24 +26,24 @@ enum NumericVariableType {
 
 func /(left: NumericVariableType, right: NumericVariableType) -> Any {
     switch left {
-    case .IntegerType(let left):
+    case .integerType(let left):
         switch right {
-        case .IntegerType(let right):
+        case .integerType(let right):
             return Double(left) / Double(right)
-        case .DoubleType(let right):
+        case .doubleType(let right):
             return Double(left) / right
         }
-    case .DoubleType(let left):
+    case .doubleType(let left):
         switch right {
-        case .IntegerType(let right):
+        case .integerType(let right):
             return left / Double(right)
-        case .DoubleType(let right):
+        case .doubleType(let right):
             return left / right
         }
     }
 }
 
-func dividedByFilter(value: Any?, arguments: [Any?]) throws -> Any? {
+func dividedByFilter(_ value: Any?, arguments: [Any?]) throws -> Any? {
     guard arguments.count == 1 else {
         throw TemplateSyntaxError("'divided_by' filter expects exactly 1 argument, not \(arguments.count)")
     }
@@ -59,7 +59,7 @@ func dividedByFilter(value: Any?, arguments: [Any?]) throws -> Any? {
     return dividend / divisor
 }
 
-func floorFilter(value: Any?) throws -> Any? {
+func floorFilter(_ value: Any?) throws -> Any? {
     guard let doubleValue = value as? Double else {
         throw TemplateSyntaxError("'floor' filter expects floating point value")
     }
@@ -67,7 +67,7 @@ func floorFilter(value: Any?) throws -> Any? {
     return Int(floor(doubleValue))
 }
 
-func ceilFilter(value: Any?) throws -> Any? {
+func ceilFilter(_ value: Any?) throws -> Any? {
     guard let doubleValue = value as? Double else {
         throw TemplateSyntaxError("'ceil' filter expects floating point value")
     }

@@ -8,7 +8,7 @@ struct PaginationRenderer: Renderer {
         
         for file in site.filesWithMetadata {
             // only paginate index files
-            guard let destinationPath = file.destinationPath where destinationPath.lastPathComponent == "index.html" else {
+            guard let destinationPath = file.destinationPath , destinationPath.lastPathComponent == "index.html" else {
                 continue
             }
             
@@ -37,31 +37,31 @@ struct PaginationRenderer: Renderer {
                 let startIndex = index * maxItemsPerPage
                 let endIndex = min(startIndex + maxItemsPerPage, items.count)
                 let slice = Array(items[startIndex..<endIndex])
-                var paginatorData: [String: Metadata] = ["posts": Metadata(files: slice), "page": .Int(index + 1), "total_pages": .Int(numPages)]
-                paginatorData["per_page"] = .Int(maxItemsPerPage)
-                paginatorData["total_items"] = .Int(items.count)
-                paginatorData["multiple_pages"] = .Bool(numPages > 1)
+                var paginatorData: [String: Metadata] = ["posts": Metadata(files: slice), "page": .int(index + 1), "total_pages": .int(numPages)]
+                paginatorData["per_page"] = .int(maxItemsPerPage)
+                paginatorData["total_items"] = .int(items.count)
+                paginatorData["multiple_pages"] = .bool(numPages > 1)
                 if index + 1 < numPages {
-                    paginatorData["next_page"] = .Int(index + 2)
-                    paginatorData["next_page_path"] = .String(URLForPage(withIndex: index + 1))
+                    paginatorData["next_page"] = .int(index + 2)
+                    paginatorData["next_page_path"] = .string(URLForPage(withIndex: index + 1))
                 }
                 if index > 0 {
-                    paginatorData["previous_page"] = .Int(index)
-                    paginatorData["previous_page_path"] = .String(URLForPage(withIndex: index - 1))
+                    paginatorData["previous_page"] = .int(index)
+                    paginatorData["previous_page_path"] = .string(URLForPage(withIndex: index - 1))
                 }
                 
                 if index > 0 {
                     let pageDocument = Document(path: file.path, contents: file.contents, metadata: file.metadata)
                     pageDocument.destinationPath = pathForPage(withIndex: index)
-                    pageDocument.metadata["paginator"] = .Dictionary(paginatorData)
+                    pageDocument.metadata["paginator"] = .dictionary(paginatorData)
                     site.documents.append(pageDocument)
                 }
                 else {
-                    if file.metadata == Metadata.None {
-                        file.metadata = Metadata.Dictionary([:])
+                    if file.metadata == Metadata.none {
+                        file.metadata = Metadata.dictionary([:])
                     }
                     
-                    file.metadata["paginator"] = .Dictionary(paginatorData)
+                    file.metadata["paginator"] = .dictionary(paginatorData)
                 }
             }
         }
