@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD0550F51D993FBA00394BB2 /* PathKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6D607B1D4BA3B100A7C277 /* PathKit.framework */; };
 		FD2EE1041D86CA1C00700C58 /* ExcerptRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2EE1031D86CA1C00700C58 /* ExcerptRenderer.swift */; };
 		FD2EE1061D86CCD900700C58 /* Paginate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2EE1051D86CCD900700C58 /* Paginate.swift */; };
 		FD3915821D7DB7BE00F7F5F7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B11D4A2A3500658286 /* main.swift */; };
@@ -67,7 +68,6 @@
 		FD6D60761D4BA2D500A7C277 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60751D4BA2D500A7C277 /* String+HTML.swift */; };
 		FD6D60781D4BA30700A7C277 /* String+XML.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60771D4BA30700A7C277 /* String+XML.swift */; };
 		FD6D607A1D4BA36A00A7C277 /* MarkdownConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60791D4BA36A00A7C277 /* MarkdownConverter.swift */; };
-		FD6D607C1D4BA3B100A7C277 /* PathKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6D607B1D4BA3B100A7C277 /* PathKit.framework */; };
 		FD6D607E1D4BA51000A7C277 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D607D1D4BA51000A7C277 /* Error.swift */; };
 		FD8531CD1D4A2A6200658286 /* SpeltKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8531BF1D4A2A6200658286 /* SpeltKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD8531D81D4A2A8D00658286 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B31D4A2A3500658286 /* Post.swift */; };
@@ -240,13 +240,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD0550F51D993FBA00394BB2 /* PathKit.framework in Frameworks */,
 				FD39159E1D7F015E00F7F5F7 /* GCDWebServers.framework in Frameworks */,
 				FD39159F1D7F015E00F7F5F7 /* Witness.framework in Frameworks */,
 				FD3915921D7DCBAE00F7F5F7 /* Commandant.framework in Frameworks */,
 				FD3915931D7DCBAE00F7F5F7 /* Result.framework in Frameworks */,
 				FD8531E21D4A3A7200658286 /* SwiftHoedown.framework in Frameworks */,
 				FD8531E41D4A3A7400658286 /* Hoedown.framework in Frameworks */,
-				FD6D607C1D4BA3B100A7C277 /* PathKit.framework in Frameworks */,
 				FDB9A8AB1D54BF230016CDB7 /* SwiftSass.framework in Frameworks */,
 				FD6D5FEA1D4B7B2700A7C277 /* SwiftYAML.framework in Frameworks */,
 			);

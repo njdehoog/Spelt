@@ -6,7 +6,7 @@
 	url = https://github.com/njdehoog/hoedown.git
 [submodule "Carthage/Checkouts/PathKit"]
 	path = Carthage/Checkouts/PathKit
-	url = https://github.com/kylef/PathKit.git
+	url = https://github.com/njdehoog/PathKit.git
 [submodule "Carthage/Checkouts/swift-hoedown"]
 	path = Carthage/Checkouts/swift-hoedown
 	url = https://github.com/njdehoog/swift-hoedown.git
