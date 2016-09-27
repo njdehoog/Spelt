@@ -1,3 +1,8 @@
 # Site settings
 title: "My Blog Title"
+description: >
+  My site description
+
+url: ""
+date_format: "MMM dd, yyyy"
 paginate: 5
