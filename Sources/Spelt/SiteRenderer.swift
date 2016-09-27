@@ -6,6 +6,7 @@ public struct SiteRenderer {
     }
     
     public func render() throws {
+        try BuildDateRenderer(site: site).render()
         try CollectionRenderer(site: site).render()
         try PermalinkRenderer(site: site).render()
         try PaginationRenderer(site: site).render()

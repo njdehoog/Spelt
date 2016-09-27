@@ -81,6 +81,7 @@
 		FDB926321D6B4CA200B8D5D3 /* SiteBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB926311D6B4CA200B8D5D3 /* SiteBuilderTests.swift */; };
 		FDB9A8A91D54B99B0016CDB7 /* SassConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB9A8A81D54B99B0016CDB7 /* SassConverter.swift */; };
 		FDB9A8AB1D54BF230016CDB7 /* SwiftSass.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */; };
+		FDCC12CC1D9A72580067D6E4 /* BuildDateRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC12CB1D9A72580067D6E4 /* BuildDateRenderer.swift */; };
 		FDE1D6221D7DB72D009A1A77 /* SwiftSass.framework in Copy Frameworks to embed in Framework */ = {isa = PBXBuildFile; fileRef = FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FDE1D6231D7DB72D009A1A77 /* PathKit.framework in Copy Frameworks to embed in Framework */ = {isa = PBXBuildFile; fileRef = FD6D607B1D4BA3B100A7C277 /* PathKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FDE1D6241D7DB72D009A1A77 /* SwiftYAML.framework in Copy Frameworks to embed in Framework */ = {isa = PBXBuildFile; fileRef = FD6D5FE81D4B7B1A00A7C277 /* SwiftYAML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -224,6 +225,7 @@
 		FDB926311D6B4CA200B8D5D3 /* SiteBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteBuilderTests.swift; sourceTree = "<group>"; };
 		FDB9A8A81D54B99B0016CDB7 /* SassConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SassConverter.swift; sourceTree = "<group>"; };
 		FDB9A8AA1D54BF230016CDB7 /* SwiftSass.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftSass.framework; path = Carthage/Build/Mac/SwiftSass.framework; sourceTree = "<group>"; };
+		FDCC12CB1D9A72580067D6E4 /* BuildDateRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildDateRenderer.swift; sourceTree = "<group>"; };
 		FDF93A061D84554100C9C8FF /* CollectionRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionRenderer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -303,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				FD6D5FFA1D4B969B00A7C277 /* Permalinks.swift */,
+				FDCC12CB1D9A72580067D6E4 /* BuildDateRenderer.swift */,
 				FD6D606F1D4BA21B00A7C277 /* TemplateRenderer.swift */,
 				FDF93A061D84554100C9C8FF /* CollectionRenderer.swift */,
 				FD2EE1031D86CA1C00700C58 /* ExcerptRenderer.swift */,
@@ -694,6 +697,7 @@
 				FD8531D81D4A2A8D00658286 /* Post.swift in Sources */,
 				FD6D607E1D4BA51000A7C277 /* Error.swift in Sources */,
 				FD6D606D1D4BA19D00A7C277 /* Tokenizer.swift in Sources */,
+				FDCC12CC1D9A72580067D6E4 /* BuildDateRenderer.swift in Sources */,
 				FD6D60741D4BA2AE00A7C277 /* Stencil+MathFilters.swift in Sources */,
 				FD3915A61D7F01B700F7F5F7 /* SiteServer.swift in Sources */,
 				FD6D60721D4BA27900A7C277 /* Stencil+Spelt.swift in Sources */,
