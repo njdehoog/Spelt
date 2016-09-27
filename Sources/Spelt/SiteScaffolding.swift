@@ -43,10 +43,10 @@ public struct SiteScaffolding {
     private func replaceWelcomePost() throws {
         // replace welcome post with one that is dynamically generated
         let filePath = destinationPath.stringByAppendingPathComponent("_posts/welcome.md")
-        var fileContents = try String(contentsOfFile: filePath)
+        let postContents = try String(contentsOfFile: filePath).stringByReplacingFrontMatter("")
         let dateString = YAMLDateFormatter.stringFromDate(Date())
         let frontMatter: YAMLValue = ["title": "Welcome to Spelt", "layout": "post", "date": .string(dateString)]
-        fileContents = try YAML.emit(frontMatter) + "---\n" + fileContents
-        try fileContents.write(toFile: filePath, atomically: true, encoding: String.Encoding.utf8)
+        let generatedContents = try YAML.emit(frontMatter) + "---\n\n" + postContents
+        try generatedContents.write(toFile: filePath, atomically: true, encoding: String.Encoding.utf8)
     }
 }
