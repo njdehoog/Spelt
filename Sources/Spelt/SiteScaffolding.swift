@@ -1,3 +1,5 @@
+import SwiftYAML
+
 public struct SiteScaffolding {
     let destinationPath: String
     let templatePath: String
@@ -34,5 +36,17 @@ public struct SiteScaffolding {
                 throw WriteError.directoryExists(destinationPath)
             }
         }
+        
+        try replaceWelcomePost()
+    }
+    
+    private func replaceWelcomePost() throws {
+        // replace welcome post with one that is dynamically generated
+        let filePath = destinationPath.stringByAppendingPathComponent("_posts/welcome.md")
+        var fileContents = try String(contentsOfFile: filePath)
+        let dateString = YAMLDateFormatter.stringFromDate(Date())
+        let frontMatter: YAMLValue = ["title": "Welcome to Spelt", "layout": "post", "date": .string(dateString)]
+        fileContents = try YAML.emit(frontMatter) + "---\n" + fileContents
+        try fileContents.write(toFile: filePath, atomically: true, encoding: String.Encoding.utf8)
     }
 }
