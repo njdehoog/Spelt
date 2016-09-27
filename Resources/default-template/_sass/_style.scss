@@ -1,0 +1,30 @@
+a {
+  color: #2980b9;
+}
+
+h1.site-title {
+  font-size: 2rem;
+}
+
+div.wrapper {
+  width: 600px;
+  margin: 0 auto;
+}
+
+h2.post-title {
+  font-size: 3rem;
+
+  a { text-decoration: none; }
+  a:hover { text-decoration: underline; }
+}
+
+p.post-meta {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  color: #7f8c8d;
+  font-weight: bold;
+}
+
+footer {
+  height: 100px;
+}
