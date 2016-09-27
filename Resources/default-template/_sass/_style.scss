@@ -14,7 +14,10 @@ div.wrapper {
 h2.post-title {
   font-size: 3rem;
 
-  a { text-decoration: none; }
+  a { 
+    color: #000;
+    text-decoration: none; 
+  }
   a:hover { text-decoration: underline; }
 }
 
