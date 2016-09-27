@@ -51,22 +51,20 @@ struct BuildCommand: CommandProtocol {
         print("Source: \(options.sourcePath)")
         print("Destination: \(options.destinationPath)")
         
-        print("Generating...")
-//        let before = Date()
+        print("Generating...", terminator: "")
+        let before = Date()
         try _build(options)
-        // FIXME: print time to complete
-//        print(String(format: "Done in %.3f seconds", NSDate().timeIntervalSinceDate(before)))
+        print(String(format: "done in %.3f seconds", Date().timeIntervalSince(before)))
 
         if options.watch {
             print("Auto-regeneration enabled")
             
             observer = SiteObserver(sourcePath: options.sourcePath, changeHandler: { sourcePath in
                 do {
-                    print("Regenerating...")
-//                    let before = Date()
+                    print("Regenerating...", terminator: "")
+                    let before = Date()
                     try self._build(options)
-                    // FIXME: print time to complete
-//                    print(String(format: "Done in %.3f seconds", NSDate().timeIntervalSinceDate(before)))
+                    print(String(format: "done in %.3f seconds", Date().timeIntervalSince(before)))
                 }
                 catch {
                     // output error to StandardError
