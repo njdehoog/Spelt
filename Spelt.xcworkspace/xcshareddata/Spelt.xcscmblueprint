@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "932351BA4170361836A889B660597D71744235A0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "932351BA4170361836A889B660597D71744235A0" : 0,
+    "3DA8097D366B6AFDAEA91946C35253AA1EBC780B" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "D1B73158-D20C-4920-AB52-2D9836A13DE9",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "932351BA4170361836A889B660597D71744235A0" : "framework\/",
+    "3DA8097D366B6AFDAEA91946C35253AA1EBC780B" : "framework\/Stencil\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Spelt",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Spelt.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/njdehoog\/Stencil.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3DA8097D366B6AFDAEA91946C35253AA1EBC780B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:njdehoog\/Spelt.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "932351BA4170361836A889B660597D71744235A0"
+    }
+  ]
+}
