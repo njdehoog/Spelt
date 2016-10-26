@@ -13,18 +13,19 @@ provision:
 clean:
 	rm -rf "$(BUILD_DIR)"
 
-install: clean all install_only
-	
-install_only:
+install: clean all
 	# Create directories if they don't exist
 	install -d "$(DESTDIR)/Frameworks"
 	install -d "$(RESOURCEDIR)"
 
 	# Copy framework
-	cp -r "$(BUILD_DIR)/Build/Products/Release/spelt.app/Contents/Frameworks/SpeltKit.framework" "$(DESTDIR)/Frameworks/"
+	cp -r "$(BUILD_DIR)Build/Products/Release/spelt.app/Contents/Frameworks/SpeltKit.framework" "$(DESTDIR)/Frameworks/"
 	
+	# Copy Swift libraries
+	cp -r "$(BUILD_DIR)Build/Products/Release/spelt.app/Contents/Frameworks/SpeltKit.framework" "$(DESTDIR)/Frameworks/"
+
 	# Copy binary
-	cp "$(BUILD_DIR)/Build/Products/Release/spelt.app/Contents/MacOS/spelt" "$(DESTDIR)/bin/spelt"
+	cp "$(BUILD_DIR)Build/Products/Release/spelt.app/Contents/MacOS/spelt" "$(DESTDIR)/bin/spelt"
 
 	# Copy site template
 	cp -r "./Resources/default-template" "$(RESOURCEDIR)"

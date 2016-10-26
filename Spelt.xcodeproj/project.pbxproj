@@ -472,8 +472,6 @@
 				FD3915721D7DB78E00F7F5F7 /* Frameworks */,
 				FD3915731D7DB78E00F7F5F7 /* Resources */,
 				FD3915871D7DB80C00F7F5F7 /* Embed Frameworks */,
-				FD3915881D7DB92300F7F5F7 /* Extract CLI Tool */,
-				FD39158F1D7DC91E00F7F5F7 /* Install executable */,
 			);
 			buildRules = (
 			);
@@ -598,36 +596,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FD3915881D7DB92300F7F5F7 /* Extract CLI Tool */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_PATH)",
-			);
-			name = "Extract CLI Tool";
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(EXECUTABLE_NAME)",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/bash;
-			shellScript = "./Scripts/extract-tool\n";
-		};
-		FD39158F1D7DC91E00F7F5F7 /* Install executable */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Install executable";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ \"${CONFIGURATION}\" = \"Release\" ]; then\n  make install_only\nfi";
-		};
 		FD6D5FDF1D4A471000A7C277 /* Copy frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -741,7 +709,7 @@
 		FD39157F1D7DB78E00F7F5F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -778,7 +746,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = spelt/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/. @executable_path/../Frameworks @executable_path/SpeltKit.framework/Versions/Current/Frameworks /Library/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/. @executable_path/../Frameworks @executable_path/SpeltKit.framework/Versions/Current/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -794,7 +762,7 @@
 		FD3915801D7DB78E00F7F5F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -825,7 +793,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = spelt/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/. @executable_path/../Frameworks @executable_path/SpeltKit.framework/Versions/Current/Frameworks /Library/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/. @executable_path/../Frameworks @executable_path/SpeltKit.framework/Versions/Current/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-headerpad_max_install_names";
@@ -888,6 +856,7 @@
 		FD8531CF1D4A2A6200658286 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -954,6 +923,7 @@
 		FD8531D01D4A2A6200658286 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
