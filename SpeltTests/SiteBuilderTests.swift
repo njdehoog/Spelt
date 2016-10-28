@@ -3,12 +3,6 @@ import XCTest
 
 class SiteBuilderTests: XCTestCase {
     
-    var sampleProjectPath: String {
-        // TODO: find a way to link to project directory, or copy fixtures to build folder
-        let fixturesPath = "~/Projects/Spelt/framework/SpeltTests/Fixtures".stringByExpandingTildeInPath
-        return fixturesPath.stringByAppendingPathComponent("test-site")
-    }
-    
     var buildPath: String {
         return sampleProjectPath.stringByAppendingPathComponent("_build")
     }

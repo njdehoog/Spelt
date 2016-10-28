@@ -2,12 +2,6 @@ import XCTest
 @testable import SpeltKit
 
 class SiteRendererTests: XCTestCase {
-
-    var sampleProjectPath: String {
-        // TODO: find a way to link to project directory, or copy fixtures to build folder
-        let fixturesPath = "~/Projects/Spelt/framework/SpeltTests/Fixtures".stringByExpandingTildeInPath
-        return fixturesPath.stringByAppendingPathComponent("test-site")
-    }
     
     lazy var site: Site = { [unowned self] in
        return try! SiteReader(sitePath: self.sampleProjectPath).read()

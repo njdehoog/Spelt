@@ -1,0 +1,4 @@
+#!/bin/bash
+# copy fixtures to build project directory
+
+cp -r "SpeltTests/Fixtures/" "${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/"

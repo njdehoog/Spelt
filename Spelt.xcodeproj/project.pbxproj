@@ -76,6 +76,7 @@
 		FD8531DB1D4A2A8D00658286 /* StaticFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B61D4A2A3500658286 /* StaticFile.swift */; };
 		FD8531E21D4A3A7200658286 /* SwiftHoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */; };
 		FD8531E41D4A3A7400658286 /* Hoedown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD8531E31D4A3A7400658286 /* Hoedown.framework */; };
+		FD8955C31DC3431C0055692A /* TestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8955C21DC3431C0055692A /* TestHelper.swift */; };
 		FD94A8BA1D75B279000D3888 /* PostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94A8B91D75B279000D3888 /* PostTests.swift */; };
 		FD94A8BD1D75C1D9000D3888 /* SiteConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD94A8BB1D75C1AA000D3888 /* SiteConfiguration.swift */; };
 		FDB926321D6B4CA200B8D5D3 /* SiteBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB926311D6B4CA200B8D5D3 /* SiteBuilderTests.swift */; };
@@ -220,6 +221,7 @@
 		FD8531CC1D4A2A6200658286 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD8531E01D4A3A4C00658286 /* SwiftHoedown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftHoedown.framework; path = Carthage/Build/Mac/SwiftHoedown.framework; sourceTree = "<group>"; };
 		FD8531E31D4A3A7400658286 /* Hoedown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Hoedown.framework; path = Carthage/Build/Mac/Hoedown.framework; sourceTree = "<group>"; };
+		FD8955C21DC3431C0055692A /* TestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestHelper.swift; sourceTree = "<group>"; };
 		FD94A8B91D75B279000D3888 /* PostTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTests.swift; sourceTree = "<group>"; };
 		FD94A8BB1D75C1AA000D3888 /* SiteConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteConfiguration.swift; sourceTree = "<group>"; };
 		FDB926311D6B4CA200B8D5D3 /* SiteBuilderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteBuilderTests.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 		FD8531C91D4A2A6200658286 /* SpeltTests */ = {
 			isa = PBXGroup;
 			children = (
+				FD8955C21DC3431C0055692A /* TestHelper.swift */,
 				FD6D5FD71D4A3C1100A7C277 /* SiteReaderTests.swift */,
 				FD6D5FF31D4B90BC00A7C277 /* SiteRendererTests.swift */,
 				FDB926311D6B4CA200B8D5D3 /* SiteBuilderTests.swift */,
@@ -510,6 +513,7 @@
 				FD8531C11D4A2A6200658286 /* Sources */,
 				FD8531C21D4A2A6200658286 /* Frameworks */,
 				FD8531C31D4A2A6200658286 /* Resources */,
+				FD3864C41DC0C58B00F34AD7 /* Copy fixtures */,
 				FD6D5FDF1D4A471000A7C277 /* Copy frameworks */,
 			);
 			buildRules = (
@@ -596,6 +600,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		FD3864C41DC0C58B00F34AD7 /* Copy fixtures */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy fixtures";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Scripts/copy-fixtures";
+		};
 		FD6D5FDF1D4A471000A7C277 /* Copy frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -684,6 +702,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD6D5FD81D4A3C1100A7C277 /* SiteReaderTests.swift in Sources */,
+				FD8955C31DC3431C0055692A /* TestHelper.swift in Sources */,
 				FD6D5FF41D4B90BC00A7C277 /* SiteRendererTests.swift in Sources */,
 				FDB926321D6B4CA200B8D5D3 /* SiteBuilderTests.swift in Sources */,
 				FD94A8BA1D75B279000D3888 /* PostTests.swift in Sources */,
