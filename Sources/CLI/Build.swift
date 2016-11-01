@@ -4,7 +4,13 @@ import Result
 
 var observer: SiteObserver?
 
-struct BuildOptions: OptionsProtocol {
+protocol BuildOptionsProtocol {
+    var sourcePath: String { get }
+    var destinationPath: String { get }
+    var watch: Bool { get }
+}
+
+struct BuildOptions: BuildOptionsProtocol, OptionsProtocol {
     let sourcePath: String
     let destinationPath: String
     let watch: Bool
@@ -19,13 +25,12 @@ struct BuildOptions: OptionsProtocol {
         return create
             <*> m <| Option(key: "source", defaultValue: BuildCommand.currentDirectoryPath, usage: "Source directory (defaults to ./)")
             <*> m <| Option(key: "destination", defaultValue: BuildCommand.currentDirectoryPath.stringByAppendingPathComponent("_build"), usage: "Destination directory (defaults to ./_build)")
-            <*> m <| Option(key: "watch", defaultValue: true, usage: "Disable auto-regeneration")
+            <*> m <| Option(key: "watch", defaultValue: false, usage: "Enable auto-regeneration")
     }
 }
 
 struct BuildCommand: CommandProtocol {
     typealias Options = BuildOptions
-    
     static let currentDirectoryPath = FileManager().currentDirectoryPath
     
     let verb = "build"
@@ -47,7 +52,7 @@ struct BuildCommand: CommandProtocol {
         return Result.success()
     }
     
-    func build(_ options: Options) throws {
+    func build(_ options: BuildOptionsProtocol) throws {
         print("Source: \(options.sourcePath)")
         print("Destination: \(options.destinationPath)")
         
@@ -74,7 +79,7 @@ struct BuildCommand: CommandProtocol {
         }
     }
     
-    fileprivate func _build(_ options: Options) throws {
+    fileprivate func _build(_ options: BuildOptionsProtocol) throws {
         let site = try SiteReader(sitePath: options.sourcePath).read()
         try SiteRenderer(site: site).render()
         try SiteBuilder(site: site, buildPath: options.destinationPath).build()

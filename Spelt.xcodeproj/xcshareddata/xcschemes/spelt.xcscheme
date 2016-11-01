@@ -77,6 +77,10 @@
             isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
+            argument = "help build"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
             argument = "build"
             isEnabled = "NO">
          </CommandLineArgument>
