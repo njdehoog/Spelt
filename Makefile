@@ -8,7 +8,7 @@ all:
 	xcodebuild $(XCODEFLAGS) build
 
 provision:
-	carthage build --platform Mac
+	carthage bootstrap --use-submodules --platform Mac
 
 clean:
 	rm -rf "$(BUILD_DIR)"
