@@ -34,6 +34,12 @@ When building your site, the generated files are placed in the `_build` folder i
 spelt build
 ```
 
+## Documentation
+
+Documentation for Spelt can be found at [docs.spelt.io](http://docs.spelt.io/). This documentation was originally written for the [Spelt Mac app](http://spelt.io/), but most of it applies to the CLI as well.
+
+If you spot any errors in the documentation, please submit a pull request in the [documentation repository](https://github.com/njdehoog/docs.spelt.io).
+
 ## Contributing
 
 This project is still in the early stages of development, so any help would be appreciated. Please feel free to fork the project and submit a pull request.
