@@ -25,8 +25,9 @@ struct NewCommand: CommandProtocol {
     let function = "Create scaffolding for a new site"
     
     func run(_ options: Options) -> Result<(), SpeltError> {
-        let executablePath = ProcessInfo.processInfo.arguments.first!
-        let templatePath = executablePath.stringByAppendingPathComponent("../../share/spelt/default-template").stringByStandardizingPath
+        guard let templatePath = Bundle(for: SiteServer.self).resourcePath?.stringByAppendingPathComponent("default-template") else {
+            fatalError("Unable to locate template files")
+        }
         
         do {
             print("Create project at path: \(options.path)")

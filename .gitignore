@@ -147,3 +147,8 @@ Packages/
 # and should therefore not be checked into the VCS.
 
 *.xccheckout
+
+
+### CUSTOM
+
+Spelt.pkg

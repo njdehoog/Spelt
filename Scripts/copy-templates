@@ -1,0 +1,4 @@
+#!/bin/bash
+# copy resources to build project directory
+
+cp -r "Resources/" "${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/"
