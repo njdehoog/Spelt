@@ -4,7 +4,13 @@ Spelt is a blog-aware static site generator written in Swift. It was created for
 
 ## Installation
 
-In order to build Spelt you need to have [Carthage](https://github.com/Carthage/Carthage) installed.
+### Using the installer
+
+The easiest way to install Spelt is by downloading the Spelt.pkg file for the latest [release](https://github.com/njdehoog/Spelt/releases).
+
+### Building from source
+
+In order to build Spelt you need to have [Carthage](https://github.com/Carthage/Carthage) and a recent version of Xcode installed.
 
 1. Clone the project: `git clone --recursive https://github.com/njdehoog/Spelt.git`
 2. Install dependencies: `make bootstrap`
