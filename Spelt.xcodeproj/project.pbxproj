@@ -474,6 +474,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FD3915811D7DB78E00F7F5F7 /* Build configuration list for PBXNativeTarget "spelt" */;
 			buildPhases = (
+				FD0F9A2C1DCF214A005CDCBD /* Update CLI version */,
 				FD3915711D7DB78E00F7F5F7 /* Sources */,
 				FD3915721D7DB78E00F7F5F7 /* Frameworks */,
 				FD3915731D7DB78E00F7F5F7 /* Resources */,
@@ -617,6 +618,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Scripts/copy-templates";
+		};
+		FD0F9A2C1DCF214A005CDCBD /* Update CLI version */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Update CLI version";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Scripts/update-cli-version";
 		};
 		FD3864C41DC0C58B00F34AD7 /* Copy fixtures */ = {
 			isa = PBXShellScriptBuildPhase;
