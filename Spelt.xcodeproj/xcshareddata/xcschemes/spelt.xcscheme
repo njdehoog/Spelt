@@ -78,6 +78,10 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "help build"
+            isEnabled = "NO">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "version"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

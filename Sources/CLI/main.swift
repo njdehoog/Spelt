@@ -14,6 +14,7 @@ let registry = CommandRegistry<SpeltError>()
 registry.register(BuildCommand())
 registry.register(ServeCommand())
 registry.register(NewCommand())
+registry.register(VersionCommand())
 
 let helpCommand = HelpCommand(registry: registry)
 registry.register(helpCommand)
