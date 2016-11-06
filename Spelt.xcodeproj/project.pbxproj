@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		FD0550F51D993FBA00394BB2 /* PathKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6D607B1D4BA3B100A7C277 /* PathKit.framework */; };
+		FD0F9A291DCF161B005CDCBD /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F9A281DCF161B005CDCBD /* Version.swift */; };
+		FD0F9A2B1DCF18FF005CDCBD /* SpeltKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0F9A2A1DCF18FF005CDCBD /* SpeltKit.swift */; };
 		FD2EE1041D86CA1C00700C58 /* ExcerptRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2EE1031D86CA1C00700C58 /* ExcerptRenderer.swift */; };
 		FD2EE1061D86CCD900700C58 /* Paginate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2EE1051D86CCD900700C58 /* Paginate.swift */; };
 		FD3915821D7DB7BE00F7F5F7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B11D4A2A3500658286 /* main.swift */; };
@@ -68,7 +70,6 @@
 		FD6D60761D4BA2D500A7C277 /* String+HTML.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60751D4BA2D500A7C277 /* String+HTML.swift */; };
 		FD6D60781D4BA30700A7C277 /* String+XML.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60771D4BA30700A7C277 /* String+XML.swift */; };
 		FD6D607A1D4BA36A00A7C277 /* MarkdownConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D60791D4BA36A00A7C277 /* MarkdownConverter.swift */; };
-		FD6D607E1D4BA51000A7C277 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D607D1D4BA51000A7C277 /* Error.swift */; };
 		FD8531CD1D4A2A6200658286 /* SpeltKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FD8531BF1D4A2A6200658286 /* SpeltKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD8531D81D4A2A8D00658286 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B31D4A2A3500658286 /* Post.swift */; };
 		FD8531D91D4A2A8D00658286 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8531B41D4A2A3500658286 /* Site.swift */; };
@@ -161,6 +162,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FD0F9A281DCF161B005CDCBD /* Version.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		FD0F9A2A1DCF18FF005CDCBD /* SpeltKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpeltKit.swift; sourceTree = "<group>"; };
 		FD2EE1031D86CA1C00700C58 /* ExcerptRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcerptRenderer.swift; sourceTree = "<group>"; };
 		FD2EE1051D86CCD900700C58 /* Paginate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paginate.swift; sourceTree = "<group>"; };
 		FD3915751D7DB78E00F7F5F7 /* spelt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spelt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,7 +211,6 @@
 		FD6D60771D4BA30700A7C277 /* String+XML.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+XML.swift"; sourceTree = "<group>"; };
 		FD6D60791D4BA36A00A7C277 /* MarkdownConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MarkdownConverter.swift; sourceTree = "<group>"; };
 		FD6D607B1D4BA3B100A7C277 /* PathKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PathKit.framework; path = Carthage/Build/Mac/PathKit.framework; sourceTree = "<group>"; };
-		FD6D607D1D4BA51000A7C277 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		FD8531B11D4A2A3500658286 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		FD8531B31D4A2A3500658286 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FD8531B41D4A2A3500658286 /* Site.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 				FD3915981D7EEF8600F7F5F7 /* Build.swift */,
 				FD3915A41D7F01B300F7F5F7 /* Serve.swift */,
 				FD4B9B4E1D8801F1009061F8 /* New.swift */,
+				FD0F9A281DCF161B005CDCBD /* Version.swift */,
 			);
 			path = CLI;
 			sourceTree = "<group>";
@@ -390,7 +393,7 @@
 		FD8531B21D4A2A3500658286 /* Spelt */ = {
 			isa = PBXGroup;
 			children = (
-				FD6D607D1D4BA51000A7C277 /* Error.swift */,
+				FD0F9A2A1DCF18FF005CDCBD /* SpeltKit.swift */,
 				FD8531B51D4A2A3500658286 /* SiteReader.swift */,
 				FD6D5FEF1D4B8FD400A7C277 /* SiteBuilder.swift */,
 				FD6D5FF51D4B90F000A7C277 /* SiteRenderer.swift */,
@@ -656,6 +659,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD3915991D7EEF8600F7F5F7 /* Build.swift in Sources */,
+				FD0F9A291DCF161B005CDCBD /* Version.swift in Sources */,
 				FD3915821D7DB7BE00F7F5F7 /* main.swift in Sources */,
 				FD4B9B501D880335009061F8 /* New.swift in Sources */,
 				FD3915A51D7F01B300F7F5F7 /* Serve.swift in Sources */,
@@ -684,6 +688,7 @@
 				FD8531DA1D4A2A8D00658286 /* SiteReader.swift in Sources */,
 				FD6D607A1D4BA36A00A7C277 /* MarkdownConverter.swift in Sources */,
 				FD6D5FF61D4B90F000A7C277 /* SiteRenderer.swift in Sources */,
+				FD0F9A2B1DCF18FF005CDCBD /* SpeltKit.swift in Sources */,
 				FD6D5FE11D4A4BE600A7C277 /* String+Paths.swift in Sources */,
 				FDF93A071D84554200C9C8FF /* CollectionRenderer.swift in Sources */,
 				FD6D5FE51D4B4E7100A7C277 /* Document.swift in Sources */,
@@ -697,7 +702,6 @@
 				FD6D606A1D4BA19D00A7C277 /* Include.swift in Sources */,
 				FD6D5FEE1D4B7F8700A7C277 /* Utilities.swift in Sources */,
 				FD8531D81D4A2A8D00658286 /* Post.swift in Sources */,
-				FD6D607E1D4BA51000A7C277 /* Error.swift in Sources */,
 				FD6D606D1D4BA19D00A7C277 /* Tokenizer.swift in Sources */,
 				FDCC12CC1D9A72580067D6E4 /* BuildDateRenderer.swift in Sources */,
 				FD6D60741D4BA2AE00A7C277 /* Stencil+MathFilters.swift in Sources */,
@@ -787,7 +791,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-headerpad_max_install_names";
-				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.spelt;
+				PRODUCT_BUNDLE_IDENTIFIER = org.spelt.spelt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -835,7 +839,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "-headerpad_max_install_names";
-				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.spelt;
+				PRODUCT_BUNDLE_IDENTIFIER = org.spelt.spelt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 3.0;
@@ -946,7 +950,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.SpeltKit;
+				PRODUCT_BUNDLE_IDENTIFIER = org.spelt.speltkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -1007,7 +1011,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.spelt.SpeltKit;
+				PRODUCT_BUNDLE_IDENTIFIER = org.spelt.speltkit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
