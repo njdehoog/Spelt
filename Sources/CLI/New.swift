@@ -2,7 +2,6 @@ import SpeltKit
 import Commandant
 import Result
 
-
 struct NewCommand: CommandProtocol {
     struct Options: OptionsProtocol {
         let path: String
@@ -25,7 +24,7 @@ struct NewCommand: CommandProtocol {
     let function = "Create scaffolding for a new site"
     
     func run(_ options: Options) -> Result<(), SpeltError> {
-        guard let templatePath = Bundle(for: SiteServer.self).resourcePath?.stringByAppendingPathComponent("default-template") else {
+        guard let templatePath = Bundle(identifier: SpeltKitBundleIdentifier)?.resourcePath?.stringByAppendingPathComponent("default-template") else {
             fatalError("Unable to locate template files")
         }
         
