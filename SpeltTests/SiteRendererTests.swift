@@ -114,7 +114,7 @@ class SiteRendererTests: XCTestCase {
     
     func testThatPaginatorContainsPosts() {
         let page = site.documents.filter({ $0.fileName == "index.html" }).first
-        XCTAssertEqual(page!.metadata["paginator"]!["posts"]!.arrayValue!.map({ $0.fileValue! as! Post }), Array(site.posts[0..<3]))
+        XCTAssertEqual(page!.metadata["paginator"]!["posts"]!.arrayValue!.map({ $0.fileValue! as! Post }), Array(site.posts.sorted(by: Site.defaultFileSorting)[0..<3]))
     }
     
     func testThatPaginatorCreatesDocumentsForPages() {
@@ -124,6 +124,6 @@ class SiteRendererTests: XCTestCase {
     
     func testThatDocumentForPageOneContainsPosts() {
         let page = site.documents.filter({ $0.destinationPath! == "1/index.html" }).first
-        XCTAssertEqual(page!.metadata["paginator"]!["posts"]!.arrayValue!.map({ $0.fileValue! as! Post }), Array(site.posts[3..<site.posts.endIndex]))
+        XCTAssertEqual(page!.metadata["paginator"]!["posts"]!.arrayValue!.map({ $0.fileValue! as! Post }), Array(site.posts.sorted(by: Site.defaultFileSorting)[3..<site.posts.endIndex]))
     }
 }
