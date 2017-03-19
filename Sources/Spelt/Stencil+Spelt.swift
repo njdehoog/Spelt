@@ -40,7 +40,6 @@ func markdownFilter(_ value: Any?) throws -> Any? {
 
 func dateFilter(_ value: Any?, arguments: [Any?]) throws -> Any? {
     guard let date = value as? Date else {
-        print(value as? String)
         throw TemplateSyntaxError("'date' filter expects input value to be of type NSDate, not \(type(of: value))")
     }
     
@@ -234,12 +233,12 @@ func numberOfWordsFilter(_ value: Any?) throws -> Any? {
 }
 
 func defaultFilter(_ value: Any?, arguments: [Any?]) throws -> Any? {
-    guard arguments.count == 1 else {
+    guard let firstArgument = arguments.first, arguments.count == 1 else {
         return TemplateSyntaxError("'default' filter expects (only) one argument")
     }
     
     if value == nil {
-        return arguments.first
+        return firstArgument
     }
     
     return value
