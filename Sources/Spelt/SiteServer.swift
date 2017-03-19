@@ -23,8 +23,8 @@ public class SiteServer {
         try server.run(options: [:])
     }
     
-    open func start() throws -> (URL, UInt) {
-        try server.start(options: [:])
+    open func start(port: Int = 0) throws -> (URL, UInt) {
+        try server.start(options: [GCDWebServerOption_Port : port])
         return (server.serverURL!, server.port)
     }
 }
