@@ -1,6 +1,6 @@
 # Spelt [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/njdehoog/Spelt/master/LICENSE.md)
 
-Spelt is a blog-aware static site generator written in Swift. It was created for the Spelt Mac app. 
+Spelt is a blog-aware static site generator written in Swift.
 
 ## Installation
 
