@@ -42,7 +42,7 @@ spelt build
 
 ## Documentation
 
-Documentation for Spelt can be found at [docs.spelt.io](http://docs.spelt.io/). This documentation was originally written for the [Spelt Mac app](http://spelt.io/), but most of it applies to the CLI as well.
+Documentation for Spelt can be found [here](http://docs.spelt.io.s3-website-us-east-1.amazonaws.com). This documentation was originally written for the Spelt Mac app, but most of it applies to the CLI as well.
 
 If you spot any errors in the documentation, please submit a pull request in the [documentation repository](https://github.com/njdehoog/docs.spelt.io).
 
