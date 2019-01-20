@@ -49,7 +49,7 @@ struct BuildCommand: CommandProtocol {
             CFRunLoopRun()
         }
         
-        return Result.success()
+        return Result.success(())
     }
     
     func build(_ options: BuildOptionsProtocol) throws {

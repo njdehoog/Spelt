@@ -36,6 +36,6 @@ struct NewCommand: CommandProtocol {
             return Result.failure(SpeltError(underlyingError: error))
         }
         
-        return Result.success()
+        return Result.success(())
     }
 }

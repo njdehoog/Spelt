@@ -45,6 +45,6 @@ struct ServeCommand: CommandProtocol {
         // keep process alive
         CFRunLoopRun()
         
-        return Result.success()
+        return Result.success(())
     }
 }

@@ -35,6 +35,6 @@ extension Site {
     }
     
     var collections: [String]? {
-        return metadata["collections"]?.arrayValue?.flatMap({ $0.stringValue })
+        return metadata["collections"]?.arrayValue?.compactMap({ $0.stringValue })
     }
 }
