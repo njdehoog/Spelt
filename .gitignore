@@ -148,6 +148,9 @@ Packages/
 
 *.xccheckout
 
+####
+# Carthage - Dependency manager
+Carthage/
 
 ### CUSTOM
 
