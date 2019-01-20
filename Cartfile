@@ -1,6 +1,6 @@
 github "njdehoog/hoedown-swift" == 0.1.3
 github "njdehoog/libyaml-swift" == 0.1.3
-github "njdehoog/Witness" == 0.1.2
+github "njdehoog/Witness" == 0.1.3
 github "sagmor/GCDWebServer" "frameworks"
 github "njdehoog/libsass-swift" == 0.1.1
 github "njdehoog/PathKit" "carthage"
