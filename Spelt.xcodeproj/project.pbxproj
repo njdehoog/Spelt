@@ -246,7 +246,6 @@
 		FD2EE1031D86CA1C00700C58 /* ExcerptRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcerptRenderer.swift; sourceTree = "<group>"; };
 		FD2EE1051D86CCD900700C58 /* Paginate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paginate.swift; sourceTree = "<group>"; };
 		FD3915751D7DB78E00F7F5F7 /* spelt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spelt.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FD39157E1D7DB78E00F7F5F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD3915901D7DCBAE00F7F5F7 /* Commandant.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Commandant.framework; path = Carthage/Build/Mac/Commandant.framework; sourceTree = "<group>"; };
 		FD3915911D7DCBAE00F7F5F7 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		FD3915981D7EEF8600F7F5F7 /* Build.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Build.swift; sourceTree = "<group>"; };
@@ -460,14 +459,6 @@
 			path = Sources;
 			sourceTree = "<group>";
 		};
-		FD3915761D7DB78E00F7F5F7 /* spelt */ = {
-			isa = PBXGroup;
-			children = (
-				FD39157E1D7DB78E00F7F5F7 /* Info.plist */,
-			);
-			path = spelt;
-			sourceTree = "<group>";
-		};
 		FD6D5FE21D4A4FBC00A7C277 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -516,7 +507,6 @@
 				FD8531AF1D4A2A3500658286 /* Sources */,
 				FD8531BE1D4A2A6200658286 /* Spelt */,
 				FD8531C91D4A2A6200658286 /* SpeltTests */,
-				FD3915761D7DB78E00F7F5F7 /* spelt */,
 				FD8531A81D4A2A1200658286 /* Products */,
 				FD8531DD1D4A3A4400658286 /* Frameworks */,
 			);
