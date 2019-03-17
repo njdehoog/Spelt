@@ -23,19 +23,20 @@ class SiteReaderTests: XCTestCase {
     
     func testThatItReadsPostContents() {
         let site = try! siteReader!.read()
-        XCTAssertEqual(site.posts.first?.contents, "Hello world")
+        let post = site.posts.first { $0.fileName == "hello-world.md" }
+        XCTAssertEqual(post?.contents, "Hello world")
     }
     
     func testThatItReadsPostCategory() {
         let site = try! siteReader!.read()
-        let post = site.posts.filter({ $0.fileName == "hello-world.md" }).first!
-        XCTAssertEqual(post.categories, ["new"])
+        let post = site.posts.first { $0.fileName == "hello-world.md" }
+        XCTAssertEqual(post?.categories, ["new"])
     }
     
     func testThatItReadsPostCategories() {
         let site = try! siteReader!.read()
-        let post = site.posts.filter({ $0.fileName == "markdown.md" }).first!
-        XCTAssertEqual(post.categories, ["writing", "markup"])
+        let post = site.posts.first { $0.fileName == "markdown.md" }
+        XCTAssertEqual(post?.categories, ["writing", "markup"])
     }
     
     func testThatItReadsPages() {
@@ -65,12 +66,14 @@ class SiteReaderTests: XCTestCase {
     
     func testThatItReadsFrontMatterForPage() {
         let site = try! siteReader!.read()
-        XCTAssertEqual(site.documents.first?.metadata, ["layout": "page"])
+        let document = site.documents.first { $0.fileName == "info.html" }
+        XCTAssertEqual(document?.metadata, ["layout": "page"])
     }
     
     func testThatItReadsFrontMatterForPost() {
         let site = try! siteReader!.read()
-        XCTAssertEqual(site.posts.first?.metadata, ["layout": "post", "date": "2016-07-29 09:39:21 +0200", "title": "Hello World", "categories": ["new"]])
+        let post = site.posts.first { $0.fileName == "hello-world.md" }
+        XCTAssertEqual(post?.metadata, ["layout": "post", "date": "2016-07-29 09:39:21 +0200", "title": "Hello World", "categories": ["new"]])
     }
     
     func testThatItReadsConfigFile() {
