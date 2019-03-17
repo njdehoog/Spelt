@@ -1,33 +1,32 @@
-extension Namespace {
-    static func defaultNamespace() -> Namespace {
-        let namespace = Namespace()
-        namespace.registerFilter("date", filter: Filter(dateFilter))
-        namespace.registerFilter("date_to_string", filter: Filter(dateToStringFilter))
-        namespace.registerFilter("date_to_rfc822", filter: Filter(dateToRFC822Filter))
-        namespace.registerFilter("date_to_xmlschema", filter: Filter(dateToXMLSchemaFilter))
-        namespace.registerFilter("markdownify", filter: Filter(markdownFilter))
-        namespace.registerFilter("xml_escape", filter: Filter(xmlEscapeFilter))
-        namespace.registerFilter("url_encode", filter: Filter(URLEncodeFilter))
-        namespace.registerFilter("prepend", filter: Filter(prependFilter))
-        namespace.registerFilter("append", filter: Filter(appendFilter))
-        namespace.registerFilter("replace", filter: Filter(replaceFilter))
-        namespace.registerFilter("remove", filter: Filter(removeFilter))
-        namespace.registerFilter("strip_html", filter: Filter(stripHTMLFilter))
-        namespace.registerFilter("strip_newlines", filter: Filter(stripNewlinesFilter))
-        namespace.registerFilter("truncate", filter: Filter(truncateFilter))
-        namespace.registerFilter("join", filter: Filter(joinFilter))
-        namespace.registerFilter("array_to_sentence_string", filter: Filter(arrayToSentenceStringFilter))
-        namespace.registerFilter("number_of_words", filter: Filter(numberOfWordsFilter))
-        namespace.registerFilter("divided_by", filter: Filter(dividedByFilter))
-        namespace.registerFilter("floor", filter: Filter(floorFilter))
-        namespace.registerFilter("ceil", filter: Filter(ceilFilter))
-        namespace.registerFilter("default", filter: Filter(defaultFilter))
+class SpeltExtension: Extension {
+    static func defaultExtension() -> Extension {
+        let defaultExtension = SpeltExtension()
+        defaultExtension.registerFilter("date", filter:dateFilter)
+        defaultExtension.registerFilter("date_to_string", filter: dateToStringFilter)
+        defaultExtension.registerFilter("date_to_rfc822", filter: dateToRFC822Filter)
+        defaultExtension.registerFilter("date_to_xmlschema", filter: dateToXMLSchemaFilter)
+        defaultExtension.registerFilter("markdownify", filter: markdownFilter)
+        defaultExtension.registerFilter("xml_escape", filter: xmlEscapeFilter)
+        defaultExtension.registerFilter("url_encode", filter: URLEncodeFilter)
+        defaultExtension.registerFilter("prepend", filter: prependFilter)
+        defaultExtension.registerFilter("append", filter: appendFilter)
+        defaultExtension.registerFilter("replace", filter: replaceFilter)
+        defaultExtension.registerFilter("remove", filter: removeFilter)
+        defaultExtension.registerFilter("strip_html", filter: stripHTMLFilter)
+        defaultExtension.registerFilter("strip_newlines", filter: stripNewlinesFilter)
+        defaultExtension.registerFilter("truncate", filter: truncateFilter)
+        defaultExtension.registerFilter("join", filter: joinFilter)
+        defaultExtension.registerFilter("array_to_sentence_string", filter: arrayToSentenceStringFilter)
+        defaultExtension.registerFilter("number_of_words", filter: numberOfWordsFilter)
+        defaultExtension.registerFilter("divided_by", filter: dividedByFilter)
+        defaultExtension.registerFilter("floor", filter: floorFilter)
+        defaultExtension.registerFilter("ceil", filter: ceilFilter)
+        defaultExtension.registerFilter("default", filter: defaultFilter)
         
-        namespace.registerTag("gist", parser: gistTag)
-        namespace.registerTag("katex", parser: KaTexNode.parse)
-        namespace.registerTag("raw", parser: RawNode.parse)
-        
-        return namespace
+        defaultExtension.registerTag("gist", parser: gistTag)
+        defaultExtension.registerTag("katex", parser: KaTexNode.parse)
+        defaultExtension.registerTag("raw", parser: RawNode.parse)
+        return defaultExtension
     }
 }
 
@@ -178,29 +177,6 @@ func truncateFilter(_ value: Any?, arguments: [Any?]) throws -> Any? {
     return string[string.startIndex..<endIndex]
 }
 
-func joinFilter(_ value: Any?, arguments: [Any?]) throws -> Any? {
-    guard let array = value as? [Any] else {
-        return TemplateSyntaxError("'join' filter expects array input")
-    }
-    
-    let stringArray = array.reduce([String]()) { strings, value in
-        if let string = value as? String {
-            return strings + [string]
-        }
-        return strings
-    }
-    
-    guard stringArray.isEmpty == false else {
-        return TemplateSyntaxError("'join' filter expects array of strings")
-    }
-    
-    guard let separator = arguments.first as? String else {
-        throw TemplateSyntaxError("'join' filter expects separator as argument")
-    }
-    
-    return stringArray.joined(separator: separator)
-}
-
 func arrayToSentenceStringFilter(_ value: Any?) throws -> Any? {
     guard let array = value as? [Any] else {
         return TemplateSyntaxError("'array_to_sentence' filter expects array input")
@@ -234,20 +210,8 @@ func numberOfWordsFilter(_ value: Any?) throws -> Any? {
     return string.components(separatedBy: CharacterSet.whitespaces).count
 }
 
-func defaultFilter(_ value: Any?, arguments: [Any?]) throws -> Any? {
-    guard let firstArgument = arguments.first, arguments.count == 1 else {
-        return TemplateSyntaxError("'default' filter expects (only) one argument")
-    }
-    
-    if value == nil {
-        return firstArgument
-    }
-    
-    return value
-}
-
 func gistTag(_ parser: TokenParser, token: Token) throws -> NodeType {
-    let components = token.components()
+    let components = token.components
     guard components.count >= 2 && components.count < 4 else {
         throw TemplateSyntaxError("'gist' tags should have between 1 and 2 arguments`\(token.contents)`.")
     }
@@ -264,18 +228,22 @@ func gistTag(_ parser: TokenParser, token: Token) throws -> NodeType {
 }
 
 public class KaTexNode : NodeType {
+    public var token: Token?  // Shouldn't this return something? How is this expected to be used?
+    
     public let mathNodes:[NodeType]
     public let inline: Bool
     
     public class func parse(parser:TokenParser, token:Token) throws -> NodeType {
-        let components = token.components()
+        let components = token.components
         guard components.count == 1 || components.count == 2 else {
             throw TemplateSyntaxError("'katex' tags should use the following syntax: 'katex (inline: true)'")
         }
         
         var inline: Bool = false
         if components.count == 2 {
-            let inlineComponents = components[1].splitAndTrimWhitespace(":")
+            let inlineComponents = components[1].split(separator: ":").map {
+                String($0).trimmingCharacters(in: .whitespaces)    
+            }
             guard inlineComponents.count == 2 && inlineComponents.first! == "inline" else {
                 throw TemplateSyntaxError("Invalid argument in katex tag '\(components.last!)'")
             }
@@ -316,10 +284,12 @@ public class KaTexNode : NodeType {
 }
 
 public class RawNode : NodeType {
+    public var token: Token? // Shouldn't this return something? How is this expected to be used?
+    
     public let rawNodes:[NodeType]
     
     public class func parse(parser:TokenParser, token:Token) throws -> NodeType {
-        let components = token.components()
+        let components = token.components
         guard components.count == 1 else {
             throw TemplateSyntaxError("'raw' tags do not accept arguments")
         }
