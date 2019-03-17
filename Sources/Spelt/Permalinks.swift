@@ -70,15 +70,15 @@ extension String {
         
         // Remove all non-ASCII characters
         let nonASCIICharsRegex = try! NSRegularExpression(pattern: "[^\\x00-\\x7F]+", options: [])
-        slug = nonASCIICharsRegex.stringByReplacingMatches(in: slug, options: [], range: NSMakeRange(0, slug.characters.count), withTemplate: "")
+        slug = nonASCIICharsRegex.stringByReplacingMatches(in: slug, options: [], range: NSMakeRange(0, slug.count), withTemplate: "")
         
         // Turn non-slug characters into separators
         let nonSlugCharactersRegex = try! NSRegularExpression(pattern: "[^a-z0-9\\-_\\+]+", options: [.caseInsensitive])
-        slug = nonSlugCharactersRegex.stringByReplacingMatches(in: slug, options: [], range: NSMakeRange(0, slug.characters.count), withTemplate: separator)
+        slug = nonSlugCharactersRegex.stringByReplacingMatches(in: slug, options: [], range: NSMakeRange(0, slug.count), withTemplate: separator)
         
         // No more than one of the separator in a row
         let repeatingSeparatorsRegex = try! NSRegularExpression(pattern: "\(separator){2,}", options: [])
-        slug = repeatingSeparatorsRegex.stringByReplacingMatches(in: slug, options: [], range: NSMakeRange(0, slug.characters.count), withTemplate: separator)
+        slug = repeatingSeparatorsRegex.stringByReplacingMatches(in: slug, options: [], range: NSMakeRange(0, slug.count), withTemplate: separator)
         
         // Remove leading/trailing separator
         slug = slug.trimmingCharacters(in: CharacterSet(charactersIn: separator))

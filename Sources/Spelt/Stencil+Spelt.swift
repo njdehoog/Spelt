@@ -171,7 +171,7 @@ func truncateFilter(_ value: Any?, arguments: [Any?]) throws -> Any? {
         throw TemplateSyntaxError("'truncate' filter expects integer argument")
     }
     
-    guard let endIndex = string.characters.index(string.startIndex, offsetBy: numberOfCharacters, limitedBy: string.endIndex) else {
+    guard let endIndex = string.index(string.startIndex, offsetBy: numberOfCharacters, limitedBy: string.endIndex) else {
         return string
     }
     return string[string.startIndex..<endIndex]

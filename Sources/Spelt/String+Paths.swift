@@ -47,8 +47,8 @@ public extension String {
     }
     
     var stringByDeletingTrailingSlash: String {
-        if self.hasSuffix("/") {
-            return substring(to: self.characters.index(before: self.endIndex))
+        if hasSuffix("/") {
+            return String(self[..<endIndex])
         }
         return self
     }

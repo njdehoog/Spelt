@@ -16,7 +16,7 @@ struct PaginationRenderer: Renderer {
             
             func pathForPage(withIndex index: Int) -> String {
                 guard index > 0 else {
-                    return "/\(file.destinationPath)"
+                    return "/\(destinationPath)"
                 }
                 let path = destinationPath.stringByDeletingLastPathComponent
                 let destinationPath = path.stringByAppendingPathComponent("\(index)").stringByAppendingPathComponent(destinationPath.lastPathComponent)
